@@ -6,167 +6,168 @@
 <title>ChangCv 팀 리더보드</title>
 <style>
   :root {
-    --bg: #f5f7fa;
+    --bg: #f6f7f9;
     --surface: #ffffff;
-    --ink: #101828;
-    --ink-2: #51607a;
-    --ink-3: #8a97ad;
-    --line: #e4e9f1;
-    --line-soft: #edf1f6;
-    --blue: #1d4ed8;
-    --blue-strong: #1e40af;
-    --blue-soft: #eff4ff;
-    --blue-line: #c7d7fe;
-    --gold: #9a6b15;
+    --ink: #131c28;
+    --ink-2: #4d5c70;
+    --ink-3: #86929f;
+    --line: #e2e7ed;
+    --line-soft: #eef1f5;
+    --blue: #1a56db;
+    --blue-strong: #16429e;
+    --blue-wash: #f0f5ff;
     --danger: #b42318;
-    --shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 8px 24px -12px rgba(16, 24, 40, 0.10);
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #0c1220; --surface: #131a2b; --ink: #e8edf6; --ink-2: #9daabf;
-      --ink-3: #6b7891; --line: #232d42; --line-soft: #1b2438;
-      --blue: #6d9bff; --blue-strong: #8fb2ff; --blue-soft: #16233e; --blue-line: #2c4370;
-      --gold: #d5a441; --danger: #f97066;
-      --shadow: none;
+      --bg: #0e141d; --surface: #151d29; --ink: #e7ecf3; --ink-2: #a2aebd;
+      --ink-3: #6d7a8a; --line: #26303e; --line-soft: #1d2634;
+      --blue: #7aa5ff; --blue-strong: #a3c0ff; --blue-wash: #18233a;
+      --danger: #f28b82;
     }
   }
   :root[data-theme="dark"] {
-    --bg: #0c1220; --surface: #131a2b; --ink: #e8edf6; --ink-2: #9daabf;
-    --ink-3: #6b7891; --line: #232d42; --line-soft: #1b2438;
-    --blue: #6d9bff; --blue-strong: #8fb2ff; --blue-soft: #16233e; --blue-line: #2c4370;
-    --gold: #d5a441; --danger: #f97066;
-    --shadow: none;
+    --bg: #0e141d; --surface: #151d29; --ink: #e7ecf3; --ink-2: #a2aebd;
+    --ink-3: #6d7a8a; --line: #26303e; --line-soft: #1d2634;
+    --blue: #7aa5ff; --blue-strong: #a3c0ff; --blue-wash: #18233a;
+    --danger: #f28b82;
   }
   * { box-sizing: border-box; margin: 0; }
   html { -webkit-text-size-adjust: 100%; }
   body {
-    background: var(--bg); color: var(--ink);
+    background: var(--bg); color: var(--ink); word-break: keep-all;
     font: 15px/1.6 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
       "Pretendard Variable", Pretendard, "Noto Sans KR", "Segoe UI", Roboto, sans-serif;
-    font-feature-settings: "tnum";
   }
-  .shell { max-width: 1020px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 44px); }
+  .shell { max-width: 1000px; margin: 0 auto; padding: 0 clamp(14px, 4vw, 40px); }
 
-  header { padding-top: 44px; }
-  .eyebrow {
-    font-size: 11.5px; font-weight: 700; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--blue);
+  header { padding-top: clamp(26px, 6vw, 44px); }
+  .brand {
+    display: inline-block; font-size: 13px; font-weight: 800; color: var(--blue);
+    border: 1px solid color-mix(in srgb, var(--blue) 35%, var(--line));
+    background: var(--blue-wash); border-radius: 6px; padding: 3px 9px;
+    letter-spacing: 0.02em;
   }
   h1 {
-    font-size: clamp(24px, 3.4vw, 30px); font-weight: 800;
-    letter-spacing: -0.022em; margin-top: 6px; text-wrap: balance;
+    margin-top: 12px; font-size: clamp(21px, 4.6vw, 28px); font-weight: 800;
+    letter-spacing: -0.02em; text-wrap: balance;
   }
-  .stamp { margin-top: 8px; font-size: 13.5px; color: var(--ink-2); }
-  .stamp b { color: var(--ink); font-weight: 600; }
+  .stamp { margin-top: 7px; font-size: 13px; color: var(--ink-3); }
+  .stamp b { color: var(--ink-2); font-weight: 600; }
 
   nav {
-    margin-top: 28px; display: flex; gap: 26px;
-    border-bottom: 1px solid var(--line);
+    margin-top: 22px; display: flex; gap: clamp(14px, 3vw, 26px);
+    border-bottom: 1px solid var(--line); overflow-x: auto; scrollbar-width: none;
   }
+  nav::-webkit-scrollbar { display: none; }
   nav button {
-    appearance: none; border: 0; background: none; padding: 0 2px 13px;
+    appearance: none; border: 0; background: none; padding: 0 1px 12px;
     font: inherit; font-size: 14.5px; font-weight: 600; color: var(--ink-2);
     cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px;
+    white-space: nowrap; flex-shrink: 0;
   }
   nav button:hover { color: var(--ink); }
   nav button:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 3px; }
   nav button.on { color: var(--blue); border-bottom-color: var(--blue); }
-  nav button .t-code { font-weight: 800; margin-right: 7px; }
+  nav button .t-code { font-weight: 800; margin-right: 6px; font-variant-numeric: tabular-nums; }
 
-  .stats {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px; margin: 26px 0 22px;
+  .summary {
+    display: flex; flex-wrap: wrap; row-gap: 6px;
+    margin: 20px 0 16px; font-size: 13.5px; color: var(--ink-2);
   }
-  .stat {
-    background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
-    padding: 14px 16px 12px; box-shadow: var(--shadow);
+  .summary .item { white-space: nowrap; display: inline-flex; align-items: baseline; gap: 6px; }
+  .summary .item + .item::before {
+    content: ""; display: inline-block; width: 1px; height: 11px;
+    background: var(--line); margin: 0 12px; align-self: center;
   }
-  .stat .k {
-    font-size: 11px; font-weight: 700; letter-spacing: 0.09em;
-    text-transform: uppercase; color: var(--ink-3);
-  }
-  .stat .v {
-    margin-top: 5px; font-size: 19px; font-weight: 700; letter-spacing: -0.01em;
-    font-variant-numeric: tabular-nums; color: var(--ink);
-  }
-  .stat .v small { font-size: 12.5px; font-weight: 600; color: var(--ink-2); margin-left: 5px; }
-  .stat.lead .v { color: var(--blue); }
+  .summary b { color: var(--ink); font-weight: 700; font-variant-numeric: tabular-nums; }
+  .summary .item.lead b { color: var(--blue); }
 
   .board {
-    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
-    box-shadow: var(--shadow); overflow: hidden;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+    overflow: hidden;
   }
   .board-scroll { overflow-x: auto; }
-  table { border-collapse: collapse; width: 100%; min-width: 660px; }
-  th, td { padding: 12px 18px; text-align: left; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { padding: 11px clamp(9px, 1.8vw, 17px); text-align: left; }
   thead th {
-    font-size: 11px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
-    color: var(--ink-3); border-bottom: 1px solid var(--line);
-    background: color-mix(in srgb, var(--surface) 60%, var(--bg));
-    white-space: nowrap;
+    font-size: 11.5px; font-weight: 700; letter-spacing: 0.03em; color: var(--ink-3);
+    border-bottom: 1px solid var(--line); white-space: nowrap;
   }
   tbody td { border-bottom: 1px solid var(--line-soft); }
   tbody tr:last-child td { border-bottom: 0; }
-  tbody tr:hover td { background: color-mix(in srgb, var(--blue-soft) 45%, transparent); }
   td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
-  td.rank { width: 3.4em; font-weight: 700; color: var(--ink-2); }
+  td.rank { font-weight: 700; color: var(--ink-3); }
   tr.top1 td.rank, tr.top1 td.who { color: var(--blue); }
   tr.top1 td.score { color: var(--blue-strong); }
   td.who { font-weight: 600; white-space: nowrap; }
-  td.score { font-weight: 700; letter-spacing: -0.01em; }
+  td.score { font-weight: 700; white-space: nowrap; }
   tr.baseline td { color: var(--ink-3); }
-  tr.baseline td.score { font-weight: 600; }
   .tag {
-    display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.05em;
-    border: 1px solid var(--line); border-radius: 999px; padding: 2px 9px;
-    margin-left: 8px; vertical-align: 1.5px; color: var(--ink-3);
+    display: inline-block; font-size: 10.5px; font-weight: 700;
+    border: 1px solid var(--line); border-radius: 999px; padding: 1.5px 8px;
+    margin-left: 7px; vertical-align: 1.5px; color: var(--ink-3); white-space: nowrap;
   }
-  td.memo { color: var(--ink-2); font-size: 13.5px; max-width: 32ch; }
-  td.file { color: var(--ink-3); font-size: 12px; font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+  td.memo { color: var(--ink-2); font-size: 13.5px; min-width: 12ch; max-width: 34ch; }
+  td.file {
+    color: var(--ink-3); font-size: 12px; white-space: nowrap;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  }
   td.date { color: var(--ink-3); font-size: 13px; white-space: nowrap; }
-  .empty { padding: 44px; text-align: center; color: var(--ink-2); }
+  .empty { padding: 40px 20px; text-align: center; color: var(--ink-2); }
 
   .below {
     display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
-    gap: 10px; margin: 14px 2px 0;
+    gap: 8px 14px; margin: 13px 2px 0;
   }
   .toggle { font-size: 13.5px; color: var(--ink-2); cursor: pointer; user-select: none; }
   .toggle input { accent-color: var(--blue); vertical-align: -2px; margin-right: 7px; }
   .metric-hint { font-size: 12.5px; color: var(--ink-3); }
 
-  .errors { margin-top: 18px; display: flex; flex-direction: column; gap: 8px; }
+  .errors { margin-top: 16px; display: flex; flex-direction: column; gap: 8px; }
   .error-item {
-    border: 1px solid color-mix(in srgb, var(--danger) 32%, var(--line));
-    background: color-mix(in srgb, var(--danger) 6%, var(--surface));
-    border-radius: 10px; padding: 10px 14px; font-size: 13.5px; color: var(--ink-2);
+    border: 1px solid color-mix(in srgb, var(--danger) 30%, var(--line));
+    border-left: 3px solid var(--danger);
+    background: var(--surface);
+    border-radius: 8px; padding: 10px 14px; font-size: 13.5px; color: var(--ink-2);
+    overflow-wrap: anywhere;
   }
   .error-item b { color: var(--danger); font-weight: 700; margin-right: 8px; }
   .error-item code { font-family: ui-monospace, Menlo, monospace; color: var(--ink); }
 
   footer {
-    margin: 34px 0 56px; padding-top: 18px; border-top: 1px solid var(--line);
-    font-size: 12.5px; color: var(--ink-3); max-width: 72ch;
+    margin: 32px 0 52px; padding-top: 16px; border-top: 1px solid var(--line);
+    font-size: 12.5px; line-height: 1.7; color: var(--ink-3); max-width: 72ch;
   }
   footer a { color: var(--blue); text-decoration: none; }
   footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 760px) {
+    th.col-file, td.file { display: none; }
+  }
+  @media (max-width: 560px) {
+    th.col-memo, td.memo { display: none; }
+    .summary { font-size: 13px; }
+    .summary .item + .item::before { margin: 0 9px; }
+  }
 </style>
 </head>
 <body>
 <div class="shell">
   <header>
-    <p class="eyebrow">ChangCv · Team Leaderboard</p>
+    <span class="brand">ChangCv</span>
     <h1>해양과학 AI 경진대회 리더보드</h1>
     <p class="stamp" id="stamp">불러오는 중</p>
     <nav id="tabs" role="tablist" aria-label="문제 선택"></nav>
   </header>
 
-  <section class="stats" id="stats"></section>
+  <section class="summary" id="summary" aria-label="요약"></section>
 
   <section class="board"><div class="board-scroll">
     <table>
       <thead><tr>
         <th class="num">순위</th><th>제출자</th><th class="num" id="score-head">점수</th>
-        <th>메모</th><th>파일</th><th>제출 시각</th>
+        <th class="col-memo">메모</th><th class="col-file">파일</th><th>제출</th>
       </tr></thead>
       <tbody id="rows"></tbody>
     </table>
@@ -183,8 +184,7 @@
     채점은 주최측 score.py의 검증 게이트와 지표 수식을 그대로 사용하며, 공식 test 정답이
     비공개이므로 train에서 분리한 팀 검증셋 기준입니다. 기준선 행은 팀 검증셋에서 다시 계산한
     값이라 공식 안내 수치와 다릅니다. 제출 방법은 팀 repo의
-    <a href="https://github.com/mango-stop/marin-leaderboard" rel="noopener">CLAUDE.md / README</a>를
-    참고하세요.
+    <a href="https://github.com/mango-stop/marin-leaderboard" rel="noopener">README</a>를 참고하세요.
   </footer>
 </div>
 
@@ -197,6 +197,7 @@ function esc(s) {
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 }
 const f6 = v => v.toFixed(6);
+const shortTime = iso => iso.slice(5, 16).replace("T", " ");
 
 function render() {
   const t = board.tasks[current];
@@ -226,7 +227,7 @@ function render() {
       `<td class="num score">${f6(e.score)}</td>` +
       `<td class="memo">${esc(e.memo || "")}</td>` +
       `<td class="file">${esc(e.file)}</td>` +
-      `<td class="date">${e.submitted_at.slice(0, 16).replace("T", " ")}</td>`;
+      `<td class="date">${shortTime(e.submitted_at)}</td>`;
     rows.appendChild(tr);
   }
 
@@ -238,15 +239,11 @@ function render() {
   const okReal = t.entries.filter(e => e.status === "ok" && !e.is_baseline);
   const baseline = t.entries.find(e => e.is_baseline && e.status === "ok");
   const top = t.entries.filter(e => e.status === "ok").find(e => e.rank === 1);
-  document.getElementById("stats").innerHTML =
-    `<div class="stat lead"><div class="k">1위 ${t.metric}</div>
-       <div class="v">${top ? f6(top.score) : "–"}${top ? `<small>${esc(top.submitter)}</small>` : ""}</div></div>` +
-    `<div class="stat"><div class="k">팀 기준선</div>
-       <div class="v">${baseline ? f6(baseline.score) : "–"}</div></div>` +
-    `<div class="stat"><div class="k">공식 기준선 · 참고</div>
-       <div class="v">${t.official_baseline}</div></div>` +
-    `<div class="stat"><div class="k">제출 수</div>
-       <div class="v">${okReal.length}<small>건</small></div></div>`;
+  document.getElementById("summary").innerHTML =
+    `<span class="item lead">1위 <b>${top ? f6(top.score) : "–"}</b>${top ? esc(top.submitter) : ""}</span>` +
+    `<span class="item">팀 기준선 <b>${baseline ? f6(baseline.score) : "–"}</b></span>` +
+    `<span class="item">공식 기준선 <b>${t.official_baseline}</b></span>` +
+    `<span class="item">제출 <b>${okReal.length}</b>건</span>`;
 }
 
 function selectTab(task) {
@@ -265,7 +262,7 @@ async function init() {
     return;
   }
   document.getElementById("stamp").innerHTML =
-    `마지막 갱신 <b>${board.generated_at.slice(0, 16).replace("T", " ")}</b> KST · 팀 검증셋 기준 자동 채점`;
+    `마지막 갱신 <b>${board.generated_at.slice(0, 16).replace("T", " ")}</b> KST · 자동 채점`;
   const tabs = document.getElementById("tabs");
   for (const task of TASKS) {
     const t = board.tasks[task];
