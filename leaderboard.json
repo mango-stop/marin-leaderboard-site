@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-14T14:53:55+09:00",
+ "generated_at": "2026-08-14T14:54:38+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -99,33 +99,11 @@
      },
      "status": "ok",
      "rank": 1
-    },
-    {
-     "file": "테스트__site-upload__test.csv",
-     "submitter": "테스트",
-     "memo": "사이트 업로드 플로우 검증",
-     "submitted_at": "2026-08-14T14:41:33+09:00",
-     "is_baseline": false,
-     "score": 0.89004,
-     "detail": {
-      "n": 546,
-      "per_lead": {
-       "3": 0.5609744269503804,
-       "6": 0.66328436876362,
-       "9": 0.8361141149309783,
-       "12": 0.911684830832032,
-       "18": 1.086293223320926,
-       "24": 1.1349449325848369
-      }
-     },
-     "status": "ok",
-     "rank": 2
     }
    ],
-   "n_ok": 2,
+   "n_ok": 1,
    "best_by_submitter": [
-    "baseline__persistence.csv",
-    "테스트__site-upload__test.csv"
+    "baseline__persistence.csv"
    ],
    "n_expected": 546,
    "expected_columns": [
