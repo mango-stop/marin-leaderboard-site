@@ -6,212 +6,206 @@
 <title>marin 팀 리더보드</title>
 <style>
   :root {
-    --bg: #f6f8fa;
+    --bg: #f5f7fa;
     --surface: #ffffff;
-    --ink: #17232e;
-    --ink-soft: #5a6b7a;
-    --line: #dde4ea;
-    --accent: #0b6e99;
-    --accent-ink: #ffffff;
-    --gold: #b8860b;
-    --baseline: #8a94a0;
-    --error: #b3402a;
-    --okc: #1a7f4b;
+    --ink: #101828;
+    --ink-2: #51607a;
+    --ink-3: #8a97ad;
+    --line: #e4e9f1;
+    --line-soft: #edf1f6;
+    --blue: #1d4ed8;
+    --blue-strong: #1e40af;
+    --blue-soft: #eff4ff;
+    --blue-line: #c7d7fe;
+    --gold: #9a6b15;
+    --danger: #b42318;
+    --shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 8px 24px -12px rgba(16, 24, 40, 0.10);
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #10171d; --surface: #18222b; --ink: #e3ecf3; --ink-soft: #93a4b3;
-      --line: #2a3843; --accent: #3aa2cc; --accent-ink: #0c1318; --gold: #d9a72e;
-      --baseline: #7c8894; --error: #e07a5f; --okc: #4cc98a;
+      --bg: #0c1220; --surface: #131a2b; --ink: #e8edf6; --ink-2: #9daabf;
+      --ink-3: #6b7891; --line: #232d42; --line-soft: #1b2438;
+      --blue: #6d9bff; --blue-strong: #8fb2ff; --blue-soft: #16233e; --blue-line: #2c4370;
+      --gold: #d5a441; --danger: #f97066;
+      --shadow: none;
     }
   }
   :root[data-theme="dark"] {
-    --bg: #10171d; --surface: #18222b; --ink: #e3ecf3; --ink-soft: #93a4b3;
-    --line: #2a3843; --accent: #3aa2cc; --accent-ink: #0c1318; --gold: #d9a72e;
-    --baseline: #7c8894; --error: #e07a5f; --okc: #4cc98a;
+    --bg: #0c1220; --surface: #131a2b; --ink: #e8edf6; --ink-2: #9daabf;
+    --ink-3: #6b7891; --line: #232d42; --line-soft: #1b2438;
+    --blue: #6d9bff; --blue-strong: #8fb2ff; --blue-soft: #16233e; --blue-line: #2c4370;
+    --gold: #d5a441; --danger: #f97066;
+    --shadow: none;
   }
   * { box-sizing: border-box; margin: 0; }
+  html { -webkit-text-size-adjust: 100%; }
   body {
     background: var(--bg); color: var(--ink);
-    font: 15px/1.55 -apple-system, "Apple SD Gothic Neo", "Pretendard",
-      "Noto Sans KR", "Segoe UI", sans-serif;
+    font: 15px/1.6 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+      "Pretendard Variable", Pretendard, "Noto Sans KR", "Segoe UI", Roboto, sans-serif;
+    font-feature-settings: "tnum";
   }
-  header {
-    background: var(--surface); border-bottom: 1px solid var(--line);
-    padding: 22px clamp(16px, 4vw, 40px) 0;
+  .shell { max-width: 1020px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 44px); }
+
+  header { padding-top: 44px; }
+  .eyebrow {
+    font-size: 11.5px; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--blue);
   }
-  .head-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
-  h1 { font-size: 21px; letter-spacing: -0.01em; }
-  h1 .wave { color: var(--accent); }
-  .sub { color: var(--ink-soft); font-size: 13px; margin: 4px 0 16px; }
-  nav { display: flex; gap: 4px; }
+  h1 {
+    font-size: clamp(24px, 3.4vw, 30px); font-weight: 800;
+    letter-spacing: -0.022em; margin-top: 6px; text-wrap: balance;
+  }
+  .stamp { margin-top: 8px; font-size: 13.5px; color: var(--ink-2); }
+  .stamp b { color: var(--ink); font-weight: 600; }
+
+  nav {
+    margin-top: 28px; display: flex; gap: 26px;
+    border-bottom: 1px solid var(--line);
+  }
   nav button {
-    appearance: none; border: 0; background: none; color: var(--ink-soft);
-    font: inherit; font-weight: 600; padding: 9px 14px; cursor: pointer;
-    border-bottom: 2.5px solid transparent;
+    appearance: none; border: 0; background: none; padding: 0 2px 13px;
+    font: inherit; font-size: 14.5px; font-weight: 600; color: var(--ink-2);
+    cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px;
   }
   nav button:hover { color: var(--ink); }
-  nav button:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  nav button.on { color: var(--accent); border-bottom-color: var(--accent); }
-  .btn {
-    appearance: none; border: 1px solid var(--line); border-radius: 7px;
-    background: var(--surface); color: var(--ink); font: inherit; font-weight: 600;
-    padding: 8px 16px; cursor: pointer;
-  }
-  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
-  .btn:disabled { opacity: 0.55; cursor: default; }
-  main { max-width: 980px; margin: 0 auto; padding: 22px clamp(12px, 4vw, 40px) 60px; }
-  .meta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
-  .chip {
-    background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
-    padding: 8px 14px; font-size: 13px; color: var(--ink-soft);
-  }
-  .chip b { color: var(--ink); font-variant-numeric: tabular-nums; }
-  .tablewrap {
-    background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
-    overflow-x: auto;
-  }
-  table { border-collapse: collapse; width: 100%; min-width: 640px; }
-  th, td { padding: 10px 14px; text-align: left; border-top: 1px solid var(--line); }
-  thead th {
-    border-top: 0; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em;
-    color: var(--ink-soft); background: color-mix(in srgb, var(--surface) 88%, var(--bg));
-  }
-  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
-  td.rank { font-weight: 700; width: 3.2em; text-align: right; }
-  tr.top1 td.rank { color: var(--gold); }
-  td.score { font-weight: 700; }
-  tr.baseline td { color: var(--baseline); }
-  tr.baseline td.score { font-weight: 600; }
-  .flag {
-    display: inline-block; font-size: 11px; font-weight: 700; border-radius: 4px;
-    padding: 1px 7px; margin-left: 7px; vertical-align: 1px;
-    background: color-mix(in srgb, var(--baseline) 18%, transparent);
-    color: var(--baseline);
-  }
-  .memo { color: var(--ink-soft); font-size: 13.5px; max-width: 30ch; }
-  .file { color: var(--ink-soft); font-size: 12.5px; font-family: ui-monospace, monospace; }
-  .date { color: var(--ink-soft); font-size: 13px; white-space: nowrap; }
-  .toggle { display: block; margin: 14px 2px; font-size: 13.5px; color: var(--ink-soft); }
-  .toggle input { accent-color: var(--accent); vertical-align: -2px; margin-right: 6px; }
-  .errors { margin-top: 14px; font-size: 13.5px; color: var(--error); }
-  .errors code, .status code { font-family: ui-monospace, monospace; }
-  .note { margin-top: 22px; font-size: 12.5px; color: var(--ink-soft); max-width: 68ch; }
-  .empty { padding: 34px; text-align: center; color: var(--ink-soft); }
+  nav button:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 3px; }
+  nav button.on { color: var(--blue); border-bottom-color: var(--blue); }
+  nav button .t-code { font-weight: 800; margin-right: 7px; }
 
-  dialog {
-    border: 1px solid var(--line); border-radius: 10px; background: var(--surface);
-    color: var(--ink); padding: 0; width: min(560px, 92vw);
+  .stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px; margin: 26px 0 22px;
   }
-  dialog::backdrop { background: rgba(10, 20, 28, 0.55); }
-  .modal-head { padding: 18px 22px 0; }
-  .modal-head h2 { font-size: 17px; }
-  .modal-body { padding: 14px 22px 22px; display: flex; flex-direction: column; gap: 13px; }
-  .field label { display: block; font-size: 12.5px; font-weight: 700; color: var(--ink-soft); margin-bottom: 5px; }
-  .field input[type="text"], .field input[type="password"], .field select {
-    width: 100%; font: inherit; color: var(--ink); background: var(--bg);
-    border: 1px solid var(--line); border-radius: 7px; padding: 8px 11px;
+  .stat {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+    padding: 14px 16px 12px; box-shadow: var(--shadow);
   }
-  .drop {
-    border: 1.5px dashed var(--line); border-radius: 8px; padding: 20px;
-    text-align: center; color: var(--ink-soft); cursor: pointer; font-size: 13.5px;
+  .stat .k {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.09em;
+    text-transform: uppercase; color: var(--ink-3);
   }
-  .drop.armed { border-color: var(--accent); color: var(--ink); }
-  .status { font-size: 13.5px; color: var(--ink-soft); min-height: 1.4em; }
-  .status.err { color: var(--error); }
-  .status.ok { color: var(--okc); }
-  .modal-actions { display: flex; justify-content: flex-end; gap: 8px; }
-  details.tokenbox { border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; font-size: 13px; }
-  details.tokenbox summary { cursor: pointer; font-weight: 600; color: var(--ink-soft); }
-  details.tokenbox .inner { margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
-  details.tokenbox a { color: var(--accent); }
+  .stat .v {
+    margin-top: 5px; font-size: 19px; font-weight: 700; letter-spacing: -0.01em;
+    font-variant-numeric: tabular-nums; color: var(--ink);
+  }
+  .stat .v small { font-size: 12.5px; font-weight: 600; color: var(--ink-2); margin-left: 5px; }
+  .stat.lead .v { color: var(--blue); }
+
+  .board {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+    box-shadow: var(--shadow); overflow: hidden;
+  }
+  .board-scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 660px; }
+  th, td { padding: 12px 18px; text-align: left; }
+  thead th {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
+    color: var(--ink-3); border-bottom: 1px solid var(--line);
+    background: color-mix(in srgb, var(--surface) 60%, var(--bg));
+    white-space: nowrap;
+  }
+  tbody td { border-bottom: 1px solid var(--line-soft); }
+  tbody tr:last-child td { border-bottom: 0; }
+  tbody tr:hover td { background: color-mix(in srgb, var(--blue-soft) 45%, transparent); }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  td.rank { width: 3.4em; font-weight: 700; color: var(--ink-2); }
+  tr.top1 td.rank, tr.top1 td.who { color: var(--blue); }
+  tr.top1 td.score { color: var(--blue-strong); }
+  td.who { font-weight: 600; white-space: nowrap; }
+  td.score { font-weight: 700; letter-spacing: -0.01em; }
+  tr.baseline td { color: var(--ink-3); }
+  tr.baseline td.score { font-weight: 600; }
+  .tag {
+    display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.05em;
+    border: 1px solid var(--line); border-radius: 999px; padding: 2px 9px;
+    margin-left: 8px; vertical-align: 1.5px; color: var(--ink-3);
+  }
+  td.memo { color: var(--ink-2); font-size: 13.5px; max-width: 32ch; }
+  td.file { color: var(--ink-3); font-size: 12px; font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+  td.date { color: var(--ink-3); font-size: 13px; white-space: nowrap; }
+  .empty { padding: 44px; text-align: center; color: var(--ink-2); }
+
+  .below {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+    gap: 10px; margin: 14px 2px 0;
+  }
+  .toggle { font-size: 13.5px; color: var(--ink-2); cursor: pointer; user-select: none; }
+  .toggle input { accent-color: var(--blue); vertical-align: -2px; margin-right: 7px; }
+  .metric-hint { font-size: 12.5px; color: var(--ink-3); }
+
+  .errors { margin-top: 18px; display: flex; flex-direction: column; gap: 8px; }
+  .error-item {
+    border: 1px solid color-mix(in srgb, var(--danger) 32%, var(--line));
+    background: color-mix(in srgb, var(--danger) 6%, var(--surface));
+    border-radius: 10px; padding: 10px 14px; font-size: 13.5px; color: var(--ink-2);
+  }
+  .error-item b { color: var(--danger); font-weight: 700; margin-right: 8px; }
+  .error-item code { font-family: ui-monospace, Menlo, monospace; color: var(--ink); }
+
+  footer {
+    margin: 34px 0 56px; padding-top: 18px; border-top: 1px solid var(--line);
+    font-size: 12.5px; color: var(--ink-3); max-width: 72ch;
+  }
+  footer a { color: var(--blue); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
-<header>
-  <div class="head-top">
-    <div>
-      <h1><span class="wave">〜</span> marin 팀 리더보드</h1>
-      <p class="sub" id="stamp">불러오는 중…</p>
-    </div>
-    <button class="btn primary" id="openSubmit">제출하기</button>
-  </div>
-  <nav id="tabs" role="tablist"></nav>
-</header>
-<main>
-  <div class="meta-row" id="chips"></div>
-  <div class="tablewrap"><table>
-    <thead><tr>
-      <th class="num">순위</th><th>제출자</th><th class="num" id="score-head">점수</th>
-      <th>메모</th><th>파일</th><th>제출 시각</th>
-    </tr></thead>
-    <tbody id="rows"></tbody>
-  </table></div>
-  <label class="toggle"><input type="checkbox" id="showAll">제출 이력 전체 보기
-    (기본: 제출자별 최고 점수만)</label>
-  <div class="errors" id="errors"></div>
-  <p class="note">채점은 주최측 score.py의 검증·지표를 그대로 사용하되, 공식 test 정답이
-  비공개이므로 train에서 분리한 팀 검증셋 기준입니다. ⚑ 베이스라인은 팀 검증셋에서 다시
-  계산한 값이라 공식 안내 수치와 다릅니다.</p>
-</main>
+<div class="shell">
+  <header>
+    <p class="eyebrow">Marin · Team Leaderboard</p>
+    <h1>해양과학 AI 경진대회 팀 리더보드</h1>
+    <p class="stamp" id="stamp">불러오는 중</p>
+    <nav id="tabs" role="tablist" aria-label="문제 선택"></nav>
+  </header>
 
-<dialog id="submitModal">
-  <div class="modal-head"><h2>제출하기</h2></div>
-  <form class="modal-body" id="submitForm" method="dialog">
-    <div class="drop" id="drop">CSV 파일을 끌어다 놓거나 클릭해서 선택
-      <input type="file" id="fileInput" accept=".csv" hidden>
-    </div>
-    <div class="field">
-      <label for="taskSel">문제</label>
-      <select id="taskSel">
-        <option value="P1">P1 · 수온 이상탐지</option>
-        <option value="P2">P2 · 연직구조 복원</option>
-        <option value="P3">P3 · 유의파고 예측</option>
-      </select>
-    </div>
-    <div class="field">
-      <label for="nameInput">제출자</label>
-      <input type="text" id="nameInput" placeholder="이름 (리더보드에 표시)" required>
-    </div>
-    <div class="field">
-      <label for="memoInput">간단 메모</label>
-      <input type="text" id="memoInput" placeholder="예: depth-aware LGBM + L5 드롭">
-    </div>
-    <details class="tokenbox" id="tokenBox">
-      <summary>GitHub 토큰 (최초 1회 등록)</summary>
-      <div class="inner">
-        <span>제출은 비공개 repo에 커밋되므로 collaborator 권한의 GitHub 토큰이
-        필요합니다. <a href="https://github.com/settings/tokens/new?scopes=repo&description=marin-leaderboard"
-        target="_blank" rel="noopener">토큰 만들기(classic, repo 권한)</a> 후 아래에
-        붙여넣으세요. 토큰은 이 브라우저(localStorage)에만 저장됩니다.</span>
-        <input type="password" id="tokenInput" placeholder="ghp_…">
-      </div>
-    </details>
-    <div class="status" id="submitStatus"></div>
-    <div class="modal-actions">
-      <button class="btn" value="cancel" id="cancelBtn">닫기</button>
-      <button class="btn primary" type="button" id="doSubmit">업로드 &amp; 채점</button>
-    </div>
-  </form>
-</dialog>
+  <section class="stats" id="stats"></section>
+
+  <section class="board"><div class="board-scroll">
+    <table>
+      <thead><tr>
+        <th class="num">순위</th><th>제출자</th><th class="num" id="score-head">점수</th>
+        <th>메모</th><th>파일</th><th>제출 시각</th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div></section>
+
+  <div class="below">
+    <label class="toggle"><input type="checkbox" id="showAll">제출 이력 전체 보기</label>
+    <span class="metric-hint" id="metric-hint"></span>
+  </div>
+
+  <div class="errors" id="errors"></div>
+
+  <footer>
+    채점은 주최측 score.py의 검증 게이트와 지표 수식을 그대로 사용하며, 공식 test 정답이
+    비공개이므로 train에서 분리한 팀 검증셋 기준입니다. 기준선 행은 팀 검증셋에서 다시 계산한
+    값이라 공식 안내 수치와 다릅니다. 제출 방법은 팀 repo의
+    <a href="https://github.com/mango-stop/marin-leaderboard" rel="noopener">CLAUDE.md / README</a>를
+    참고하세요.
+  </footer>
+</div>
 
 <script>
 const TASKS = ["P1", "P2", "P3"];
-const REPO = "mango-stop/marin-leaderboard";
-const API = "https://api.github.com";
-let board = null, current = "P1", pickedFile = null, polling = null;
+let board = null, current = "P1";
 
 function esc(s) {
   return String(s).replace(/[&<>"']/g, c =>
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 }
-function fmtScore(t, v) { return v.toFixed(6); }
+const f6 = v => v.toFixed(6);
 
 function render() {
   const t = board.tasks[current];
   const showAll = document.getElementById("showAll").checked;
-  document.getElementById("score-head").textContent =
-    t.metric + (t.unit ? ` (${t.unit})` : "") + (t.higher_better ? " ↑" : " ↓");
+  const unit = t.unit ? ` (${t.unit})` : "";
+  document.getElementById("score-head").textContent = t.metric + unit;
+  document.getElementById("metric-hint").textContent =
+    `${t.metric}${unit} · ${t.higher_better ? "높을수록" : "낮을수록"} 좋음 · 기본 보기는 제출자별 최고 점수`;
+
   const best = new Set(t.best_by_submitter);
   const ok = t.entries.filter(e => e.status === "ok")
     .sort((a, b) => a.rank - b.rank)
@@ -219,8 +213,8 @@ function render() {
   const rows = document.getElementById("rows");
   rows.innerHTML = "";
   if (!ok.length) {
-    rows.innerHTML = '<tr><td colspan="6" class="empty">아직 제출이 없습니다 — ' +
-      '오른쪽 위 제출하기 버튼으로 CSV를 올리세요.</td></tr>';
+    rows.innerHTML = `<tr><td colspan="6" class="empty">아직 제출이 없습니다 —
+      팀 repo의 submissions/${current}/ 에 CSV를 push 하세요.</td></tr>`;
   }
   for (const e of ok) {
     const tr = document.createElement("tr");
@@ -228,25 +222,31 @@ function render() {
     if (e.is_baseline) tr.classList.add("baseline");
     tr.innerHTML =
       `<td class="num rank">${e.rank}</td>` +
-      `<td>${esc(e.submitter)}${e.is_baseline ? '<span class="flag">기준선</span>' : ''}</td>` +
-      `<td class="num score">${fmtScore(t, e.score)}</td>` +
+      `<td class="who">${esc(e.submitter)}${e.is_baseline ? '<span class="tag">기준선</span>' : ""}</td>` +
+      `<td class="num score">${f6(e.score)}</td>` +
       `<td class="memo">${esc(e.memo || "")}</td>` +
       `<td class="file">${esc(e.file)}</td>` +
       `<td class="date">${e.submitted_at.slice(0, 16).replace("T", " ")}</td>`;
     rows.appendChild(tr);
   }
-  const errs = t.entries.filter(e => e.status === "error");
-  document.getElementById("errors").innerHTML = errs.map(e =>
-    `⚠️ <code>${esc(e.file)}</code> 채점 실패 — ${esc(e.error)}`).join("<br>");
-  const okAll = t.entries.filter(e => e.status === "ok" && !e.is_baseline);
+
+  document.getElementById("errors").innerHTML =
+    t.entries.filter(e => e.status === "error").map(e =>
+      `<div class="error-item"><b>채점 실패</b><code>${esc(e.file)}</code> — ${esc(e.error)}</div>`
+    ).join("");
+
+  const okReal = t.entries.filter(e => e.status === "ok" && !e.is_baseline);
   const baseline = t.entries.find(e => e.is_baseline && e.status === "ok");
-  const bestEntry = t.entries.filter(e => e.status === "ok").find(e => e.rank === 1);
-  document.getElementById("chips").innerHTML =
-    `<span class="chip">${t.name} · 지표 <b>${t.metric}${t.unit ? " (" + t.unit + ")" : ""}</b></span>` +
-    `<span class="chip">제출 <b>${okAll.length}</b>건</span>` +
-    (bestEntry ? `<span class="chip">1위 <b>${fmtScore(t, bestEntry.score)}</b> · ${esc(bestEntry.submitter)}</span>` : "") +
-    (baseline ? `<span class="chip">팀 기준선 <b>${fmtScore(t, baseline.score)}</b></span>` : "") +
-    `<span class="chip">공식 기준선(참고) <b>${t.official_baseline}</b></span>`;
+  const top = t.entries.filter(e => e.status === "ok").find(e => e.rank === 1);
+  document.getElementById("stats").innerHTML =
+    `<div class="stat lead"><div class="k">1위 ${t.metric}</div>
+       <div class="v">${top ? f6(top.score) : "–"}${top ? `<small>${esc(top.submitter)}</small>` : ""}</div></div>` +
+    `<div class="stat"><div class="k">팀 기준선</div>
+       <div class="v">${baseline ? f6(baseline.score) : "–"}</div></div>` +
+    `<div class="stat"><div class="k">공식 기준선 · 참고</div>
+       <div class="v">${t.official_baseline}</div></div>` +
+    `<div class="stat"><div class="k">제출 수</div>
+       <div class="v">${okReal.length}<small>건</small></div></div>`;
 }
 
 function selectTab(task) {
@@ -256,222 +256,30 @@ function selectTab(task) {
   render();
 }
 
-async function loadBoard() {
-  board = await (await fetch("leaderboard.json?_=" + Date.now())).json();
-  document.getElementById("stamp").textContent =
-    "갱신 " + board.generated_at.slice(0, 16).replace("T", " ") +
-    " (KST) · 팀 검증셋 기준 자동 채점";
-}
-
 async function init() {
-  const tabs = document.getElementById("tabs");
   try {
-    await loadBoard();
+    board = await (await fetch("leaderboard.json?_=" + Date.now())).json();
   } catch (e) {
     document.getElementById("stamp").textContent =
       "leaderboard.json을 불러오지 못했습니다 — 첫 채점 실행 전이거나 배포 오류입니다.";
     return;
   }
+  document.getElementById("stamp").innerHTML =
+    `마지막 갱신 <b>${board.generated_at.slice(0, 16).replace("T", " ")}</b> KST · 팀 검증셋 기준 자동 채점`;
+  const tabs = document.getElementById("tabs");
   for (const task of TASKS) {
     const t = board.tasks[task];
     if (!t) continue;
     const b = document.createElement("button");
     b.dataset.task = task;
-    b.textContent = `${task} ${t.name}`;
+    b.setAttribute("role", "tab");
+    b.innerHTML = `<span class="t-code">${task}</span>${esc(t.name)}`;
     b.onclick = () => selectTab(task);
     tabs.appendChild(b);
   }
   document.getElementById("showAll").onchange = render;
   selectTab("P1");
 }
-
-/* ---------- 제출 모달 ---------- */
-const modal = document.getElementById("submitModal");
-const drop = document.getElementById("drop");
-const fileInput = document.getElementById("fileInput");
-const statusEl = document.getElementById("submitStatus");
-
-function setStatus(msg, cls) {
-  statusEl.textContent = msg;
-  statusEl.className = "status" + (cls ? " " + cls : "");
-}
-
-document.getElementById("openSubmit").onclick = () => {
-  document.getElementById("nameInput").value = localStorage.getItem("lb_name") || "";
-  document.getElementById("tokenInput").value = localStorage.getItem("lb_token") || "";
-  document.getElementById("tokenBox").open = !localStorage.getItem("lb_token");
-  document.getElementById("taskSel").value = current;
-  setStatus("");
-  modal.showModal();
-};
-document.getElementById("cancelBtn").onclick = () => { if (polling) clearInterval(polling); };
-
-drop.onclick = () => fileInput.click();
-drop.ondragover = e => { e.preventDefault(); drop.classList.add("armed"); };
-drop.ondragleave = () => drop.classList.remove("armed");
-drop.ondrop = e => {
-  e.preventDefault(); drop.classList.remove("armed");
-  if (e.dataTransfer.files.length) setFile(e.dataTransfer.files[0]);
-};
-fileInput.onchange = () => { if (fileInput.files.length) setFile(fileInput.files[0]); };
-
-function setFile(f) {
-  pickedFile = f;
-  drop.textContent = `${f.name} (${(f.size / 1048576).toFixed(1)} MB)`;
-  drop.classList.add("armed");
-  // 헤더로 문제 자동 감지
-  f.slice(0, 4096).text().then(head => {
-    const first = head.split(/\r?\n/, 1)[0].trim();
-    for (const task of TASKS) {
-      if ((board.tasks[task].expected_columns || []).includes(first)) {
-        document.getElementById("taskSel").value = task;
-        setStatus(`헤더가 ${task} 형식과 일치합니다.`, "ok");
-        return;
-      }
-    }
-    setStatus("헤더가 어느 문제 형식과도 일치하지 않습니다 — 문제를 직접 선택하세요.", "err");
-  });
-}
-
-function slugify(s) {
-  return s.trim().replace(/[^\w가-힣-]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 40) || "submit";
-}
-
-async function gh(path, opts = {}, token) {
-  const r = await fetch(API + path, {
-    ...opts,
-    headers: {
-      "Authorization": "Bearer " + token,
-      "Accept": "application/vnd.github+json",
-      ...(opts.body ? { "Content-Type": "application/json" } : {}),
-    },
-  });
-  if (!r.ok) {
-    const body = await r.text();
-    throw new Error(`GitHub API ${r.status} (${path}): ${body.slice(0, 200)}`);
-  }
-  return r.json();
-}
-
-function fileToBase64(f) {
-  return new Promise((res, rej) => {
-    const rd = new FileReader();
-    rd.onload = () => res(rd.result.split(",", 2)[1]);
-    rd.onerror = rej;
-    rd.readAsDataURL(f);
-  });
-}
-
-async function preValidate(task) {
-  const t = board.tasks[task];
-  const text = await pickedFile.text();
-  const firstLine = text.split(/\r?\n/, 1)[0].trim();
-  if (!(t.expected_columns || []).includes(firstLine)) {
-    throw new Error(`헤더 불일치: "${firstLine}" — 필요: ${t.expected_columns.join(" 또는 ")}`);
-  }
-  const nRows = text.split(/\r?\n/).filter(l => l.trim()).length - 1;
-  if (t.n_expected && nRows !== t.n_expected) {
-    throw new Error(`행 수 불일치: ${nRows.toLocaleString()}행 — 필요: ${t.n_expected.toLocaleString()}행`);
-  }
-}
-
-async function doSubmit() {
-  const task = document.getElementById("taskSel").value;
-  const name = document.getElementById("nameInput").value.trim();
-  const memo = document.getElementById("memoInput").value.trim();
-  const token = document.getElementById("tokenInput").value.trim();
-  if (!pickedFile) return setStatus("먼저 CSV 파일을 선택하세요.", "err");
-  if (!name) return setStatus("제출자 이름을 입력하세요.", "err");
-  if (!token) {
-    document.getElementById("tokenBox").open = true;
-    return setStatus("GitHub 토큰을 등록하세요 (최초 1회).", "err");
-  }
-  const btn = document.getElementById("doSubmit");
-  btn.disabled = true;
-  try {
-    setStatus("파일 형식 검사 중…");
-    await preValidate(task);
-    setStatus("권한 확인 중…");
-    await gh(`/repos/${REPO}`, {}, token);
-    localStorage.setItem("lb_name", name);
-    localStorage.setItem("lb_token", token);
-
-    const stamp = new Date().toISOString().slice(0, 16).replace(/[-:T]/g, "").slice(0, 12);
-    const fname = `${slugify(name)}__${slugify(memo)}__${stamp}`;
-    const dir = `submissions/${task}`;
-
-    setStatus("업로드 중… (파일이 크면 수십 초 걸릴 수 있습니다)");
-    const ref = await gh(`/repos/${REPO}/git/ref/heads/main`, {}, token);
-    const baseCommit = await gh(`/repos/${REPO}/git/commits/${ref.object.sha}`, {}, token);
-    const csvBlob = await gh(`/repos/${REPO}/git/blobs`, {
-      method: "POST",
-      body: JSON.stringify({ content: await fileToBase64(pickedFile), encoding: "base64" }),
-    }, token);
-    const metaBlob = await gh(`/repos/${REPO}/git/blobs`, {
-      method: "POST",
-      body: JSON.stringify({
-        content: JSON.stringify({ submitter: name, memo: memo }, null, 1),
-        encoding: "utf-8",
-      }),
-    }, token);
-    const tree = await gh(`/repos/${REPO}/git/trees`, {
-      method: "POST",
-      body: JSON.stringify({
-        base_tree: baseCommit.tree.sha,
-        tree: [
-          { path: `${dir}/${fname}.csv`, mode: "100644", type: "blob", sha: csvBlob.sha },
-          { path: `${dir}/${fname}.json`, mode: "100644", type: "blob", sha: metaBlob.sha },
-        ],
-      }),
-    }, token);
-    const commit = await gh(`/repos/${REPO}/git/commits`, {
-      method: "POST",
-      body: JSON.stringify({
-        message: `${task} 제출: ${name} — ${memo || fname}`,
-        tree: tree.sha,
-        parents: [ref.object.sha],
-      }),
-    }, token);
-    await gh(`/repos/${REPO}/git/refs/heads/main`, {
-      method: "PATCH",
-      body: JSON.stringify({ sha: commit.sha }),
-    }, token);
-
-    setStatus("업로드 완료 — 자동 채점 중입니다 (보통 1~3분). 이 창을 닫아도 됩니다.");
-    pollFor(task, `${fname}.csv`);
-  } catch (e) {
-    setStatus(String(e.message || e), "err");
-  } finally {
-    btn.disabled = false;
-  }
-}
-document.getElementById("doSubmit").onclick = doSubmit;
-
-function pollFor(task, fname) {
-  if (polling) clearInterval(polling);
-  const t0 = Date.now();
-  polling = setInterval(async () => {
-    if (Date.now() - t0 > 8 * 60 * 1000) {
-      clearInterval(polling);
-      setStatus("아직 반영되지 않았습니다 — Actions 탭에서 채점 상태를 확인하세요.", "err");
-      return;
-    }
-    try {
-      await loadBoard();
-      const e = board.tasks[task].entries.find(x => x.file === fname);
-      if (e) {
-        clearInterval(polling);
-        selectTab(task);
-        if (e.status === "ok") {
-          setStatus(`채점 완료: ${board.tasks[task].metric} ${e.score.toFixed(6)} — 현재 ${e.rank}위`, "ok");
-        } else {
-          setStatus(`형식 오류로 채점 실패 — ${e.error}`, "err");
-        }
-      }
-    } catch (_) { /* 다음 폴링에서 재시도 */ }
-  }, 20000);
-}
-
 init();
 </script>
 </body>
