@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-14T14:40:20+09:00",
+ "generated_at": "2026-08-14T14:44:27+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -12,7 +12,7 @@
      "file": "baseline__hard-rule.csv",
      "submitter": "baseline",
      "memo": "",
-     "submitted_at": "2026-08-14T14:38:32+09:00",
+     "submitted_at": "2026-08-14T14:41:33+09:00",
      "is_baseline": true,
      "score": 0.213107,
      "detail": {
@@ -41,7 +41,7 @@
      "file": "baseline__depth-interp.csv",
      "submitter": "baseline",
      "memo": "",
-     "submitted_at": "2026-08-14T14:38:34+09:00",
+     "submitted_at": "2026-08-14T14:41:33+09:00",
      "is_baseline": true,
      "score": 0.886741,
      "detail": {
@@ -72,7 +72,7 @@
      "file": "baseline__persistence.csv",
      "submitter": "baseline",
      "memo": "",
-     "submitted_at": "2026-08-14T14:38:34+09:00",
+     "submitted_at": "2026-08-14T14:41:33+09:00",
      "is_baseline": true,
      "score": 0.89004,
      "detail": {
