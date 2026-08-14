@@ -16,38 +16,19 @@
     --gold: #b8860b;
     --baseline: #8a94a0;
     --error: #b3402a;
-    --up: #1a7f4b;
-    --down: #b3402a;
+    --okc: #1a7f4b;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #10171d;
-      --surface: #18222b;
-      --ink: #e3ecf3;
-      --ink-soft: #93a4b3;
-      --line: #2a3843;
-      --accent: #3aa2cc;
-      --accent-ink: #0c1318;
-      --gold: #d9a72e;
-      --baseline: #7c8894;
-      --error: #e07a5f;
-      --up: #4cc98a;
-      --down: #e07a5f;
+      --bg: #10171d; --surface: #18222b; --ink: #e3ecf3; --ink-soft: #93a4b3;
+      --line: #2a3843; --accent: #3aa2cc; --accent-ink: #0c1318; --gold: #d9a72e;
+      --baseline: #7c8894; --error: #e07a5f; --okc: #4cc98a;
     }
   }
   :root[data-theme="dark"] {
-    --bg: #10171d;
-    --surface: #18222b;
-    --ink: #e3ecf3;
-    --ink-soft: #93a4b3;
-    --line: #2a3843;
-    --accent: #3aa2cc;
-    --accent-ink: #0c1318;
-    --gold: #d9a72e;
-    --baseline: #7c8894;
-    --error: #e07a5f;
-    --up: #4cc98a;
-    --down: #e07a5f;
+    --bg: #10171d; --surface: #18222b; --ink: #e3ecf3; --ink-soft: #93a4b3;
+    --line: #2a3843; --accent: #3aa2cc; --accent-ink: #0c1318; --gold: #d9a72e;
+    --baseline: #7c8894; --error: #e07a5f; --okc: #4cc98a;
   }
   * { box-sizing: border-box; margin: 0; }
   body {
@@ -59,6 +40,7 @@
     background: var(--surface); border-bottom: 1px solid var(--line);
     padding: 22px clamp(16px, 4vw, 40px) 0;
   }
+  .head-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
   h1 { font-size: 21px; letter-spacing: -0.01em; }
   h1 .wave { color: var(--accent); }
   .sub { color: var(--ink-soft); font-size: 13px; margin: 4px 0 16px; }
@@ -69,8 +51,15 @@
     border-bottom: 2.5px solid transparent;
   }
   nav button:hover { color: var(--ink); }
-  nav button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  nav button:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   nav button.on { color: var(--accent); border-bottom-color: var(--accent); }
+  .btn {
+    appearance: none; border: 1px solid var(--line); border-radius: 7px;
+    background: var(--surface); color: var(--ink); font: inherit; font-weight: 600;
+    padding: 8px 16px; cursor: pointer;
+  }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .btn:disabled { opacity: 0.55; cursor: default; }
   main { max-width: 980px; margin: 0 auto; padding: 22px clamp(12px, 4vw, 40px) 60px; }
   .meta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
   .chip {
@@ -103,18 +92,50 @@
   .memo { color: var(--ink-soft); font-size: 13.5px; max-width: 30ch; }
   .file { color: var(--ink-soft); font-size: 12.5px; font-family: ui-monospace, monospace; }
   .date { color: var(--ink-soft); font-size: 13px; white-space: nowrap; }
-  .toggle { margin: 14px 2px; font-size: 13.5px; color: var(--ink-soft); }
+  .toggle { display: block; margin: 14px 2px; font-size: 13.5px; color: var(--ink-soft); }
   .toggle input { accent-color: var(--accent); vertical-align: -2px; margin-right: 6px; }
   .errors { margin-top: 14px; font-size: 13.5px; color: var(--error); }
-  .errors code { font-family: ui-monospace, monospace; }
+  .errors code, .status code { font-family: ui-monospace, monospace; }
   .note { margin-top: 22px; font-size: 12.5px; color: var(--ink-soft); max-width: 68ch; }
   .empty { padding: 34px; text-align: center; color: var(--ink-soft); }
+
+  dialog {
+    border: 1px solid var(--line); border-radius: 10px; background: var(--surface);
+    color: var(--ink); padding: 0; width: min(560px, 92vw);
+  }
+  dialog::backdrop { background: rgba(10, 20, 28, 0.55); }
+  .modal-head { padding: 18px 22px 0; }
+  .modal-head h2 { font-size: 17px; }
+  .modal-body { padding: 14px 22px 22px; display: flex; flex-direction: column; gap: 13px; }
+  .field label { display: block; font-size: 12.5px; font-weight: 700; color: var(--ink-soft); margin-bottom: 5px; }
+  .field input[type="text"], .field input[type="password"], .field select {
+    width: 100%; font: inherit; color: var(--ink); background: var(--bg);
+    border: 1px solid var(--line); border-radius: 7px; padding: 8px 11px;
+  }
+  .drop {
+    border: 1.5px dashed var(--line); border-radius: 8px; padding: 20px;
+    text-align: center; color: var(--ink-soft); cursor: pointer; font-size: 13.5px;
+  }
+  .drop.armed { border-color: var(--accent); color: var(--ink); }
+  .status { font-size: 13.5px; color: var(--ink-soft); min-height: 1.4em; }
+  .status.err { color: var(--error); }
+  .status.ok { color: var(--okc); }
+  .modal-actions { display: flex; justify-content: flex-end; gap: 8px; }
+  details.tokenbox { border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; font-size: 13px; }
+  details.tokenbox summary { cursor: pointer; font-weight: 600; color: var(--ink-soft); }
+  details.tokenbox .inner { margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
+  details.tokenbox a { color: var(--accent); }
 </style>
 </head>
 <body>
 <header>
-  <h1><span class="wave">〜</span> marin 팀 리더보드</h1>
-  <p class="sub" id="stamp">불러오는 중…</p>
+  <div class="head-top">
+    <div>
+      <h1><span class="wave">〜</span> marin 팀 리더보드</h1>
+      <p class="sub" id="stamp">불러오는 중…</p>
+    </div>
+    <button class="btn primary" id="openSubmit">제출하기</button>
+  </div>
   <nav id="tabs" role="tablist"></nav>
 </header>
 <main>
@@ -133,10 +154,57 @@
   비공개이므로 train에서 분리한 팀 검증셋 기준입니다. ⚑ 베이스라인은 팀 검증셋에서 다시
   계산한 값이라 공식 안내 수치와 다릅니다.</p>
 </main>
+
+<dialog id="submitModal">
+  <div class="modal-head"><h2>제출하기</h2></div>
+  <form class="modal-body" id="submitForm" method="dialog">
+    <div class="drop" id="drop">CSV 파일을 끌어다 놓거나 클릭해서 선택
+      <input type="file" id="fileInput" accept=".csv" hidden>
+    </div>
+    <div class="field">
+      <label for="taskSel">문제</label>
+      <select id="taskSel">
+        <option value="P1">P1 · 수온 이상탐지</option>
+        <option value="P2">P2 · 연직구조 복원</option>
+        <option value="P3">P3 · 유의파고 예측</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="nameInput">제출자</label>
+      <input type="text" id="nameInput" placeholder="이름 (리더보드에 표시)" required>
+    </div>
+    <div class="field">
+      <label for="memoInput">간단 메모</label>
+      <input type="text" id="memoInput" placeholder="예: depth-aware LGBM + L5 드롭">
+    </div>
+    <details class="tokenbox" id="tokenBox">
+      <summary>GitHub 토큰 (최초 1회 등록)</summary>
+      <div class="inner">
+        <span>제출은 비공개 repo에 커밋되므로 collaborator 권한의 GitHub 토큰이
+        필요합니다. <a href="https://github.com/settings/tokens/new?scopes=repo&description=marin-leaderboard"
+        target="_blank" rel="noopener">토큰 만들기(classic, repo 권한)</a> 후 아래에
+        붙여넣으세요. 토큰은 이 브라우저(localStorage)에만 저장됩니다.</span>
+        <input type="password" id="tokenInput" placeholder="ghp_…">
+      </div>
+    </details>
+    <div class="status" id="submitStatus"></div>
+    <div class="modal-actions">
+      <button class="btn" value="cancel" id="cancelBtn">닫기</button>
+      <button class="btn primary" type="button" id="doSubmit">업로드 &amp; 채점</button>
+    </div>
+  </form>
+</dialog>
+
 <script>
 const TASKS = ["P1", "P2", "P3"];
-let board = null, current = "P1";
+const REPO = "mango-stop/marin-leaderboard";
+const API = "https://api.github.com";
+let board = null, current = "P1", pickedFile = null, polling = null;
 
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, c =>
+    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
 function fmtScore(t, v) { return v.toFixed(6); }
 
 function render() {
@@ -152,7 +220,7 @@ function render() {
   rows.innerHTML = "";
   if (!ok.length) {
     rows.innerHTML = '<tr><td colspan="6" class="empty">아직 제출이 없습니다 — ' +
-      'submissions/' + current + '/ 에 CSV를 push 하세요.</td></tr>';
+      '오른쪽 위 제출하기 버튼으로 CSV를 올리세요.</td></tr>';
   }
   for (const e of ok) {
     const tr = document.createElement("tr");
@@ -181,11 +249,6 @@ function render() {
     `<span class="chip">공식 기준선(참고) <b>${t.official_baseline}</b></span>`;
 }
 
-function esc(s) {
-  return String(s).replace(/[&<>"']/g, c =>
-    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-}
-
 function selectTab(task) {
   current = task;
   document.querySelectorAll("#tabs button").forEach(b =>
@@ -193,18 +256,22 @@ function selectTab(task) {
   render();
 }
 
+async function loadBoard() {
+  board = await (await fetch("leaderboard.json?_=" + Date.now())).json();
+  document.getElementById("stamp").textContent =
+    "갱신 " + board.generated_at.slice(0, 16).replace("T", " ") +
+    " (KST) · 팀 검증셋 기준 자동 채점";
+}
+
 async function init() {
   const tabs = document.getElementById("tabs");
   try {
-    board = await (await fetch("leaderboard.json?_=" + Date.now())).json();
+    await loadBoard();
   } catch (e) {
     document.getElementById("stamp").textContent =
       "leaderboard.json을 불러오지 못했습니다 — 첫 채점 실행 전이거나 배포 오류입니다.";
     return;
   }
-  document.getElementById("stamp").textContent =
-    "갱신 " + board.generated_at.slice(0, 16).replace("T", " ") +
-    " (KST) · 팀 검증셋 기준 자동 채점";
   for (const task of TASKS) {
     const t = board.tasks[task];
     if (!t) continue;
@@ -217,6 +284,194 @@ async function init() {
   document.getElementById("showAll").onchange = render;
   selectTab("P1");
 }
+
+/* ---------- 제출 모달 ---------- */
+const modal = document.getElementById("submitModal");
+const drop = document.getElementById("drop");
+const fileInput = document.getElementById("fileInput");
+const statusEl = document.getElementById("submitStatus");
+
+function setStatus(msg, cls) {
+  statusEl.textContent = msg;
+  statusEl.className = "status" + (cls ? " " + cls : "");
+}
+
+document.getElementById("openSubmit").onclick = () => {
+  document.getElementById("nameInput").value = localStorage.getItem("lb_name") || "";
+  document.getElementById("tokenInput").value = localStorage.getItem("lb_token") || "";
+  document.getElementById("tokenBox").open = !localStorage.getItem("lb_token");
+  document.getElementById("taskSel").value = current;
+  setStatus("");
+  modal.showModal();
+};
+document.getElementById("cancelBtn").onclick = () => { if (polling) clearInterval(polling); };
+
+drop.onclick = () => fileInput.click();
+drop.ondragover = e => { e.preventDefault(); drop.classList.add("armed"); };
+drop.ondragleave = () => drop.classList.remove("armed");
+drop.ondrop = e => {
+  e.preventDefault(); drop.classList.remove("armed");
+  if (e.dataTransfer.files.length) setFile(e.dataTransfer.files[0]);
+};
+fileInput.onchange = () => { if (fileInput.files.length) setFile(fileInput.files[0]); };
+
+function setFile(f) {
+  pickedFile = f;
+  drop.textContent = `${f.name} (${(f.size / 1048576).toFixed(1)} MB)`;
+  drop.classList.add("armed");
+  // 헤더로 문제 자동 감지
+  f.slice(0, 4096).text().then(head => {
+    const first = head.split(/\r?\n/, 1)[0].trim();
+    for (const task of TASKS) {
+      if ((board.tasks[task].expected_columns || []).includes(first)) {
+        document.getElementById("taskSel").value = task;
+        setStatus(`헤더가 ${task} 형식과 일치합니다.`, "ok");
+        return;
+      }
+    }
+    setStatus("헤더가 어느 문제 형식과도 일치하지 않습니다 — 문제를 직접 선택하세요.", "err");
+  });
+}
+
+function slugify(s) {
+  return s.trim().replace(/[^\w가-힣-]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 40) || "submit";
+}
+
+async function gh(path, opts = {}, token) {
+  const r = await fetch(API + path, {
+    ...opts,
+    headers: {
+      "Authorization": "Bearer " + token,
+      "Accept": "application/vnd.github+json",
+      ...(opts.body ? { "Content-Type": "application/json" } : {}),
+    },
+  });
+  if (!r.ok) {
+    const body = await r.text();
+    throw new Error(`GitHub API ${r.status} (${path}): ${body.slice(0, 200)}`);
+  }
+  return r.json();
+}
+
+function fileToBase64(f) {
+  return new Promise((res, rej) => {
+    const rd = new FileReader();
+    rd.onload = () => res(rd.result.split(",", 2)[1]);
+    rd.onerror = rej;
+    rd.readAsDataURL(f);
+  });
+}
+
+async function preValidate(task) {
+  const t = board.tasks[task];
+  const text = await pickedFile.text();
+  const firstLine = text.split(/\r?\n/, 1)[0].trim();
+  if (!(t.expected_columns || []).includes(firstLine)) {
+    throw new Error(`헤더 불일치: "${firstLine}" — 필요: ${t.expected_columns.join(" 또는 ")}`);
+  }
+  const nRows = text.split(/\r?\n/).filter(l => l.trim()).length - 1;
+  if (t.n_expected && nRows !== t.n_expected) {
+    throw new Error(`행 수 불일치: ${nRows.toLocaleString()}행 — 필요: ${t.n_expected.toLocaleString()}행`);
+  }
+}
+
+async function doSubmit() {
+  const task = document.getElementById("taskSel").value;
+  const name = document.getElementById("nameInput").value.trim();
+  const memo = document.getElementById("memoInput").value.trim();
+  const token = document.getElementById("tokenInput").value.trim();
+  if (!pickedFile) return setStatus("먼저 CSV 파일을 선택하세요.", "err");
+  if (!name) return setStatus("제출자 이름을 입력하세요.", "err");
+  if (!token) {
+    document.getElementById("tokenBox").open = true;
+    return setStatus("GitHub 토큰을 등록하세요 (최초 1회).", "err");
+  }
+  const btn = document.getElementById("doSubmit");
+  btn.disabled = true;
+  try {
+    setStatus("파일 형식 검사 중…");
+    await preValidate(task);
+    setStatus("권한 확인 중…");
+    await gh(`/repos/${REPO}`, {}, token);
+    localStorage.setItem("lb_name", name);
+    localStorage.setItem("lb_token", token);
+
+    const stamp = new Date().toISOString().slice(0, 16).replace(/[-:T]/g, "").slice(0, 12);
+    const fname = `${slugify(name)}__${slugify(memo)}__${stamp}`;
+    const dir = `submissions/${task}`;
+
+    setStatus("업로드 중… (파일이 크면 수십 초 걸릴 수 있습니다)");
+    const ref = await gh(`/repos/${REPO}/git/ref/heads/main`, {}, token);
+    const baseCommit = await gh(`/repos/${REPO}/git/commits/${ref.object.sha}`, {}, token);
+    const csvBlob = await gh(`/repos/${REPO}/git/blobs`, {
+      method: "POST",
+      body: JSON.stringify({ content: await fileToBase64(pickedFile), encoding: "base64" }),
+    }, token);
+    const metaBlob = await gh(`/repos/${REPO}/git/blobs`, {
+      method: "POST",
+      body: JSON.stringify({
+        content: JSON.stringify({ submitter: name, memo: memo }, null, 1),
+        encoding: "utf-8",
+      }),
+    }, token);
+    const tree = await gh(`/repos/${REPO}/git/trees`, {
+      method: "POST",
+      body: JSON.stringify({
+        base_tree: baseCommit.tree.sha,
+        tree: [
+          { path: `${dir}/${fname}.csv`, mode: "100644", type: "blob", sha: csvBlob.sha },
+          { path: `${dir}/${fname}.json`, mode: "100644", type: "blob", sha: metaBlob.sha },
+        ],
+      }),
+    }, token);
+    const commit = await gh(`/repos/${REPO}/git/commits`, {
+      method: "POST",
+      body: JSON.stringify({
+        message: `${task} 제출: ${name} — ${memo || fname}`,
+        tree: tree.sha,
+        parents: [ref.object.sha],
+      }),
+    }, token);
+    await gh(`/repos/${REPO}/git/refs/heads/main`, {
+      method: "PATCH",
+      body: JSON.stringify({ sha: commit.sha }),
+    }, token);
+
+    setStatus("업로드 완료 — 자동 채점 중입니다 (보통 1~3분). 이 창을 닫아도 됩니다.");
+    pollFor(task, `${fname}.csv`);
+  } catch (e) {
+    setStatus(String(e.message || e), "err");
+  } finally {
+    btn.disabled = false;
+  }
+}
+document.getElementById("doSubmit").onclick = doSubmit;
+
+function pollFor(task, fname) {
+  if (polling) clearInterval(polling);
+  const t0 = Date.now();
+  polling = setInterval(async () => {
+    if (Date.now() - t0 > 8 * 60 * 1000) {
+      clearInterval(polling);
+      setStatus("아직 반영되지 않았습니다 — Actions 탭에서 채점 상태를 확인하세요.", "err");
+      return;
+    }
+    try {
+      await loadBoard();
+      const e = board.tasks[task].entries.find(x => x.file === fname);
+      if (e) {
+        clearInterval(polling);
+        selectTab(task);
+        if (e.status === "ok") {
+          setStatus(`채점 완료: ${board.tasks[task].metric} ${e.score.toFixed(6)} — 현재 ${e.rank}위`, "ok");
+        } else {
+          setStatus(`형식 오류로 채점 실패 — ${e.error}`, "err");
+        }
+      }
+    } catch (_) { /* 다음 폴링에서 재시도 */ }
+  }, 20000);
+}
+
 init();
 </script>
 </body>
