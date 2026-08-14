@@ -1,0 +1,99 @@
+{
+ "generated_at": "2026-08-14T14:40:20+09:00",
+ "tasks": {
+  "P1": {
+   "name": "수온 이상탐지",
+   "metric": "F1",
+   "higher_better": true,
+   "official_baseline": 0.548255,
+   "unit": "",
+   "entries": [
+    {
+     "file": "baseline__hard-rule.csv",
+     "submitter": "baseline",
+     "memo": "",
+     "submitted_at": "2026-08-14T14:38:32+09:00",
+     "is_baseline": true,
+     "score": 0.213107,
+     "detail": {
+      "TP": 1182,
+      "FP": 0,
+      "FN": 8729,
+      "n": 208093
+     },
+     "status": "ok",
+     "rank": 1
+    }
+   ],
+   "n_ok": 1,
+   "best_by_submitter": [
+    "baseline__hard-rule.csv"
+   ]
+  },
+  "P2": {
+   "name": "연직구조 복원",
+   "metric": "RMSE",
+   "higher_better": false,
+   "official_baseline": 1.290264,
+   "unit": "℃",
+   "entries": [
+    {
+     "file": "baseline__depth-interp.csv",
+     "submitter": "baseline",
+     "memo": "",
+     "submitted_at": "2026-08-14T14:38:34+09:00",
+     "is_baseline": true,
+     "score": 0.886741,
+     "detail": {
+      "n": 26288,
+      "per_layer": {
+       "2": 0.384242237805559,
+       "3": 0.8216712242786703,
+       "4": 1.2413013948255762
+      }
+     },
+     "status": "ok",
+     "rank": 1
+    }
+   ],
+   "n_ok": 1,
+   "best_by_submitter": [
+    "baseline__depth-interp.csv"
+   ]
+  },
+  "P3": {
+   "name": "유의파고 예측",
+   "metric": "RMSE",
+   "higher_better": false,
+   "official_baseline": 0.769455,
+   "unit": "m",
+   "entries": [
+    {
+     "file": "baseline__persistence.csv",
+     "submitter": "baseline",
+     "memo": "",
+     "submitted_at": "2026-08-14T14:38:34+09:00",
+     "is_baseline": true,
+     "score": 0.89004,
+     "detail": {
+      "n": 546,
+      "per_lead": {
+       "3": 0.5609744269503804,
+       "6": 0.66328436876362,
+       "9": 0.8361141149309783,
+       "12": 0.911684830832032,
+       "18": 1.086293223320926,
+       "24": 1.1349449325848369
+      }
+     },
+     "status": "ok",
+     "rank": 1
+    }
+   ],
+   "n_ok": 1,
+   "best_by_submitter": [
+    "baseline__persistence.csv"
+   ]
+  }
+ }
+}
