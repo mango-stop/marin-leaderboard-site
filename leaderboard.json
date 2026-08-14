@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-14T14:44:27+09:00",
+ "generated_at": "2026-08-14T14:52:41+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -28,7 +28,13 @@
    "n_ok": 1,
    "best_by_submitter": [
     "baseline__hard-rule.csv"
-   ]
+   ],
+   "n_expected": 208093,
+   "expected_columns": [
+    "station,year,layer,time,label,anomaly_type",
+    "station,year,layer,time,label"
+   ],
+   "answer_columns": "station,year,layer,time,label,anomaly_type"
   },
   "P2": {
    "name": "연직구조 복원",
@@ -59,7 +65,12 @@
    "n_ok": 1,
    "best_by_submitter": [
     "baseline__depth-interp.csv"
-   ]
+   ],
+   "n_expected": 26288,
+   "expected_columns": [
+    "station,layer,time,temp"
+   ],
+   "answer_columns": "station,layer,time,temp"
   },
   "P3": {
    "name": "유의파고 예측",
@@ -93,7 +104,12 @@
    "n_ok": 1,
    "best_by_submitter": [
     "baseline__persistence.csv"
-   ]
+   ],
+   "n_expected": 546,
+   "expected_columns": [
+    "case_id,station,lead_h,hs_pred"
+   ],
+   "answer_columns": "case_id,station,lead_h,hs"
   }
  }
 }
