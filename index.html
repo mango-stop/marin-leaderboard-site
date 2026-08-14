@@ -173,7 +173,7 @@
   </div></section>
 
   <div class="below">
-    <label class="toggle"><input type="checkbox" id="showAll">제출 이력 전체 보기</label>
+    <label class="toggle"><input type="checkbox" id="bestOnly">제출자별 최고 점수만 보기</label>
     <span class="metric-hint" id="metric-hint"></span>
   </div>
 
@@ -200,16 +200,16 @@ const f6 = v => v.toFixed(6);
 
 function render() {
   const t = board.tasks[current];
-  const showAll = document.getElementById("showAll").checked;
+  const bestOnly = document.getElementById("bestOnly").checked;
   const unit = t.unit ? ` (${t.unit})` : "";
   document.getElementById("score-head").textContent = t.metric + unit;
   document.getElementById("metric-hint").textContent =
-    `${t.metric}${unit} · ${t.higher_better ? "높을수록" : "낮을수록"} 좋음 · 기본 보기는 제출자별 최고 점수`;
+    `${t.metric}${unit} · ${t.higher_better ? "높을수록" : "낮을수록"} 좋음`;
 
   const best = new Set(t.best_by_submitter);
   const ok = t.entries.filter(e => e.status === "ok")
     .sort((a, b) => a.rank - b.rank)
-    .filter(e => showAll || best.has(e.file));
+    .filter(e => !bestOnly || best.has(e.file));
   const rows = document.getElementById("rows");
   rows.innerHTML = "";
   if (!ok.length) {
@@ -277,7 +277,7 @@ async function init() {
     b.onclick = () => selectTab(task);
     tabs.appendChild(b);
   }
-  document.getElementById("showAll").onchange = render;
+  document.getElementById("bestOnly").onchange = render;
   selectTab("P1");
 }
 init();
