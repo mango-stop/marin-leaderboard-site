@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-14T15:04:52+09:00",
+ "generated_at": "2026-08-18T14:47:54+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -98,11 +98,33 @@
       }
      },
      "status": "ok",
+     "rank": 2
+    },
+    {
+     "file": "세진__onset-lgbm-ridge-v1.csv",
+     "submitter": "세진",
+     "memo": "온셋 샘플링 + 리드별 LGBM·Ridge 앙상블 v1",
+     "submitted_at": "2026-08-18T14:47:28+09:00",
+     "is_baseline": false,
+     "score": 0.80547,
+     "detail": {
+      "n": 546,
+      "per_lead": {
+       "3": 0.5359283134364681,
+       "6": 0.6497075107773033,
+       "9": 0.7515294645946,
+       "12": 0.8401472806519183,
+       "18": 0.9886216844956138,
+       "24": 0.9671253245038635
+      }
+     },
+     "status": "ok",
      "rank": 1
     }
    ],
-   "n_ok": 1,
+   "n_ok": 2,
    "best_by_submitter": [
+    "세진__onset-lgbm-ridge-v1.csv",
     "baseline__persistence.csv"
    ],
    "n_expected": 546,
