@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-18T15:29:20+09:00",
+ "generated_at": "2026-08-18T15:56:11+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -22,11 +22,28 @@
       "n": 208093
      },
      "status": "ok",
+     "rank": 2
+    },
+    {
+     "file": "임민수__cnn-gru-lgbm-blend-pp3-v5.csv",
+     "submitter": "임민수",
+     "memo": "v4 + drift ramp 외삽 후처리(예측구간 잔차 선형추세 R²≥0.85 이면 0교차 시각까지 역방향 확장). 후처리 3종 모두 dev OOF 기준 채택. dev OOF 0.9431 / val 0.9910",
+     "submitted_at": "2026-08-14T14:41:33+09:00",
+     "is_baseline": false,
+     "score": 0.990988,
+     "detail": {
+      "TP": 9842,
+      "FP": 110,
+      "FN": 69,
+      "n": 208093
+     },
+     "status": "ok",
      "rank": 1
     }
    ],
-   "n_ok": 1,
+   "n_ok": 2,
    "best_by_submitter": [
+    "임민수__cnn-gru-lgbm-blend-pp3-v5.csv",
     "baseline__hard-rule.csv"
    ],
    "n_expected": 208093,
