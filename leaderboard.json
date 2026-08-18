@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-18T14:58:37+09:00",
+ "generated_at": "2026-08-18T15:29:20+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -98,7 +98,7 @@
       }
      },
      "status": "ok",
-     "rank": 2
+     "rank": 3
     },
     {
      "file": "sejin__onset-lgbm-ridge-v1.csv",
@@ -119,12 +119,33 @@
       }
      },
      "status": "ok",
+     "rank": 2
+    },
+    {
+     "file": "sejin__stacking-phys-gru-v2.csv",
+     "submitter": "세진",
+     "memo": "스태킹 v2: Ridge+LGBM+물리잔차+GRU, 메타 Ridge",
+     "submitted_at": "2026-08-18T15:29:01+09:00",
+     "is_baseline": false,
+     "score": 0.789588,
+     "detail": {
+      "n": 546,
+      "per_lead": {
+       "3": 0.4902062764964189,
+       "6": 0.6569711486130042,
+       "9": 0.7663248463346926,
+       "12": 0.8238573054056932,
+       "18": 0.9505790592066489,
+       "24": 0.9482527588229758
+      }
+     },
+     "status": "ok",
      "rank": 1
     }
    ],
-   "n_ok": 2,
+   "n_ok": 3,
    "best_by_submitter": [
-    "sejin__onset-lgbm-ridge-v1.csv",
+    "sejin__stacking-phys-gru-v2.csv",
     "baseline__persistence.csv"
    ],
    "n_expected": 546,
