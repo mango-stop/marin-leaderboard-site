@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-18T15:56:11+09:00",
+ "generated_at": "2026-08-22T23:25:53+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -76,11 +76,30 @@
       }
      },
      "status": "ok",
+     "rank": 2
+    },
+    {
+     "file": "honghwasu__mix-autumn-v1.csv",
+     "submitter": "홍화수",
+     "memo": "혼합가중 t1+a(t5-t1), a=(0.05,0.11,0.37) 가을적합 + 층5폴백. 로컬 0.4558",
+     "submitted_at": "2026-08-22T23:25:34+09:00",
+     "is_baseline": false,
+     "score": 0.464479,
+     "detail": {
+      "n": 26288,
+      "per_layer": {
+       "2": 0.1630157174814147,
+       "3": 0.350652847017913,
+       "4": 0.7067080146662998
+      }
+     },
+     "status": "ok",
      "rank": 1
     }
    ],
-   "n_ok": 1,
+   "n_ok": 2,
    "best_by_submitter": [
+    "honghwasu__mix-autumn-v1.csv",
     "baseline__depth-interp.csv"
    ],
    "n_expected": 26288,
