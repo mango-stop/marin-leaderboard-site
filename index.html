@@ -134,6 +134,14 @@
   .toggle input { accent-color: var(--blue); vertical-align: -2px; margin-right: 7px; }
   .metric-hint { font-size: 12.5px; color: var(--ink-3); }
 
+  .official { margin-top: 30px; }
+  .official .sec-title {
+    font-size: 16.5px; font-weight: 800; letter-spacing: -0.01em;
+  }
+  .official .sec-sub { margin: 4px 0 12px; font-size: 12.5px; color: var(--ink-3); }
+  .official tr.best td.who, .official tr.best td.score { color: var(--blue); }
+  .official tr.best td.score { color: var(--blue-strong); }
+
   .errors { margin-top: 16px; display: flex; flex-direction: column; gap: 8px; }
   .error-item {
     border: 1px solid color-mix(in srgb, var(--danger) 30%, var(--line));
@@ -188,6 +196,20 @@
     <span class="metric-hint" id="metric-hint"></span>
   </div>
 
+  <section class="official" id="official" hidden aria-label="공식 리더보드 제출 기록">
+    <h2 class="sec-title">🏆 공식 리더보드 제출 기록</h2>
+    <p class="sec-sub">대회 공식 사이트에 제출한 Public 점수의 수동 기록입니다. 문제별 최고 기록이 강조됩니다.</p>
+    <div class="board"><div class="board-scroll">
+      <table>
+        <thead><tr>
+          <th>날짜</th><th>제출자</th><th class="num" id="off-metric-head">Public 지표</th>
+          <th class="num">대회점수</th><th class="col-file">파일</th><th class="col-memo">메모</th>
+        </tr></thead>
+        <tbody id="official-rows"></tbody>
+      </table>
+    </div></div>
+  </section>
+
   <div class="errors" id="errors"></div>
 
   <footer>
@@ -239,6 +261,25 @@ function render() {
       `<td class="file">${esc(e.file)}</td>` +
       `<td class="date">${shortTime(e.submitted_at)}</td>`;
     rows.appendChild(tr);
+  }
+
+  const off = ((board.official && board.official.entries) || [])
+    .filter(e => e.task === current)
+    .sort((a, b) => a.submitted_at.localeCompare(b.submitted_at));
+  const offSec = document.getElementById("official");
+  offSec.hidden = !off.length;
+  if (off.length) {
+    document.getElementById("off-metric-head").textContent = `Public ${t.metric}${unit}`;
+    const bestVal = (t.higher_better ? Math.max : Math.min)(...off.map(e => e.public_metric));
+    document.getElementById("official-rows").innerHTML = off.map(e =>
+      `<tr${e.public_metric === bestVal ? ' class="best"' : ""}>` +
+      `<td class="date">${esc(e.submitted_at)}</td>` +
+      `<td class="who">${esc(e.submitter)}</td>` +
+      `<td class="num score">${f6(e.public_metric)}</td>` +
+      `<td class="num">${f6(e.public_points)}</td>` +
+      `<td class="file">${esc(e.file)}</td>` +
+      `<td class="memo">${esc(e.memo || "")}</td></tr>`
+    ).join("");
   }
 
   document.getElementById("errors").innerHTML =
