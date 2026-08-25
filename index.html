@@ -118,10 +118,11 @@
     border: 1px solid var(--line); border-radius: 999px; padding: 1.5px 8px;
     margin-left: 7px; vertical-align: 1.5px; color: var(--ink-3); white-space: nowrap;
   }
-  td.memo { color: var(--ink-2); font-size: 13.5px; min-width: 12ch; max-width: 34ch; }
+  td.memo { color: var(--ink-2); font-size: 13.5px; min-width: 26ch; max-width: 40ch; }
   td.file {
     color: var(--ink-3); font-size: 12px; white-space: nowrap;
     font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    max-width: 18ch; overflow: hidden; text-overflow: ellipsis;
   }
   td.date { color: var(--ink-3); font-size: 13px; white-space: nowrap; }
   .empty { padding: 40px 20px; text-align: center; color: var(--ink-2); }
@@ -134,13 +135,16 @@
   .toggle input { accent-color: var(--blue); vertical-align: -2px; margin-right: 7px; }
   .metric-hint { font-size: 12.5px; color: var(--ink-3); }
 
-  .official { margin-top: 30px; }
-  .official .sec-title {
-    font-size: 16.5px; font-weight: 800; letter-spacing: -0.01em;
+  td.team { color: var(--ink-2); font-weight: 600; }
+  td.gap { font-size: 13.5px; font-weight: 600; }
+  td.gap.neg { color: var(--danger); }
+  td.gap.pos { color: var(--ok); }
+  td.na { color: var(--ink-3); font-weight: 400; }
+  :root { --ok: #067647; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --ok: #6ce9a6; }
   }
-  .official .sec-sub { margin: 4px 0 12px; font-size: 12.5px; color: var(--ink-3); }
-  .official tr.best td.who, .official tr.best td.score { color: var(--blue); }
-  .official tr.best td.score { color: var(--blue-strong); }
+  :root[data-theme="dark"] { --ok: #6ce9a6; }
 
   .errors { margin-top: 16px; display: flex; flex-direction: column; gap: 8px; }
   .error-item {
@@ -184,7 +188,10 @@
   <section class="board"><div class="board-scroll">
     <table>
       <thead><tr>
-        <th class="num">순위</th><th>제출자</th><th class="num" id="score-head">점수</th>
+        <th class="num">순위</th><th>제출자</th>
+        <th class="num" id="head-official">🏆 공식 Public</th>
+        <th class="num" id="head-team">팀 검증</th>
+        <th class="num">갭(공식−팀)</th>
         <th class="col-memo">메모</th><th class="col-file">파일</th><th>제출</th>
       </tr></thead>
       <tbody id="rows"></tbody>
@@ -195,22 +202,6 @@
     <label class="toggle"><input type="checkbox" id="bestOnly">제출자별 최고 점수만 보기</label>
     <span class="metric-hint" id="metric-hint"></span>
   </div>
-
-  <section class="official" id="official" hidden aria-label="공식 리더보드 제출 기록">
-    <h2 class="sec-title">🏆 공식 리더보드 제출 기록</h2>
-    <p class="sec-sub">대회 공식 사이트에 제출한 Public 점수와 같은 모델의 팀 검증 점수 비교입니다.
-      갭(공식 − 팀)이 큰 음수일수록 팀 검증셋에 과적합됐다는 신호입니다. 문제별 최고 기록이 강조됩니다.</p>
-    <div class="board"><div class="board-scroll">
-      <table>
-        <thead><tr>
-          <th>날짜</th><th>제출자</th><th class="num" id="off-metric-head">공식 Public</th>
-          <th class="num" id="off-team-head">팀 검증</th><th class="num">갭(공식−팀)</th>
-          <th class="num">대회점수</th><th class="col-file">파일</th><th class="col-memo">메모</th>
-        </tr></thead>
-        <tbody id="official-rows"></tbody>
-      </table>
-    </div></div>
-  </section>
 
   <div class="errors" id="errors"></div>
 
@@ -237,57 +228,57 @@ function render() {
   const t = board.tasks[current];
   const bestOnly = document.getElementById("bestOnly").checked;
   const unit = t.unit ? ` (${t.unit})` : "";
-  document.getElementById("score-head").textContent = t.metric + unit;
+  const hb = t.higher_better;
+  document.getElementById("head-official").textContent = `🏆 공식 Public ${t.metric}${unit}`;
+  document.getElementById("head-team").textContent = `팀 검증 ${t.metric}${unit}`;
   document.getElementById("metric-hint").textContent =
-    `${t.metric}${unit} · ${t.higher_better ? "높을수록" : "낮을수록"} 좋음`;
+    `${t.metric}${unit} · ${hb ? "높을수록" : "낮을수록"} 좋음 · 공식 점수 있는 제출을 공식 점수순으로 먼저 표시`;
 
+  // 공식 기록(official_scores.csv)을 team_file 로 팀 제출에 join
+  const offByTeam = {};
+  for (const o of (board.official && board.official.entries) || []) {
+    if (o.task === current && o.team_file) offByTeam[o.team_file] = o;
+  }
   const best = new Set(t.best_by_submitter);
-  const ok = t.entries.filter(e => e.status === "ok")
-    .sort((a, b) => a.rank - b.rank)
-    .filter(e => !bestOnly || best.has(e.file));
+  const sgn = hb ? -1 : 1;
+  const joined = t.entries.filter(e => e.status === "ok")
+    .map(e => ({ e, o: offByTeam[e.file] || null }))
+    .filter(r => !bestOnly || best.has(r.e.file) || r.o)
+    .sort((a, b) =>
+      (a.o === null) - (b.o === null) ||
+      sgn * ((a.o ? a.o.public_metric : 0) - (b.o ? b.o.public_metric : 0)) ||
+      sgn * (a.e.score - b.e.score));
+  const offVals = joined.filter(r => r.o).map(r => r.o.public_metric);
+  const bestOff = offVals.length ? (hb ? Math.max : Math.min)(...offVals) : null;
+
   const rows = document.getElementById("rows");
   rows.innerHTML = "";
-  if (!ok.length) {
-    rows.innerHTML = `<tr><td colspan="6" class="empty">아직 제출이 없습니다 —
+  if (!joined.length) {
+    rows.innerHTML = `<tr><td colspan="8" class="empty">아직 제출이 없습니다 —
       팀 repo의 submissions/${current}/ 에 CSV를 push 하세요.</td></tr>`;
   }
-  for (const e of ok) {
+  joined.forEach((r, i) => {
+    const { e, o } = r;
     const tr = document.createElement("tr");
-    if (e.rank === 1) tr.classList.add("top1");
+    if (o && o.public_metric === bestOff) tr.classList.add("top1");
     if (e.is_baseline) tr.classList.add("baseline");
+    let offCell = '<td class="num na">–</td>', gapCell = '<td class="num na">–</td>';
+    if (o) {
+      const gap = o.public_metric - e.score;
+      offCell = `<td class="num score" title="대회점수 ${f6(o.public_points)}">${f6(o.public_metric)}</td>`;
+      gapCell = `<td class="num gap ${gap < 0 ? "neg" : "pos"}">${(gap >= 0 ? "+" : "") + gap.toFixed(4)}</td>`;
+    }
     tr.innerHTML =
-      `<td class="num rank">${e.rank}</td>` +
+      `<td class="num rank">${i + 1}</td>` +
       `<td class="who">${esc(e.submitter)}${e.is_baseline ? '<span class="tag">기준선</span>' : ""}</td>` +
-      `<td class="num score">${f6(e.score)}</td>` +
+      offCell +
+      `<td class="num team">${f6(e.score)}</td>` +
+      gapCell +
       `<td class="memo">${esc(e.memo || "")}</td>` +
       `<td class="file">${esc(e.file)}</td>` +
       `<td class="date">${shortTime(e.submitted_at)}</td>`;
     rows.appendChild(tr);
-  }
-
-  const off = ((board.official && board.official.entries) || [])
-    .filter(e => e.task === current)
-    .sort((a, b) => a.submitted_at.localeCompare(b.submitted_at));
-  const offSec = document.getElementById("official");
-  offSec.hidden = !off.length;
-  if (off.length) {
-    document.getElementById("off-metric-head").textContent = `공식 Public ${t.metric}${unit}`;
-    document.getElementById("off-team-head").textContent = `팀 검증 ${t.metric}${unit}`;
-    const bestVal = (t.higher_better ? Math.max : Math.min)(...off.map(e => e.public_metric));
-    document.getElementById("official-rows").innerHTML = off.map(e => {
-      const hasTeam = e.team_score !== null && e.team_score !== undefined;
-      const gap = hasTeam ? e.public_metric - e.team_score : null;
-      return `<tr${e.public_metric === bestVal ? ' class="best"' : ""}>` +
-        `<td class="date">${esc(e.submitted_at)}</td>` +
-        `<td class="who">${esc(e.submitter)}</td>` +
-        `<td class="num score">${f6(e.public_metric)}</td>` +
-        `<td class="num">${hasTeam ? f6(e.team_score) : "–"}</td>` +
-        `<td class="num">${hasTeam ? (gap >= 0 ? "+" : "") + gap.toFixed(4) : "–"}</td>` +
-        `<td class="num">${f6(e.public_points)}</td>` +
-        `<td class="file">${esc(e.file)}</td>` +
-        `<td class="memo">${esc(e.memo || "")}</td></tr>`;
-    }).join("");
-  }
+  });
 
   document.getElementById("errors").innerHTML =
     t.entries.filter(e => e.status === "error").map(e =>
@@ -297,11 +288,12 @@ function render() {
   const okReal = t.entries.filter(e => e.status === "ok" && !e.is_baseline);
   const baseline = t.entries.find(e => e.is_baseline && e.status === "ok");
   const top = t.entries.filter(e => e.status === "ok").find(e => e.rank === 1);
+  const bestOffRow = joined.find(r => r.o && r.o.public_metric === bestOff);
   document.getElementById("summary").innerHTML =
-    `<div class="item lead"><div class="k">1위</div>
+    `<div class="item lead"><div class="k">🏆 공식 베스트</div>
+       <div class="v">${bestOff !== null ? f6(bestOff) : "–"}${bestOffRow ? `<small>${esc(bestOffRow.e.submitter)}</small>` : ""}</div></div>` +
+    `<div class="item"><div class="k">팀 검증 1위</div>
        <div class="v">${top ? f6(top.score) : "–"}${top ? `<small>${esc(top.submitter)}</small>` : ""}</div></div>` +
-    `<div class="item"><div class="k">팀 기준선</div>
-       <div class="v">${baseline ? f6(baseline.score) : "–"}</div></div>` +
     `<div class="item"><div class="k">공식 기준선</div>
        <div class="v">${t.official_baseline}</div></div>` +
     `<div class="item"><div class="k">제출 수</div>
