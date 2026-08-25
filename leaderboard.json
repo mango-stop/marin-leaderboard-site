@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-22T23:25:53+09:00",
+ "generated_at": "2026-08-25T17:17:24+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -190,5 +190,46 @@
    ],
    "answer_columns": "case_id,station,lead_h,hs"
   }
+ },
+ "official": {
+  "entries": [
+   {
+    "submitted_at": "2026-08-25",
+    "task": "P1",
+    "submitter": "임민수",
+    "file": "cnn-gru-lgbm-blend-pp3-v5__test2026.csv",
+    "public_metric": 0.893812,
+    "public_points": 30.511055,
+    "memo": "CNN-GRU+LGBM 블렌드 + 후처리 3종(extback·gapfill·ramp)"
+   },
+   {
+    "submitted_at": "2026-08-25",
+    "task": "P1",
+    "submitter": "임민수",
+    "file": "cnn-gru-lgbm-blend-v2__test2026.csv",
+    "public_metric": 0.907915,
+    "public_points": 30.885889,
+    "memo": "후처리 없는 순수 블렌드 — 후처리가 공식에서 해로움 확인"
+   },
+   {
+    "submitted_at": "2026-08-25",
+    "task": "P1",
+    "submitter": "임민수",
+    "file": "cnn-gru-lgbm-blend-extback-v3__test2026.csv",
+    "public_metric": 0.897469,
+    "public_points": 30.608241,
+    "memo": "extback만 적용 프로브 — extback 효과 -0.0104 확정"
+   },
+   {
+    "submitted_at": "2026-08-25",
+    "task": "P1",
+    "submitter": "임민수",
+    "file": "cnn-gru-lgbm-blend-erode1-v6__test2026.csv",
+    "public_metric": 0.899791,
+    "public_points": 30.66997,
+    "memo": "긴 구간 양끝 1스텝 침식 프로브 — 침식도 -0.0081 손해"
+   }
+  ],
+  "errors": []
  }
 }
