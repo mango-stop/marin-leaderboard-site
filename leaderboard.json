@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-25T23:09:54+09:00",
+ "generated_at": "2026-08-25T23:12:21+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -381,6 +381,17 @@
     "public_points": 23.480842,
     "memo": "v4 단순평균 메타(GRU 5시드·4베이스 균등평균) — v3 대비 Public −1.35%",
     "team_score": 0.795983
+   },
+   {
+    "submitted_at": "2026-08-25",
+    "task": "P3",
+    "submitter": "세진",
+    "file": "submission_v4b.csv",
+    "team_file": "sejin__stacking-v3b.csv",
+    "public_metric": 0.618489,
+    "public_points": 23.517058,
+    "memo": "v4b 하이브리드 메타(단리드 균등평균·장리드 심플렉스) — 공식 최고",
+    "team_score": 0.799158
    }
   ],
   "errors": []
