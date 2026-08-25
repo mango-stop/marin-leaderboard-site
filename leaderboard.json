@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-25T22:58:08+09:00",
+ "generated_at": "2026-08-25T23:01:49+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -182,7 +182,7 @@
       }
      },
      "status": "ok",
-     "rank": 3
+     "rank": 5
     },
     {
      "file": "sejin__onset-lgbm-ridge-v1.csv",
@@ -203,7 +203,7 @@
       }
      },
      "status": "ok",
-     "rank": 2
+     "rank": 4
     },
     {
      "file": "sejin__stacking-phys-gru-v2.csv",
@@ -225,9 +225,51 @@
      },
      "status": "ok",
      "rank": 1
+    },
+    {
+     "file": "sejin__stacking-v3.csv",
+     "submitter": "세진",
+     "memo": "v4 단순평균 메타(GRU 5시드): 팀검증 0.7960로 v3보다 악화, 정직한 내부 CV는 0.7221→0.7110 개선 — 공식 프로브용",
+     "submitted_at": "2026-08-25T23:01:29+09:00",
+     "is_baseline": false,
+     "score": 0.795983,
+     "detail": {
+      "n": 546,
+      "per_lead": {
+       "3": 0.5053942055139067,
+       "6": 0.6525290297950542,
+       "9": 0.7518740196526086,
+       "12": 0.8295503936497142,
+       "18": 0.9702416595426565,
+       "24": 0.9620156926251998
+      }
+     },
+     "status": "ok",
+     "rank": 2
+    },
+    {
+     "file": "sejin__stacking-v3b.csv",
+     "submitter": "세진",
+     "memo": "v4 하이브리드 메타(단리드 평균·장리드 심플렉스): 팀검증 0.7992 악화, 내부 CV 0.7094 최고",
+     "submitted_at": "2026-08-25T23:01:29+09:00",
+     "is_baseline": false,
+     "score": 0.799158,
+     "detail": {
+      "n": 546,
+      "per_lead": {
+       "3": 0.5053942055139067,
+       "6": 0.6525290297950542,
+       "9": 0.7518740196526086,
+       "12": 0.8295503936497142,
+       "18": 0.9744620936024818,
+       "24": 0.9734768348102012
+      }
+     },
+     "status": "ok",
+     "rank": 3
     }
    ],
-   "n_ok": 3,
+   "n_ok": 5,
    "best_by_submitter": [
     "sejin__stacking-phys-gru-v2.csv",
     "baseline__persistence.csv"
