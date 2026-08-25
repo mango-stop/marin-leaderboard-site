@@ -127,7 +127,11 @@
   td.file {
     color: var(--ink-3); font-size: 12px; white-space: nowrap;
     font-family: ui-monospace, "SF Mono", Menlo, monospace;
-    max-width: 13ch; overflow: hidden; text-overflow: ellipsis;
+    max-width: 13ch; overflow: hidden; text-overflow: ellipsis; cursor: pointer;
+  }
+  td.file.open {
+    white-space: normal; overflow: visible; text-overflow: clip;
+    overflow-wrap: anywhere; min-width: 24ch; max-width: 30ch;
   }
   td.date { color: var(--ink-3); font-size: 13px; white-space: nowrap; }
   .empty { padding: 40px 20px; text-align: center; color: var(--ink-2); }
@@ -280,7 +284,7 @@ function render() {
       `<td class="num team">${f6(e.score)}</td>` +
       gapCell +
       `<td class="memo" title="${esc(e.memo || "")}">${esc(e.memo || "")}</td>` +
-      `<td class="file">${esc(e.file)}</td>` +
+      `<td class="file" title="${esc(e.file)}">${esc(e.file)}</td>` +
       `<td class="date">${shortTime(e.submitted_at)}</td>`;
     rows.appendChild(tr);
   });
@@ -335,7 +339,7 @@ async function init() {
   }
   document.getElementById("bestOnly").onchange = render;
   document.getElementById("rows").addEventListener("click", ev => {
-    const td = ev.target.closest("td.memo");
+    const td = ev.target.closest("td.memo, td.file");
     if (td && td.textContent) td.classList.toggle("open");
   });
   selectTab("P1");
