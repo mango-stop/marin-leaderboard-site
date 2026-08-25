@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-25T20:49:30+09:00",
+ "generated_at": "2026-08-25T22:58:08+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -317,6 +317,17 @@
     "public_points": 27.928548,
     "memo": "배율 프로브 s=0.7 (보정용)",
     "team_score": null
+   },
+   {
+    "submitted_at": "2026-08-25",
+    "task": "P3",
+    "submitter": "세진",
+    "file": "submission_v3.csv",
+    "team_file": "sejin__stacking-phys-gru-v2.csv",
+    "public_metric": 0.629294,
+    "public_points": 23.345569,
+    "memo": "스태킹 v3(Ridge+LGBM+물리잔차+GRU·메타 Ridge) 전체데이터 재학습판 — 첫 공식 제출",
+    "team_score": 0.789588
    }
   ],
   "errors": []
