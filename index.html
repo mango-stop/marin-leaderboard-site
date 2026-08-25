@@ -198,11 +198,13 @@
 
   <section class="official" id="official" hidden aria-label="공식 리더보드 제출 기록">
     <h2 class="sec-title">🏆 공식 리더보드 제출 기록</h2>
-    <p class="sec-sub">대회 공식 사이트에 제출한 Public 점수의 수동 기록입니다. 문제별 최고 기록이 강조됩니다.</p>
+    <p class="sec-sub">대회 공식 사이트에 제출한 Public 점수와 같은 모델의 팀 검증 점수 비교입니다.
+      갭(공식 − 팀)이 큰 음수일수록 팀 검증셋에 과적합됐다는 신호입니다. 문제별 최고 기록이 강조됩니다.</p>
     <div class="board"><div class="board-scroll">
       <table>
         <thead><tr>
-          <th>날짜</th><th>제출자</th><th class="num" id="off-metric-head">Public 지표</th>
+          <th>날짜</th><th>제출자</th><th class="num" id="off-metric-head">공식 Public</th>
+          <th class="num" id="off-team-head">팀 검증</th><th class="num">갭(공식−팀)</th>
           <th class="num">대회점수</th><th class="col-file">파일</th><th class="col-memo">메모</th>
         </tr></thead>
         <tbody id="official-rows"></tbody>
@@ -269,17 +271,22 @@ function render() {
   const offSec = document.getElementById("official");
   offSec.hidden = !off.length;
   if (off.length) {
-    document.getElementById("off-metric-head").textContent = `Public ${t.metric}${unit}`;
+    document.getElementById("off-metric-head").textContent = `공식 Public ${t.metric}${unit}`;
+    document.getElementById("off-team-head").textContent = `팀 검증 ${t.metric}${unit}`;
     const bestVal = (t.higher_better ? Math.max : Math.min)(...off.map(e => e.public_metric));
-    document.getElementById("official-rows").innerHTML = off.map(e =>
-      `<tr${e.public_metric === bestVal ? ' class="best"' : ""}>` +
-      `<td class="date">${esc(e.submitted_at)}</td>` +
-      `<td class="who">${esc(e.submitter)}</td>` +
-      `<td class="num score">${f6(e.public_metric)}</td>` +
-      `<td class="num">${f6(e.public_points)}</td>` +
-      `<td class="file">${esc(e.file)}</td>` +
-      `<td class="memo">${esc(e.memo || "")}</td></tr>`
-    ).join("");
+    document.getElementById("official-rows").innerHTML = off.map(e => {
+      const hasTeam = e.team_score !== null && e.team_score !== undefined;
+      const gap = hasTeam ? e.public_metric - e.team_score : null;
+      return `<tr${e.public_metric === bestVal ? ' class="best"' : ""}>` +
+        `<td class="date">${esc(e.submitted_at)}</td>` +
+        `<td class="who">${esc(e.submitter)}</td>` +
+        `<td class="num score">${f6(e.public_metric)}</td>` +
+        `<td class="num">${hasTeam ? f6(e.team_score) : "–"}</td>` +
+        `<td class="num">${hasTeam ? (gap >= 0 ? "+" : "") + gap.toFixed(4) : "–"}</td>` +
+        `<td class="num">${f6(e.public_points)}</td>` +
+        `<td class="file">${esc(e.file)}</td>` +
+        `<td class="memo">${esc(e.memo || "")}</td></tr>`;
+    }).join("");
   }
 
   document.getElementById("errors").innerHTML =

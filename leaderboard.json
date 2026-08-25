@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-25T17:28:19+09:00",
+ "generated_at": "2026-08-25T17:38:07+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -22,6 +22,38 @@
       "n": 208093
      },
      "status": "ok",
+     "rank": 5
+    },
+    {
+     "file": "임민수__cnn-gru-lgbm-blend-erode1-v6.csv",
+     "submitter": "임민수",
+     "memo": "v2 예측의 긴 구간 양끝 1스텝 침식 프로브. 공식 Public 0.899791 — 확장·침식 양방향 손해로 v2 경계가 공식 라벨과 사실상 일치함을 확인",
+     "submitted_at": "2026-08-14T14:41:33+09:00",
+     "is_baseline": false,
+     "score": 0.96926,
+     "detail": {
+      "TP": 9349,
+      "FP": 31,
+      "FN": 562,
+      "n": 208093
+     },
+     "status": "ok",
+     "rank": 4
+    },
+    {
+     "file": "임민수__cnn-gru-lgbm-blend-extback-v3.csv",
+     "submitter": "임민수",
+     "memo": "CNN(창2048·bi-GRU·폭96, 3시드)+LGBM v5both 로짓 블렌드 w0.7 + drift 시작구간 역방향 확장 후처리(p>0.25, ≤36h; dev OOF 0.9313→0.9376, val 0.9733→0.9856)",
+     "submitted_at": "2026-08-14T14:41:33+09:00",
+     "is_baseline": false,
+     "score": 0.985603,
+     "detail": {
+      "TP": 9721,
+      "FP": 94,
+      "FN": 190,
+      "n": 208093
+     },
+     "status": "ok",
      "rank": 2
     },
     {
@@ -39,9 +71,25 @@
      },
      "status": "ok",
      "rank": 1
+    },
+    {
+     "file": "임민수__cnn-gru-lgbm-blend-v2.csv",
+     "submitter": "임민수",
+     "memo": "1D dilated CNN(폭96, 창2048, bi-GRU 헤드, 24ep×3시드) + LightGBM v5(both) 로짓 블렌드 w=0.7, t=0.775(dev OOF), 후처리(12,18). dev OOF 0.931 / val F1 0.973",
+     "submitted_at": "2026-08-14T14:41:33+09:00",
+     "is_baseline": false,
+     "score": 0.973322,
+     "detail": {
+      "TP": 9431,
+      "FP": 37,
+      "FN": 480,
+      "n": 208093
+     },
+     "status": "ok",
+     "rank": 3
     }
    ],
-   "n_ok": 2,
+   "n_ok": 5,
    "best_by_submitter": [
     "임민수__cnn-gru-lgbm-blend-pp3-v5.csv",
     "baseline__hard-rule.csv"
@@ -198,36 +246,44 @@
     "task": "P1",
     "submitter": "임민수",
     "file": "cnn-gru-lgbm-blend-pp3-v5__test2026.csv",
+    "team_file": "임민수__cnn-gru-lgbm-blend-pp3-v5.csv",
     "public_metric": 0.893812,
     "public_points": 30.511055,
-    "memo": "CNN-GRU+LGBM 블렌드 + 후처리 3종(extback·gapfill·ramp)"
+    "memo": "CNN-GRU+LGBM 블렌드 + 후처리 3종(extback·gapfill·ramp)",
+    "team_score": 0.990988
    },
    {
     "submitted_at": "2026-08-25",
     "task": "P1",
     "submitter": "임민수",
     "file": "cnn-gru-lgbm-blend-v2__test2026.csv",
+    "team_file": "임민수__cnn-gru-lgbm-blend-v2.csv",
     "public_metric": 0.907915,
     "public_points": 30.885889,
-    "memo": "후처리 없는 순수 블렌드 — 후처리가 공식에서 해로움 확인"
+    "memo": "후처리 없는 순수 블렌드 — 후처리가 공식에서 해로움 확인",
+    "team_score": 0.973322
    },
    {
     "submitted_at": "2026-08-25",
     "task": "P1",
     "submitter": "임민수",
     "file": "cnn-gru-lgbm-blend-extback-v3__test2026.csv",
+    "team_file": "임민수__cnn-gru-lgbm-blend-extback-v3.csv",
     "public_metric": 0.897469,
     "public_points": 30.608241,
-    "memo": "extback만 적용 프로브 — extback 효과 -0.0104 확정"
+    "memo": "extback만 적용 프로브 — extback 효과 -0.0104 확정",
+    "team_score": 0.985603
    },
    {
     "submitted_at": "2026-08-25",
     "task": "P1",
     "submitter": "임민수",
     "file": "cnn-gru-lgbm-blend-erode1-v6__test2026.csv",
+    "team_file": "임민수__cnn-gru-lgbm-blend-erode1-v6.csv",
     "public_metric": 0.899791,
     "public_points": 30.66997,
-    "memo": "긴 구간 양끝 1스텝 침식 프로브 — 침식도 -0.0081 손해"
+    "memo": "긴 구간 양끝 1스텝 침식 프로브 — 침식도 -0.0081 손해",
+    "team_score": 0.96926
    }
   ],
   "errors": []
