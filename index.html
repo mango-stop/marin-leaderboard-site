@@ -107,7 +107,11 @@
   tbody td { border-bottom: 1px solid var(--line-soft); }
   tbody tr:last-child td { border-bottom: 0; }
   td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
-  td.rank { font-weight: 700; color: var(--ink-3); }
+  td.rank { font-weight: 700; color: var(--ink-3); width: 1%; }
+  td.who { width: 1%; }
+  th.sortable { cursor: pointer; user-select: none; }
+  th.sortable:hover { color: var(--ink); }
+  th.sortable.on { color: var(--blue); }
   tr.top1 td.rank, tr.top1 td.who { color: var(--blue); }
   tr.top1 td.score { color: var(--blue-strong); }
   td.who { font-weight: 600; white-space: nowrap; }
@@ -198,9 +202,9 @@
     <table>
       <thead><tr>
         <th class="num">순위</th><th>제출자</th>
-        <th class="num" id="head-official">🏆 공식 Public</th>
-        <th class="num" id="head-team">팀 검증</th>
-        <th class="num">갭(공식−팀)</th>
+        <th class="num sortable" id="head-official" data-key="official">🏆 공식 Public</th>
+        <th class="num sortable" id="head-team" data-key="team">팀 검증</th>
+        <th class="num sortable" id="head-gap" data-key="gap">갭(공식−팀)</th>
         <th class="col-memo">메모</th><th class="col-file">파일</th><th>제출</th>
       </tr></thead>
       <tbody id="rows"></tbody>
@@ -225,6 +229,7 @@
 <script>
 const TASKS = ["P1", "P2", "P3"];
 let board = null, current = "P1";
+let sortState = { key: "official", desc: true };
 
 function esc(s) {
   return String(s).replace(/[&<>"']/g, c =>
@@ -238,10 +243,16 @@ function render() {
   const bestOnly = document.getElementById("bestOnly").checked;
   const unit = t.unit ? ` (${t.unit})` : "";
   const hb = t.higher_better;
-  document.getElementById("head-official").textContent = `🏆 공식 Public ${t.metric}${unit}`;
-  document.getElementById("head-team").textContent = `팀 검증 ${t.metric}${unit}`;
+  const arrow = k => sortState.key === k ? (sortState.desc ? " ▼" : " ▲") : "";
+  const hOff = document.getElementById("head-official");
+  const hTeam = document.getElementById("head-team");
+  const hGap = document.getElementById("head-gap");
+  hOff.textContent = `🏆 공식 Public ${t.metric}${unit}${arrow("official")}`;
+  hTeam.textContent = `팀 검증 ${t.metric}${unit}${arrow("team")}`;
+  hGap.textContent = `갭(공식−팀)${arrow("gap")}`;
+  [hOff, hTeam, hGap].forEach(h => h.classList.toggle("on", sortState.key === h.dataset.key));
   document.getElementById("metric-hint").textContent =
-    `${t.metric}${unit} · ${hb ? "높을수록" : "낮을수록"} 좋음 · 공식 점수 있는 제출을 공식 점수순으로 먼저 표시`;
+    `${t.metric}${unit} · ${hb ? "높을수록" : "낮을수록"} 좋음 · 열 제목 클릭으로 정렬, 공식 점수 없는 제출은 항상 뒤에`;
 
   // 공식 기록(official_scores.csv)을 team_file 로 팀 제출에 join
   const offByTeam = {};
@@ -250,13 +261,20 @@ function render() {
   }
   const best = new Set(t.best_by_submitter);
   const sgn = hb ? -1 : 1;
+  const sortVal = r => {
+    if (sortState.key === "team") return r.e.score;
+    if (!r.o) return null;
+    return sortState.key === "gap" ? r.o.public_metric - r.e.score : r.o.public_metric;
+  };
   const joined = t.entries.filter(e => e.status === "ok")
     .map(e => ({ e, o: offByTeam[e.file] || null }))
     .filter(r => !bestOnly || best.has(r.e.file) || r.o)
-    .sort((a, b) =>
-      (a.o === null) - (b.o === null) ||
-      sgn * ((a.o ? a.o.public_metric : 0) - (b.o ? b.o.public_metric : 0)) ||
-      sgn * (a.e.score - b.e.score));
+    .sort((a, b) => {
+      const va = sortVal(a), vb = sortVal(b);
+      if ((va === null) !== (vb === null)) return va === null ? 1 : -1;
+      if (va !== null && va !== vb) return sortState.desc ? vb - va : va - vb;
+      return sgn * (a.e.score - b.e.score);
+    });
   const offVals = joined.filter(r => r.o).map(r => r.o.public_metric);
   const bestOff = offVals.length ? (hb ? Math.max : Math.min)(...offVals) : null;
 
@@ -311,6 +329,7 @@ function render() {
 
 function selectTab(task) {
   current = task;
+  sortState = { key: "official", desc: board.tasks[task].higher_better };
   document.querySelectorAll("#tabs button").forEach(b =>
     b.classList.toggle("on", b.dataset.task === task));
   render();
@@ -341,6 +360,12 @@ async function init() {
   document.getElementById("rows").addEventListener("click", ev => {
     const td = ev.target.closest("td.memo, td.file");
     if (td && td.textContent) td.classList.toggle("open");
+  });
+  document.querySelectorAll("th.sortable").forEach(th => th.onclick = () => {
+    const k = th.dataset.key;
+    if (sortState.key === k) sortState.desc = !sortState.desc;
+    else sortState = { key: k, desc: board.tasks[current].higher_better };
+    render();
   });
   selectTab("P1");
 }
