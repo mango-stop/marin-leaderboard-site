@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-26T19:33:35+09:00",
+ "generated_at": "2026-08-26T20:30:15+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -651,11 +651,11 @@
     "task": "P2",
     "submitter": "홍화수",
     "file": "official_P2_probe_h0.csv",
-    "team_file": "",
+    "team_file": "honghwasu__mix-autumn-v1.csv",
     "public_metric": 0.403082,
     "public_points": 28.275657,
     "memo": "브리지 프로브 h=0 — 당일 최고",
-    "team_score": null
+    "team_score": 0.464479
    },
    {
     "submitted_at": "2026-08-25",
