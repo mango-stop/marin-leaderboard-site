@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-26T19:07:34+09:00",
+ "generated_at": "2026-08-26T19:10:57+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -22,7 +22,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 16
+     "rank": 19
     },
     {
      "file": "임민수__cnn-gru-lgbm-blend-erode1-v6.csv",
@@ -105,6 +105,54 @@
      "rank": 4
     },
     {
+     "file": "임민수__cnn-gru5-lgbm-blend-t045-v9.csv",
+     "submitter": "임민수",
+     "memo": "v7 과 같은 시드5 모델, 임계값 0.45 프로브. 공식 Public 0.937407 — 공식 최고. 임계값 하향이 공식·val 모두 유리",
+     "submitted_at": "2026-08-14T14:41:33+09:00",
+     "is_baseline": false,
+     "score": 0.951845,
+     "detail": {
+      "TP": 9389,
+      "FP": 428,
+      "FN": 522,
+      "n": 208093
+     },
+     "status": "ok",
+     "rank": 6
+    },
+    {
+     "file": "임민수__cnn-gru5-lgbm-blend-t0775-v8.csv",
+     "submitter": "임민수",
+     "memo": "v7 과 같은 시드5 모델, 임계값 0.775 프로브. 공식 Public 0.858393 — 높은 임계값 −0.061",
+     "submitted_at": "2026-08-14T14:41:33+09:00",
+     "is_baseline": false,
+     "score": 0.935928,
+     "detail": {
+      "TP": 8728,
+      "FP": 12,
+      "FN": 1183,
+      "n": 208093
+     },
+     "status": "ok",
+     "rank": 8
+    },
+    {
+     "file": "임민수__cnn-gru5-lgbm-blend-v7.csv",
+     "submitter": "임민수",
+     "memo": "1D CNN(폭96, 창2048, bi-GRU, 24ep×5시드) + LightGBM v5 로짓 블렌드 w0.7, t=0.55(dev OOF 선택), 후처리(12,18). dev OOF 0.9392. 공식 Public 0.919179",
+     "submitted_at": "2026-08-14T14:41:33+09:00",
+     "is_baseline": false,
+     "score": 0.947046,
+     "detail": {
+      "TP": 9121,
+      "FP": 230,
+      "FN": 790,
+      "n": 208093
+     },
+     "status": "ok",
+     "rank": 7
+    },
+    {
      "file": "임민수__cnn-lgbm-blend-v1.csv",
      "submitter": "임민수",
      "memo": "1D dilated CNN(17채널, 창 1024, 24ep×3시드) + LightGBM v5(both 주입) 로짓 평균 블렌드 w=0.5, t=0.775(dev OOF), 후처리(12,18). dev OOF 0.895 / val F1 0.909",
@@ -118,7 +166,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 6
+     "rank": 9
     },
     {
      "file": "임민수__gbm-aug-v2.csv",
@@ -134,7 +182,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 14
+     "rank": 17
     },
     {
      "file": "임민수__gbm-aug-v3.csv",
@@ -150,7 +198,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 13
+     "rank": 16
     },
     {
      "file": "임민수__gbm-aug-v4-t05.csv",
@@ -166,7 +214,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 10
+     "rank": 13
     },
     {
      "file": "임민수__gbm-aug-v4.csv",
@@ -182,7 +230,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 12
+     "rank": 15
     },
     {
      "file": "임민수__lgbm-v4-t05.csv",
@@ -198,7 +246,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 9
+     "rank": 12
     },
     {
      "file": "임민수__lgbm-v4.csv",
@@ -214,7 +262,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 11
+     "rank": 14
     },
     {
      "file": "임민수__lgbm-v5-both-t05.csv",
@@ -230,7 +278,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 7
+     "rank": 10
     },
     {
      "file": "임민수__lgbm-v5-both.csv",
@@ -246,7 +294,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 8
+     "rank": 11
     },
     {
      "file": "임민수__rules-v1.csv",
@@ -262,10 +310,10 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 15
+     "rank": 18
     }
    ],
-   "n_ok": 16,
+   "n_ok": 19,
    "best_by_submitter": [
     "임민수__cnn-gru-lgbm-blend-pp3-v5.csv",
     "baseline__hard-rule.csv"
@@ -691,33 +739,33 @@
     "task": "P1",
     "submitter": "임민수",
     "file": "cnn-gru5-lgbm-blend-v7__test2026.csv",
-    "team_file": "",
+    "team_file": "임민수__cnn-gru5-lgbm-blend-v7.csv",
     "public_metric": 0.919179,
     "public_points": 31.185264,
     "memo": "CNN 시드5 앙상블 + LGBM 로짓 블렌드 w0.7 t0.55(dev 선택) — 시드3 v2 대비 +0.0113",
-    "team_score": null
+    "team_score": 0.947046
    },
    {
     "submitted_at": "2026-08-26",
     "task": "P1",
     "submitter": "임민수",
     "file": "cnn-gru5-lgbm-blend-t0775-v8__test2026.csv",
-    "team_file": "",
+    "team_file": "임민수__cnn-gru5-lgbm-blend-t0775-v8.csv",
     "public_metric": 0.858393,
     "public_points": 29.569671,
     "memo": "v7 과 같은 모델 t0.775 프로브 — 높은 임계값 −0.061 (dev 예상 −0.005)",
-    "team_score": null
+    "team_score": 0.935928
    },
    {
     "submitted_at": "2026-08-26",
     "task": "P1",
     "submitter": "임민수",
     "file": "cnn-gru5-lgbm-blend-t045-v9__test2026.csv",
-    "team_file": "",
+    "team_file": "임민수__cnn-gru5-lgbm-blend-t045-v9.csv",
     "public_metric": 0.937407,
     "public_points": 31.669724,
     "memo": "v7 과 같은 모델 t0.45 프로브 — 임계값 하향 +0.018 공식 최고",
-    "team_score": null
+    "team_score": 0.951845
    }
   ],
   "errors": []
