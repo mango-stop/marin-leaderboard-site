@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-27T01:39:27+09:00",
+ "generated_at": "2026-08-27T02:10:36+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -934,6 +934,28 @@
     "public_points": 30.953803,
     "memo": "t0.30 히스테리시스 프로브 — 저신뢰 구간 제거 -0.040 (내부 val +0.027 과 정반대) 제거 축 종료",
     "team_score": 0.978831
+   },
+   {
+    "submitted_at": "2026-08-27",
+    "task": "P2",
+    "submitter": "홍화수",
+    "file": "official_P2_r9_probe_g56.csv",
+    "team_file": "",
+    "public_metric": 0.380376,
+    "public_points": 28.560552,
+    "memo": "심층경사 연동 프로브 — 신호 실재(실험실의 42%) 계수 확정",
+    "team_score": null
+   },
+   {
+    "submitted_at": "2026-08-27",
+    "task": "P2",
+    "submitter": "홍화수",
+    "file": "official_P2_r9_probe_md.csv",
+    "team_file": "",
+    "public_metric": 0.384135,
+    "public_points": 28.513385,
+    "memo": "일주기 연동 프로브 — 약신호(실험실의 15%) 계수 확정",
+    "team_score": null
    }
   ],
   "errors": []
