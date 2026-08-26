@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-26T10:29:23+09:00",
+ "generated_at": "2026-08-26T12:55:20+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -182,7 +182,28 @@
       }
      },
      "status": "ok",
-     "rank": 6
+     "rank": 7
+    },
+    {
+     "file": "sejin__blend-v4b-v5.csv",
+     "submitter": "세진",
+     "memo": "v4b + v5 예측 단순 평균 블렌드 — 공식 Public 0.617323 최고",
+     "submitted_at": "2026-08-26T12:54:59+09:00",
+     "is_baseline": false,
+     "score": 0.793884,
+     "detail": {
+      "n": 546,
+      "per_lead": {
+       "3": 0.47996051334264145,
+       "6": 0.6553713868051131,
+       "9": 0.7402028841829429,
+       "12": 0.814221827207487,
+       "18": 0.9774911841737308,
+       "24": 0.9773884196876698
+      }
+     },
+     "status": "ok",
+     "rank": 3
     },
     {
      "file": "sejin__onset-lgbm-ridge-v1.csv",
@@ -203,7 +224,7 @@
       }
      },
      "status": "ok",
-     "rank": 5
+     "rank": 6
     },
     {
      "file": "sejin__stacking-phys-gru-v2.csv",
@@ -245,7 +266,7 @@
       }
      },
      "status": "ok",
-     "rank": 3
+     "rank": 4
     },
     {
      "file": "sejin__stacking-v3b.csv",
@@ -266,7 +287,7 @@
       }
      },
      "status": "ok",
-     "rank": 4
+     "rank": 5
     },
     {
      "file": "sejin__stacking-v5.csv",
@@ -290,7 +311,7 @@
      "rank": 2
     }
    ],
-   "n_ok": 6,
+   "n_ok": 7,
    "best_by_submitter": [
     "sejin__stacking-phys-gru-v2.csv",
     "baseline__persistence.csv"
@@ -424,6 +445,17 @@
     "public_points": 23.485658,
     "memo": "v5 다중 임계 온셋 표본 확대 — 내부 CV −1.6%였으나 Public은 v4b와 잡음 범위 내 동률",
     "team_score": 0.792655
+   },
+   {
+    "submitted_at": "2026-08-26",
+    "task": "P3",
+    "submitter": "세진",
+    "file": "submission_v45_blend.csv",
+    "team_file": "sejin__blend-v4b-v5.csv",
+    "public_metric": 0.617323,
+    "public_points": 23.535573,
+    "memo": "v4b+v5 단순 평균 블렌드 — 공식 최고 갱신",
+    "team_score": 0.793884
    }
   ],
   "errors": []
