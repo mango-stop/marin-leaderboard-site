@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-26T22:51:28+09:00",
+ "generated_at": "2026-08-26T23:55:53+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -809,6 +809,39 @@
     "public_points": 31.669724,
     "memo": "v7 과 같은 모델 t0.45 프로브 — 임계값 하향 +0.018 공식 최고",
     "team_score": 0.951845
+   },
+   {
+    "submitted_at": "2026-08-26",
+    "task": "P2",
+    "submitter": "홍화수",
+    "file": "official_P2_v2_opt.csv",
+    "team_file": "",
+    "public_metric": 0.399725,
+    "public_points": 28.317778,
+    "memo": "리더보드 보정 최적 (s=1.140 h=0.128) — 포물선 해석해",
+    "team_score": null
+   },
+   {
+    "submitted_at": "2026-08-26",
+    "task": "P2",
+    "submitter": "홍화수",
+    "file": "official_P2_r6_probe_mneg.csv",
+    "team_file": "",
+    "public_metric": 0.385322,
+    "public_points": 28.498493,
+    "memo": "혼합비 시간추세 프로브 m=-0.8 — 신호 실재 확정·공식 최고 갱신",
+    "team_score": null
+   },
+   {
+    "submitted_at": "2026-08-26",
+    "task": "P2",
+    "submitter": "홍화수",
+    "file": "official_P2_r6_probe_mpos.csv",
+    "team_file": "",
+    "public_metric": 0.429299,
+    "public_points": 27.946692,
+    "memo": "m=+0.8 반대점 검산 프로브",
+    "team_score": null
    }
   ],
   "errors": []
