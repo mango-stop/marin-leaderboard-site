@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-26T22:31:18+09:00",
+ "generated_at": "2026-08-26T22:51:28+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -406,7 +406,7 @@
       }
      },
      "status": "ok",
-     "rank": 10
+     "rank": 11
     },
     {
      "file": "sejin__blend-v4-v4b-v5.csv",
@@ -577,6 +577,27 @@
      "rank": 1
     },
     {
+     "file": "임민수__ridge-lgbm-leadw-v2.csv",
+     "submitter": "임민수",
+     "memo": "v1 + 리드별 Ridge/LGBM 블렌드 가중(단리드 LGBM 위주, +24h Ridge 전용; 온셋 CV 선택). 온셋 CV 0.7258(-11.8%)",
+     "submitted_at": "2026-08-26T22:50:26+09:00",
+     "is_baseline": false,
+     "score": 0.855658,
+     "detail": {
+      "n": 546,
+      "per_lead": {
+       "3": 0.48229083480889345,
+       "6": 0.6707833621230471,
+       "9": 0.7671900022552689,
+       "12": 0.9080186087554339,
+       "18": 1.0754657751488346,
+       "24": 1.0680085093499754
+      }
+     },
+     "status": "ok",
+     "rank": 10
+    },
+    {
      "file": "임민수__ridge-lgbm-v1.csv",
      "submitter": "임민수",
      "memo": "독립 파이프라인 v1: 탐욕 온셋 사례(1.5/78h + 확장 1.3·1.7/24h) 48h 컨텍스트 52피처, 리드별 Δhs Ridge+LGBM(3시드) 평균. 온셋 CV 0.7313(지속성 0.8228, -11.1%)",
@@ -598,7 +619,7 @@
      "rank": 9
     }
    ],
-   "n_ok": 10,
+   "n_ok": 11,
    "best_by_submitter": [
     "sejin__stacking-v5zoo.csv",
     "임민수__ridge-lgbm-v1.csv",
