@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-26T15:00:30+09:00",
+ "generated_at": "2026-08-26T19:07:34+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -22,7 +22,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 5
+     "rank": 16
     },
     {
      "file": "임민수__cnn-gru-lgbm-blend-erode1-v6.csv",
@@ -38,7 +38,23 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 4
+     "rank": 5
+    },
+    {
+     "file": "임민수__cnn-gru-lgbm-blend-extback-gapfill-v4.csv",
+     "submitter": "임민수",
+     "memo": "v3(CNN-GRU+LGBM 블렌드 + drift 시작구간 역방향 확장) + offset 중간 gap 채움 후처리(두 긴 예측구간 사이, 층간 잔차 부호 일치·|pres_z| 지속, 인접층 이상 시 제외). dev OOF 0.9384 / val 0.9897",
+     "submitted_at": "2026-08-14T14:41:33+09:00",
+     "is_baseline": false,
+     "score": 0.9897,
+     "detail": {
+      "TP": 9801,
+      "FP": 94,
+      "FN": 110,
+      "n": 208093
+     },
+     "status": "ok",
+     "rank": 2
     },
     {
      "file": "임민수__cnn-gru-lgbm-blend-extback-v3.csv",
@@ -54,7 +70,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 2
+     "rank": 3
     },
     {
      "file": "임민수__cnn-gru-lgbm-blend-pp3-v5.csv",
@@ -86,10 +102,170 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 3
+     "rank": 4
+    },
+    {
+     "file": "임민수__cnn-lgbm-blend-v1.csv",
+     "submitter": "임민수",
+     "memo": "1D dilated CNN(17채널, 창 1024, 24ep×3시드) + LightGBM v5(both 주입) 로짓 평균 블렌드 w=0.5, t=0.775(dev OOF), 후처리(12,18). dev OOF 0.895 / val F1 0.909",
+     "submitted_at": "2026-08-14T14:41:33+09:00",
+     "is_baseline": false,
+     "score": 0.908816,
+     "detail": {
+      "TP": 8721,
+      "FP": 560,
+      "FN": 1190,
+      "n": 208093
+     },
+     "status": "ok",
+     "rank": 6
+    },
+    {
+     "file": "임민수__gbm-aug-v2.csv",
+     "submitter": "임민수",
+     "memo": "v2 HistGB 30피처 + 합성주입 2벌 augmentation + 공짜규칙 OR + 구간 후처리(gap12/min18), OOF F1 0.764",
+     "submitted_at": "2026-08-14T14:41:33+09:00",
+     "is_baseline": false,
+     "score": 0.690713,
+     "detail": {
+      "TP": 5582,
+      "FP": 670,
+      "FN": 4329,
+      "n": 208093
+     },
+     "status": "ok",
+     "rank": 14
+    },
+    {
+     "file": "임민수__gbm-aug-v3.csv",
+     "submitter": "임민수",
+     "memo": "v3 HistGB 35피처(v2+24h/48h 선형적합) + 합성주입 3벌(offset/drift x2) + 공짜규칙 OR + 후처리(gap6/min18), OOF F1 0.788",
+     "submitted_at": "2026-08-14T14:41:33+09:00",
+     "is_baseline": false,
+     "score": 0.811589,
+     "detail": {
+      "TP": 7017,
+      "FP": 364,
+      "FN": 2894,
+      "n": 208093
+     },
+     "status": "ok",
+     "rank": 13
+    },
+    {
+     "file": "임민수__gbm-aug-v4-t05.csv",
+     "submitter": "임민수",
+     "memo": "v4 동일 모델, 임계값 0.5 고정(OOF-best 0.8 대신) + 후처리(gap3/min12). dev OOF 0.798 (t=0.8: 0.825)",
+     "submitted_at": "2026-08-14T14:41:33+09:00",
+     "is_baseline": false,
+     "score": 0.842408,
+     "detail": {
+      "TP": 7751,
+      "FP": 740,
+      "FN": 2160,
+      "n": 208093
+     },
+     "status": "ok",
+     "rank": 10
+    },
+    {
+     "file": "임민수__gbm-aug-v4.csv",
+     "submitter": "임민수",
+     "memo": "v4 = v3 + 인접층 수심보간 잔차 피처 7개(42피처), 합성주입 3벌(offset/drift x2), 공짜규칙 OR, 후처리(gap6/min18), OOF F1 0.825",
+     "submitted_at": "2026-08-14T14:41:33+09:00",
+     "is_baseline": false,
+     "score": 0.821187,
+     "detail": {
+      "TP": 7155,
+      "FP": 360,
+      "FN": 2756,
+      "n": 208093
+     },
+     "status": "ok",
+     "rank": 12
+    },
+    {
+     "file": "임민수__lgbm-v4-t05.csv",
+     "submitter": "임민수",
+     "memo": "LightGBM v4 동일 모델, 임계값 0.5 고정 + 후처리(gap3/min12). OOF F1 0.811",
+     "submitted_at": "2026-08-14T14:41:33+09:00",
+     "is_baseline": false,
+     "score": 0.854194,
+     "detail": {
+      "TP": 7821,
+      "FP": 580,
+      "FN": 2090,
+      "n": 208093
+     },
+     "status": "ok",
+     "rank": 9
+    },
+    {
+     "file": "임민수__lgbm-v4.csv",
+     "submitter": "임민수",
+     "memo": "LightGBM(400tr, lr0.06, 63leaves, subsample/colsample 0.8) + v4 42피처 + 합성주입 3벌, OOF-best 임계값 0.75, 후처리(gap6/min18). OOF F1 0.827",
+     "submitted_at": "2026-08-14T14:41:33+09:00",
+     "is_baseline": false,
+     "score": 0.838363,
+     "detail": {
+      "TP": 7404,
+      "FP": 348,
+      "FN": 2507,
+      "n": 208093
+     },
+     "status": "ok",
+     "rank": 11
+    },
+    {
+     "file": "임민수__lgbm-v5-both-t05.csv",
+     "submitter": "임민수",
+     "memo": "LightGBM v5(v4+변화점 KernelCPD 피처) + 합성주입 orig+small 각 3벌, 임계값 0.5 고정, 후처리(2,6). val F1 0.888",
+     "submitted_at": "2026-08-14T14:41:33+09:00",
+     "is_baseline": false,
+     "score": 0.88803,
+     "detail": {
+      "TP": 8391,
+      "FP": 596,
+      "FN": 1520,
+      "n": 208093
+     },
+     "status": "ok",
+     "rank": 7
+    },
+    {
+     "file": "임민수__lgbm-v5-both.csv",
+     "submitter": "임민수",
+     "memo": "LightGBM v5(v4+변화점 KernelCPD 피처 60개) + 합성주입 orig 3벌+small(offset/drift 로그균등 0.3~10°C) 3벌, t=OOF-best 0.775, 후처리(3,12). val F1 0.874",
+     "submitted_at": "2026-08-14T14:41:33+09:00",
+     "is_baseline": false,
+     "score": 0.874037,
+     "detail": {
+      "TP": 7938,
+      "FP": 315,
+      "FN": 1973,
+      "n": 208093
+     },
+     "status": "ok",
+     "rank": 8
+    },
+    {
+     "file": "임민수__rules-v1.csv",
+     "submitter": "임민수",
+     "memo": "v1 규칙 기반 5개 OR (물리범위·flatline≥6·표준화|d1|>80·6h std비>6·7일편차 z>8), dev F1 0.563",
+     "submitted_at": "2026-08-14T14:41:33+09:00",
+     "is_baseline": false,
+     "score": 0.490652,
+     "detail": {
+      "TP": 3976,
+      "FP": 2320,
+      "FN": 5935,
+      "n": 208093
+     },
+     "status": "ok",
+     "rank": 15
     }
    ],
-   "n_ok": 5,
+   "n_ok": 16,
    "best_by_submitter": [
     "임민수__cnn-gru-lgbm-blend-pp3-v5.csv",
     "baseline__hard-rule.csv"
@@ -509,6 +685,39 @@
     "public_points": 23.561052,
     "memo": "v4+v4b+v5 3자 평균 블렌드 — 공식 최고 갱신",
     "team_score": 0.793157
+   },
+   {
+    "submitted_at": "2026-08-26",
+    "task": "P1",
+    "submitter": "임민수",
+    "file": "cnn-gru5-lgbm-blend-v7__test2026.csv",
+    "team_file": "",
+    "public_metric": 0.919179,
+    "public_points": 31.185264,
+    "memo": "CNN 시드5 앙상블 + LGBM 로짓 블렌드 w0.7 t0.55(dev 선택) — 시드3 v2 대비 +0.0113",
+    "team_score": null
+   },
+   {
+    "submitted_at": "2026-08-26",
+    "task": "P1",
+    "submitter": "임민수",
+    "file": "cnn-gru5-lgbm-blend-t0775-v8__test2026.csv",
+    "team_file": "",
+    "public_metric": 0.858393,
+    "public_points": 29.569671,
+    "memo": "v7 과 같은 모델 t0.775 프로브 — 높은 임계값 −0.061 (dev 예상 −0.005)",
+    "team_score": null
+   },
+   {
+    "submitted_at": "2026-08-26",
+    "task": "P1",
+    "submitter": "임민수",
+    "file": "cnn-gru5-lgbm-blend-t045-v9__test2026.csv",
+    "team_file": "",
+    "public_metric": 0.937407,
+    "public_points": 31.669724,
+    "memo": "v7 과 같은 모델 t0.45 프로브 — 임계값 하향 +0.018 공식 최고",
+    "team_score": null
    }
   ],
   "errors": []
