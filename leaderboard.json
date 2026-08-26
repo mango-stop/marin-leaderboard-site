@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-26T12:55:20+09:00",
+ "generated_at": "2026-08-26T14:22:14+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -182,7 +182,7 @@
       }
      },
      "status": "ok",
-     "rank": 7
+     "rank": 8
     },
     {
      "file": "sejin__blend-v4b-v5.csv",
@@ -203,7 +203,7 @@
       }
      },
      "status": "ok",
-     "rank": 3
+     "rank": 4
     },
     {
      "file": "sejin__onset-lgbm-ridge-v1.csv",
@@ -224,7 +224,7 @@
       }
      },
      "status": "ok",
-     "rank": 6
+     "rank": 7
     },
     {
      "file": "sejin__stacking-phys-gru-v2.csv",
@@ -245,7 +245,7 @@
       }
      },
      "status": "ok",
-     "rank": 1
+     "rank": 2
     },
     {
      "file": "sejin__stacking-v3.csv",
@@ -266,7 +266,7 @@
       }
      },
      "status": "ok",
-     "rank": 4
+     "rank": 5
     },
     {
      "file": "sejin__stacking-v3b.csv",
@@ -287,7 +287,7 @@
       }
      },
      "status": "ok",
-     "rank": 5
+     "rank": 6
     },
     {
      "file": "sejin__stacking-v5.csv",
@@ -308,12 +308,33 @@
       }
      },
      "status": "ok",
-     "rank": 2
+     "rank": 3
+    },
+    {
+     "file": "sejin__stacking-v5zoo.csv",
+     "submitter": "세진",
+     "memo": "최대 스태킹 v5: 21개 베이스 + 학습베이스 균등평균",
+     "submitted_at": "2026-08-26T14:21:52+09:00",
+     "is_baseline": false,
+     "score": 0.78746,
+     "detail": {
+      "n": 546,
+      "per_lead": {
+       "3": 0.489080013791312,
+       "6": 0.6390453804243938,
+       "9": 0.7332122295941153,
+       "12": 0.8092753434638063,
+       "18": 0.9770677004224381,
+       "24": 0.9621821862051643
+      }
+     },
+     "status": "ok",
+     "rank": 1
     }
    ],
-   "n_ok": 7,
+   "n_ok": 8,
    "best_by_submitter": [
-    "sejin__stacking-phys-gru-v2.csv",
+    "sejin__stacking-v5zoo.csv",
     "baseline__persistence.csv"
    ],
    "n_expected": 546,
