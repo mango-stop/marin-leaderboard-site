@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-26T14:56:24+09:00",
+ "generated_at": "2026-08-26T15:00:30+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -498,6 +498,17 @@
     "public_points": 23.535573,
     "memo": "v4b+v5 단순 평균 블렌드 — 공식 최고 갱신",
     "team_score": 0.793884
+   },
+   {
+    "submitted_at": "2026-08-26",
+    "task": "P3",
+    "submitter": "세진",
+    "file": "submission_v445_blend.csv",
+    "team_file": "sejin__blend-v4-v4b-v5.csv",
+    "public_metric": 0.615717,
+    "public_points": 23.561052,
+    "memo": "v4+v4b+v5 3자 평균 블렌드 — 공식 최고 갱신",
+    "team_score": 0.793157
    }
   ],
   "errors": []
