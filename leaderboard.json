@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-26T19:13:53+09:00",
+ "generated_at": "2026-08-26T19:15:12+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -60,7 +60,7 @@
      "file": "임민수__cnn-gru-lgbm-blend-extback-v3.csv",
      "submitter": "임민수",
      "memo": "CNN(창2048·bi-GRU·폭96, 3시드)+LGBM v5both 로짓 블렌드 w0.7 + drift 시작구간 역방향 확장 후처리(p>0.25, ≤36h; dev OOF 0.9313→0.9376, val 0.9733→0.9856)",
-     "submitted_at": "2026-08-25T17:37:42+09:00",
+     "submitted_at": "2026-08-18T14:55:26+09:00",
      "is_baseline": false,
      "score": 0.985603,
      "detail": {
@@ -76,7 +76,7 @@
      "file": "임민수__cnn-gru-lgbm-blend-pp3-v5.csv",
      "submitter": "임민수",
      "memo": "v4 + drift ramp 외삽 후처리(예측구간 잔차 선형추세 R²≥0.85 이면 0교차 시각까지 역방향 확장). 후처리 3종 모두 dev OOF 기준 채택. dev OOF 0.9431 / val 0.9910",
-     "submitted_at": "2026-08-18T15:55:51+09:00",
+     "submitted_at": "2026-08-18T15:14:32+09:00",
      "is_baseline": false,
      "score": 0.990988,
      "detail": {
@@ -92,7 +92,7 @@
      "file": "임민수__cnn-gru-lgbm-blend-v2.csv",
      "submitter": "임민수",
      "memo": "1D dilated CNN(폭96, 창2048, bi-GRU 헤드, 24ep×3시드) + LightGBM v5(both) 로짓 블렌드 w=0.7, t=0.775(dev OOF), 후처리(12,18). dev OOF 0.931 / val F1 0.973",
-     "submitted_at": "2026-08-25T17:37:42+09:00",
+     "submitted_at": "2026-08-18T13:48:18+09:00",
      "is_baseline": false,
      "score": 0.973322,
      "detail": {
