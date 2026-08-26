@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-25T23:12:21+09:00",
+ "generated_at": "2026-08-26T10:24:58+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -182,7 +182,7 @@
       }
      },
      "status": "ok",
-     "rank": 5
+     "rank": 6
     },
     {
      "file": "sejin__onset-lgbm-ridge-v1.csv",
@@ -203,7 +203,7 @@
       }
      },
      "status": "ok",
-     "rank": 4
+     "rank": 5
     },
     {
      "file": "sejin__stacking-phys-gru-v2.csv",
@@ -245,7 +245,7 @@
       }
      },
      "status": "ok",
-     "rank": 2
+     "rank": 3
     },
     {
      "file": "sejin__stacking-v3b.csv",
@@ -266,10 +266,31 @@
       }
      },
      "status": "ok",
-     "rank": 3
+     "rank": 4
+    },
+    {
+     "file": "sejin__stacking-v5.csv",
+     "submitter": "세진",
+     "memo": "v5: 다중 임계 온셋(1.3/1.5/1.7m, 가중 1.0)으로 학습 표본 936→1,822 확대 + v4b 하이브리드 메타. 내부 CV 0.7094→0.6984",
+     "submitted_at": "2026-08-26T10:24:37+09:00",
+     "is_baseline": false,
+     "score": 0.792655,
+     "detail": {
+      "n": 546,
+      "per_lead": {
+       "3": 0.4645098953274761,
+       "6": 0.6627252861820311,
+       "9": 0.7324049624429021,
+       "12": 0.803287895649314,
+       "18": 0.9830138705940112,
+       "24": 0.9832760753367643
+      }
+     },
+     "status": "ok",
+     "rank": 2
     }
    ],
-   "n_ok": 5,
+   "n_ok": 6,
    "best_by_submitter": [
     "sejin__stacking-phys-gru-v2.csv",
     "baseline__persistence.csv"
