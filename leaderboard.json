@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-28T01:27:25+09:00",
+ "generated_at": "2026-08-28T01:44:43+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -454,7 +454,7 @@
       }
      },
      "status": "ok",
-     "rank": 19
+     "rank": 20
     },
     {
      "file": "sejin__blend-v4-v4b-v5.csv",
@@ -475,7 +475,7 @@
       }
      },
      "status": "ok",
-     "rank": 12
+     "rank": 13
     },
     {
      "file": "sejin__blend-v4b-v5.csv",
@@ -496,7 +496,7 @@
       }
      },
      "status": "ok",
-     "rank": 13
+     "rank": 14
     },
     {
      "file": "sejin__blend-zoo-v6.csv",
@@ -517,7 +517,7 @@
       }
      },
      "status": "ok",
-     "rank": 6
+     "rank": 7
     },
     {
      "file": "sejin__onset-lgbm-ridge-v1.csv",
@@ -538,7 +538,7 @@
       }
      },
      "status": "ok",
-     "rank": 16
+     "rank": 17
     },
     {
      "file": "sejin__stacking-phys-gru-v2.csv",
@@ -559,7 +559,7 @@
       }
      },
      "status": "ok",
-     "rank": 10
+     "rank": 11
     },
     {
      "file": "sejin__stacking-v3.csv",
@@ -580,7 +580,7 @@
       }
      },
      "status": "ok",
-     "rank": 14
+     "rank": 15
     },
     {
      "file": "sejin__stacking-v3b.csv",
@@ -601,7 +601,7 @@
       }
      },
      "status": "ok",
-     "rank": 15
+     "rank": 16
     },
     {
      "file": "sejin__stacking-v5.csv",
@@ -622,7 +622,7 @@
       }
      },
      "status": "ok",
-     "rank": 11
+     "rank": 12
     },
     {
      "file": "sejin__stacking-v5zoo.csv",
@@ -643,7 +643,7 @@
       }
      },
      "status": "ok",
-     "rank": 8
+     "rank": 9
     },
     {
      "file": "sejin__stacking-v6.csv",
@@ -664,7 +664,7 @@
       }
      },
      "status": "ok",
-     "rank": 7
+     "rank": 8
     },
     {
      "file": "sejin__zoo2-mean_all.csv",
@@ -685,7 +685,7 @@
       }
      },
      "status": "ok",
-     "rank": 3
+     "rank": 4
     },
     {
      "file": "sejin__zoo2-simplex.csv",
@@ -706,7 +706,7 @@
       }
      },
      "status": "ok",
-     "rank": 2
+     "rank": 3
     },
     {
      "file": "임민수__ext-pool-kma-v1.csv",
@@ -748,7 +748,7 @@
       }
      },
      "status": "ok",
-     "rank": 18
+     "rank": 19
     },
     {
      "file": "임민수__ridge-lgbm-v1.csv",
@@ -769,7 +769,7 @@
       }
      },
      "status": "ok",
-     "rank": 17
+     "rank": 18
     },
     {
      "file": "임민수__sejin-v445-warm-shrink-v1.csv",
@@ -790,7 +790,7 @@
       }
      },
      "status": "ok",
-     "rank": 4
+     "rank": 5
     },
     {
      "file": "임민수__sejin-v445-zoo-blend-v1.csv",
@@ -811,7 +811,28 @@
       }
      },
      "status": "ok",
-     "rank": 9
+     "rank": 10
+    },
+    {
+     "file": "임민수__stacking-v7-thr15-w03.csv",
+     "submitter": "임민수",
+     "memo": "스태킹 v7: v5 구성 + 외부 부이 온셋 풀링(kma, 58349표본, w0.3, 표형 베이스만) — 내부 CV 0.6838",
+     "submitted_at": "2026-08-28T01:44:17+09:00",
+     "is_baseline": false,
+     "score": 0.74737,
+     "detail": {
+      "n": 546,
+      "per_lead": {
+       "3": 0.48798640721476416,
+       "6": 0.6285437724185595,
+       "9": 0.7095849893725606,
+       "12": 0.7587645942257384,
+       "18": 0.9051361521649901,
+       "24": 0.9053560832470986
+      }
+     },
+     "status": "ok",
+     "rank": 2
     },
     {
      "file": "임민수__v445-warm-shrink-s10-v2.csv",
@@ -832,10 +853,10 @@
       }
      },
      "status": "ok",
-     "rank": 5
+     "rank": 6
     }
    ],
-   "n_ok": 19,
+   "n_ok": 20,
    "best_by_submitter": [
     "임민수__ext-pool-kma-v1.csv",
     "sejin__zoo2-simplex.csv",
