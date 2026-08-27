@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-28T00:50:09+09:00",
+ "generated_at": "2026-08-28T00:52:50+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -1126,6 +1126,17 @@
     "public_points": 28.578677,
     "memo": "g56+md 2방향 결합 최적 — 공식 최고 갱신 (예측 4연속 적중)",
     "team_score": null
+   },
+   {
+    "submitted_at": "2026-08-28",
+    "task": "P3",
+    "submitter": "세진",
+    "file": "submission_zoo_v6_blend.csv",
+    "team_file": "sejin__blend-zoo-v6.csv",
+    "public_metric": 0.59952,
+    "public_points": 23.818121,
+    "memo": "동물원+v6 1:1 블렌드 — 동물원 단독(0.5971)보다 소폭 열세",
+    "team_score": 0.785046
    }
   ],
   "errors": []
