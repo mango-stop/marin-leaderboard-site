@@ -293,7 +293,7 @@ function render() {
     if (o) {
       const gap = o.public_metric - e.score;
       offCell = `<td class="num score" title="대회점수 ${f6(o.public_points)}">${f6(o.public_metric)}</td>`;
-      gapCell = `<td class="num gap ${gap < 0 ? "neg" : "pos"}">${(gap >= 0 ? "+" : "") + gap.toFixed(4)}</td>`;
+      gapCell = `<td class="num gap ${(hb ? gap < 0 : gap > 0) ? "neg" : "pos"}" title="${hb ? "양수" : "음수"}면 공식이 팀 검증보다 좋음">${(gap >= 0 ? "+" : "") + gap.toFixed(4)}</td>`;
     }
     tr.innerHTML =
       `<td class="num rank">${i + 1}</td>` +
