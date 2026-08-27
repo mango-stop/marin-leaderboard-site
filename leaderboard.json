@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-27T23:18:40+09:00",
+ "generated_at": "2026-08-27T23:19:30+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -1019,6 +1019,17 @@
     "public_points": 28.513385,
     "memo": "일주기 연동 프로브 — 약신호(실험실의 15%) 계수 확정",
     "team_score": null
+   },
+   {
+    "submitted_at": "2026-08-27",
+    "task": "P3",
+    "submitter": "임민수",
+    "file": "v445-warm-shrink-v1.csv",
+    "team_file": "임민수__sejin-v445-warm-shrink-v1.csv",
+    "public_metric": 0.615356,
+    "public_points": 23.566788,
+    "memo": "세진 v445 블렌드 후처리: 온난 케이스(airt≥15°C)만 리드별 수축 -0.03…-0.20 m (OOF 봄 편향 절반 강도) — 공식 최고 소폭 갱신",
+    "team_score": 0.777007
    }
   ],
   "errors": []
