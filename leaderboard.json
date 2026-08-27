@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-28T01:59:55+09:00",
+ "generated_at": "2026-08-28T02:02:54+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -1265,6 +1265,17 @@
     "public_points": 31.838593,
     "memo": "t0.30 + 구간 시작 2행 앞당김(dilate) 프로브 — -0.006. 침식·확장 양방향 손해 확정",
     "team_score": 0.940336
+   },
+   {
+    "submitted_at": "2026-08-28",
+    "task": "P1",
+    "submitter": "임민수",
+    "file": "cnn-gru5-lgbm-blend-stI025__test2026.csv",
+    "team_file": "",
+    "public_metric": 0.940637,
+    "public_points": 31.755577,
+    "memo": "정점별 임계값 프로브: I-ORS만 0.25(+100행) — -0.0094 = 전역 t0.25 손해의 전부 → I-ORS는 0.30 이상 G/S는 하향 여지",
+    "team_score": null
    }
   ],
   "errors": []
