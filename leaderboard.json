@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-27T23:41:25+09:00",
+ "generated_at": "2026-08-28T00:10:40+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -1073,6 +1073,17 @@
     "public_points": 23.856416,
     "memo": "최대 스태킹(18베이스 균등평균) — 공식 최고 대폭 갱신(−3.0%)",
     "team_score": 0.78746
+   },
+   {
+    "submitted_at": "2026-08-28",
+    "task": "P2",
+    "submitter": "홍화수",
+    "file": "official_P2_v4_gm_opt.csv",
+    "team_file": "",
+    "public_metric": 0.378932,
+    "public_points": 28.578677,
+    "memo": "g56+md 2방향 결합 최적 — 공식 최고 갱신 (예측 4연속 적중)",
+    "team_score": null
    }
   ],
   "errors": []
