@@ -140,6 +140,19 @@
   td.date { color: var(--ink-3); font-size: 13px; white-space: nowrap; }
   .empty { padding: 40px 20px; text-align: center; color: var(--ink-2); }
 
+  .pager {
+    display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap;
+    margin: 12px 0 2px; font-size: 13px; color: var(--ink-2);
+  }
+  .pager button {
+    appearance: none; font: inherit; font-size: 13px; min-width: 32px; padding: 5px 9px;
+    border: 1px solid var(--line); border-radius: 7px; background: var(--surface); color: var(--ink-2);
+    cursor: pointer; font-variant-numeric: tabular-nums;
+  }
+  .pager button:hover:not(:disabled) { color: var(--ink); border-color: var(--ink-2); }
+  .pager button.on { background: var(--blue); border-color: var(--blue); color: #fff; font-weight: 700; }
+  .pager button:disabled { opacity: .4; cursor: default; }
+  .pager .info { margin: 0 6px; }
   .below {
     display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
     gap: 8px 14px; margin: 13px 2px 0;
@@ -210,6 +223,7 @@
       <tbody id="rows"></tbody>
     </table>
   </div></section>
+  <div class="pager" id="pager" aria-label="페이지"></div>
 
   <div class="below">
     <label class="toggle"><input type="checkbox" id="bestOnly">제출자별 최고 점수만 보기</label>
@@ -230,6 +244,8 @@
 const TASKS = ["P1", "P2", "P3"];
 let board = null, current = "P1";
 let sortState = { key: "official", desc: true };
+const PAGE = 10;
+let page = 1;
 
 function esc(s) {
   return String(s).replace(/[&<>"']/g, c =>
@@ -284,7 +300,11 @@ function render() {
     rows.innerHTML = `<tr><td colspan="8" class="empty">아직 제출이 없습니다 —
       팀 repo의 submissions/${current}/ 에 CSV를 push 하세요.</td></tr>`;
   }
-  joined.forEach((r, i) => {
+  const nPages = Math.max(1, Math.ceil(joined.length / PAGE));
+  if (page > nPages) page = nPages;
+  const start = (page - 1) * PAGE;
+  joined.slice(start, start + PAGE).forEach((r, k) => {
+    const i = start + k;
     const { e, o } = r;
     const tr = document.createElement("tr");
     if (o && o.public_metric === bestOff) tr.classList.add("top1");
@@ -306,6 +326,7 @@ function render() {
       `<td class="date">${shortTime(e.submitted_at)}</td>`;
     rows.appendChild(tr);
   });
+  renderPager(nPages, joined.length);
 
   document.getElementById("errors").innerHTML =
     t.entries.filter(e => e.status === "error").map(e =>
@@ -327,8 +348,30 @@ function render() {
        <div class="v">${okReal.length}<small>건</small></div></div>`;
 }
 
+function renderPager(nPages, total) {
+  const el = document.getElementById("pager");
+  if (nPages <= 1) { el.innerHTML = ""; return; }
+  const btn = (label, p, cls = "", dis = false) =>
+    `<button data-page="${p}" class="${cls}" ${dis ? "disabled" : ""}>${label}</button>`;
+  let h = btn("‹", page - 1, "", page === 1);
+  const pages = new Set([1, nPages, page - 1, page, page + 1].filter(p => p >= 1 && p <= nPages));
+  let prev = 0;
+  [...pages].sort((a, b) => a - b).forEach(p => {
+    if (p - prev > 1) h += `<span>…</span>`;
+    h += btn(p, p, p === page ? "on" : "");
+    prev = p;
+  });
+  h += btn("›", page + 1, "", page === nPages);
+  h += `<span class="info">${(page - 1) * PAGE + 1}–${Math.min(page * PAGE, total)} / ${total}</span>`;
+  el.innerHTML = h;
+  el.querySelectorAll("button[data-page]").forEach(b => b.onclick = () => {
+    page = +b.dataset.page; render();
+    document.querySelector(".board").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+}
+
 function selectTab(task) {
-  current = task;
+  current = task; page = 1;
   sortState = { key: "official", desc: board.tasks[task].higher_better };
   document.querySelectorAll("#tabs button").forEach(b =>
     b.classList.toggle("on", b.dataset.task === task));
@@ -356,7 +399,7 @@ async function init() {
     b.onclick = () => selectTab(task);
     tabs.appendChild(b);
   }
-  document.getElementById("bestOnly").onchange = render;
+  document.getElementById("bestOnly").onchange = () => { page = 1; render(); };
   document.getElementById("rows").addEventListener("click", ev => {
     const td = ev.target.closest("td.memo, td.file");
     if (td && td.textContent) td.classList.toggle("open");
@@ -365,7 +408,7 @@ async function init() {
     const k = th.dataset.key;
     if (sortState.key === k) sortState.desc = !sortState.desc;
     else sortState = { key: k, desc: board.tasks[current].higher_better };
-    render();
+    page = 1; render();
   });
   selectTab("P1");
 }
