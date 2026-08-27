@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-28T01:48:03+09:00",
+ "generated_at": "2026-08-28T01:50:30+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -22,7 +22,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 22
+     "rank": 24
     },
     {
      "file": "임민수__cnn-gru-lgbm-blend-erode1-v6.csv",
@@ -105,6 +105,38 @@
      "rank": 5
     },
     {
+     "file": "임민수__cnn-gru5-lgbm-blend-t025.csv",
+     "submitter": "임민수",
+     "memo": "시드5 모델 임계값 0.25 프로브 (정점 확인용; t0.30 공식 0.950037)",
+     "submitted_at": "2026-08-28T01:49:55+09:00",
+     "is_baseline": false,
+     "score": 0.937165,
+     "detail": {
+      "TP": 9717,
+      "FP": 1109,
+      "FN": 194,
+      "n": 208093
+     },
+     "status": "ok",
+     "rank": 12
+    },
+    {
+     "file": "임민수__cnn-gru5-lgbm-blend-t030-dil2.csv",
+     "submitter": "임민수",
+     "memo": "t0.30 + 예측 구간 시작 2행 앞당김(dilate, +106행). 내부 val 0.9403 (t030 0.9439) — 확장 축 프로브 후보",
+     "submitted_at": "2026-08-28T01:49:55+09:00",
+     "is_baseline": false,
+     "score": 0.940336,
+     "detail": {
+      "TP": 9677,
+      "FP": 994,
+      "FN": 234,
+      "n": 208093
+     },
+     "status": "ok",
+     "rank": 11
+    },
+    {
      "file": "임민수__cnn-gru5-lgbm-blend-t030-h08.csv",
      "submitter": "임민수",
      "memo": "t0.30 + 히스테리시스(구간 max p<0.8 제거) 프로브. 내부 val 0.979 였으나 공식 Public 0.91047 (-0.040) — 저신뢰 구간이 실제 이상, 제거 축 종료",
@@ -182,7 +214,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 11
+     "rank": 13
     },
     {
      "file": "임민수__cnn-gru5-lgbm-blend-v7.csv",
@@ -214,7 +246,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 12
+     "rank": 14
     },
     {
      "file": "임민수__gbm-aug-v2.csv",
@@ -230,7 +262,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 20
+     "rank": 22
     },
     {
      "file": "임민수__gbm-aug-v3.csv",
@@ -246,7 +278,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 19
+     "rank": 21
     },
     {
      "file": "임민수__gbm-aug-v4-t05.csv",
@@ -262,7 +294,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 16
+     "rank": 18
     },
     {
      "file": "임민수__gbm-aug-v4.csv",
@@ -278,7 +310,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 18
+     "rank": 20
     },
     {
      "file": "임민수__lgbm-v4-t05.csv",
@@ -294,7 +326,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 15
+     "rank": 17
     },
     {
      "file": "임민수__lgbm-v4.csv",
@@ -310,7 +342,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 17
+     "rank": 19
     },
     {
      "file": "임민수__lgbm-v5-both-t05.csv",
@@ -326,7 +358,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 13
+     "rank": 15
     },
     {
      "file": "임민수__lgbm-v5-both.csv",
@@ -342,7 +374,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 14
+     "rank": 16
     },
     {
      "file": "임민수__rules-v1.csv",
@@ -358,10 +390,10 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 21
+     "rank": 23
     }
    ],
-   "n_ok": 22,
+   "n_ok": 24,
    "best_by_submitter": [
     "임민수__cnn-gru-lgbm-blend-pp3-v5.csv",
     "baseline__hard-rule.csv"
