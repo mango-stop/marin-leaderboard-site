@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-27T23:32:50+09:00",
+ "generated_at": "2026-08-27T23:41:25+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -1062,6 +1062,17 @@
     "public_points": 23.367391,
     "memo": "warm-shrink 강도 1.0판 (온난 케이스 리드별 -0.06…-0.40 m) — 0.5강도(0.615356) 대비 크게 악화 → test 온난 편향은 작음. 후처리 축 종료",
     "team_score": 0.781993
+   },
+   {
+    "submitted_at": "2026-08-27",
+    "task": "P3",
+    "submitter": "세진",
+    "file": "submission_v5zoo.csv",
+    "team_file": "sejin__stacking-v5zoo.csv",
+    "public_metric": 0.597107,
+    "public_points": 23.856416,
+    "memo": "최대 스태킹(18베이스 균등평균) — 공식 최고 대폭 갱신(−3.0%)",
+    "team_score": 0.78746
    }
   ],
   "errors": []
