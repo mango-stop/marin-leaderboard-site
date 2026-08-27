@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-28T00:10:40+09:00",
+ "generated_at": "2026-08-28T00:32:57+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -454,7 +454,7 @@
       }
      },
      "status": "ok",
-     "rank": 15
+     "rank": 16
     },
     {
      "file": "sejin__blend-v4-v4b-v5.csv",
@@ -475,7 +475,7 @@
       }
      },
      "status": "ok",
-     "rank": 8
+     "rank": 9
     },
     {
      "file": "sejin__blend-v4b-v5.csv",
@@ -496,7 +496,7 @@
       }
      },
      "status": "ok",
-     "rank": 9
+     "rank": 10
     },
     {
      "file": "sejin__onset-lgbm-ridge-v1.csv",
@@ -517,7 +517,7 @@
       }
      },
      "status": "ok",
-     "rank": 12
+     "rank": 13
     },
     {
      "file": "sejin__stacking-phys-gru-v2.csv",
@@ -538,7 +538,7 @@
       }
      },
      "status": "ok",
-     "rank": 6
+     "rank": 7
     },
     {
      "file": "sejin__stacking-v3.csv",
@@ -559,7 +559,7 @@
       }
      },
      "status": "ok",
-     "rank": 10
+     "rank": 11
     },
     {
      "file": "sejin__stacking-v3b.csv",
@@ -580,7 +580,7 @@
       }
      },
      "status": "ok",
-     "rank": 11
+     "rank": 12
     },
     {
      "file": "sejin__stacking-v5.csv",
@@ -601,7 +601,7 @@
       }
      },
      "status": "ok",
-     "rank": 7
+     "rank": 8
     },
     {
      "file": "sejin__stacking-v5zoo.csv",
@@ -622,7 +622,7 @@
       }
      },
      "status": "ok",
-     "rank": 4
+     "rank": 5
     },
     {
      "file": "sejin__stacking-v6.csv",
@@ -643,7 +643,28 @@
       }
      },
      "status": "ok",
-     "rank": 3
+     "rank": 4
+    },
+    {
+     "file": "임민수__ext-pool-kma-v1.csv",
+     "submitter": "임민수",
+     "memo": "외부데이터 풀링 v1: 기상청 해양부이 32지점 2010~2025-06 온셋 3.2만개(가중 0.3)를 ORS 온셋과 합쳐 리드별 Ridge+LGBM(3시드) 학습 (세진 solve_v2 피처·온셋 규칙). 온셋 CV 0.6936→0.6717",
+     "submitted_at": "2026-08-28T00:32:29+09:00",
+     "is_baseline": false,
+     "score": 0.742864,
+     "detail": {
+      "n": 546,
+      "per_lead": {
+       "3": 0.48217307959001476,
+       "6": 0.6276866490937572,
+       "9": 0.7149862978015425,
+       "12": 0.7574377824519412,
+       "18": 0.8914144416673911,
+       "24": 0.8972519819542775
+      }
+     },
+     "status": "ok",
+     "rank": 1
     },
     {
      "file": "임민수__ridge-lgbm-leadw-v2.csv",
@@ -664,7 +685,7 @@
       }
      },
      "status": "ok",
-     "rank": 14
+     "rank": 15
     },
     {
      "file": "임민수__ridge-lgbm-v1.csv",
@@ -685,7 +706,7 @@
       }
      },
      "status": "ok",
-     "rank": 13
+     "rank": 14
     },
     {
      "file": "임민수__sejin-v445-warm-shrink-v1.csv",
@@ -706,7 +727,7 @@
       }
      },
      "status": "ok",
-     "rank": 1
+     "rank": 2
     },
     {
      "file": "임민수__sejin-v445-zoo-blend-v1.csv",
@@ -727,7 +748,7 @@
       }
      },
      "status": "ok",
-     "rank": 5
+     "rank": 6
     },
     {
      "file": "임민수__v445-warm-shrink-s10-v2.csv",
@@ -748,12 +769,12 @@
       }
      },
      "status": "ok",
-     "rank": 2
+     "rank": 3
     }
    ],
-   "n_ok": 15,
+   "n_ok": 16,
    "best_by_submitter": [
-    "임민수__sejin-v445-warm-shrink-v1.csv",
+    "임민수__ext-pool-kma-v1.csv",
     "sejin__stacking-v6.csv",
     "baseline__persistence.csv"
    ],
