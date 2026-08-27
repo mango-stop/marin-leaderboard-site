@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-28T00:52:50+09:00",
+ "generated_at": "2026-08-28T00:56:09+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -1137,6 +1137,17 @@
     "public_points": 23.818121,
     "memo": "동물원+v6 1:1 블렌드 — 동물원 단독(0.5971)보다 소폭 열세",
     "team_score": 0.785046
+   },
+   {
+    "submitted_at": "2026-08-28",
+    "task": "P3",
+    "submitter": "세진",
+    "file": "submission_v6.csv",
+    "team_file": "sejin__stacking-v6.csv",
+    "public_metric": 0.605345,
+    "public_points": 23.725668,
+    "memo": "v6 단독(CNN-GRU 스택·Caruana) — 내부 CV 최고였으나 공식은 동물원에 열세",
+    "team_score": 0.785838
    }
   ],
   "errors": []
