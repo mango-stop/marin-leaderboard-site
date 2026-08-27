@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-28T01:50:30+09:00",
+ "generated_at": "2026-08-28T01:51:26+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -1243,6 +1243,17 @@
     "public_points": 23.725668,
     "memo": "v6 단독(CNN-GRU 스택·Caruana) — 내부 CV 최고였으나 공식은 동물원에 열세",
     "team_score": 0.785838
+   },
+   {
+    "submitted_at": "2026-08-28",
+    "task": "P1",
+    "submitter": "임민수",
+    "file": "cnn-gru5-lgbm-blend-t025__test2026.csv",
+    "team_file": "임민수__cnn-gru5-lgbm-blend-t025.csv",
+    "public_metric": 0.940893,
+    "public_points": 31.762369,
+    "memo": "시드5 모델 t0.25 프로브 — t0.30(0.950037) 대비 -0.009 → 임계값 정점 0.30 확정",
+    "team_score": 0.937165
    }
   ],
   "errors": []
