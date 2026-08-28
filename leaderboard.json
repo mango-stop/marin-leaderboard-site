@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-28T17:27:12+09:00",
+ "generated_at": "2026-08-29T00:09:36+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -1351,6 +1351,17 @@
     "public_points": 23.897754,
     "memo": "동물원 v2 34베이스 균등평균(GBDT 4종+CNN-GRU 추가) — 공식 최고 갱신",
     "team_score": 0.761645
+   },
+   {
+    "submitted_at": "2026-08-29",
+    "task": "P3",
+    "submitter": "세진",
+    "file": "submission_zoo3b.csv",
+    "team_file": "sejin__zoo3-mean_all.csv",
+    "public_metric": 0.591788,
+    "public_points": 23.940836,
+    "memo": "동물원 v3 균등평균(zoo2 + 24h창 CNN-GRU + MLP) — 공식 최고 갱신",
+    "team_score": 0.760071
    }
   ],
   "errors": []
