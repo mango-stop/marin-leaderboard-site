@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-28T03:22:49+09:00",
+ "generated_at": "2026-08-28T10:56:02+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -1275,6 +1275,28 @@
     "public_metric": 0.940637,
     "public_points": 31.755577,
     "memo": "정점별 임계값 프로브: I-ORS만 0.25(+100행) — -0.0094 = 전역 t0.25 손해의 전부 → I-ORS는 0.30 이상 G/S는 하향 여지",
+    "team_score": null
+   },
+   {
+    "submitted_at": "2026-08-28",
+    "task": "P2",
+    "submitter": "홍화수",
+    "file": "official_P2_r12_probe_hfe_A.csv",
+    "team_file": "",
+    "public_metric": 0.383478,
+    "public_points": 28.521637,
+    "memo": "9년 아카이브 발굴 hfe 축 프로브 — 2025 역부호 신호 발견",
+    "team_score": null
+   },
+   {
+    "submitted_at": "2026-08-28",
+    "task": "P2",
+    "submitter": "홍화수",
+    "file": "official_P2_v5_hfe_opt.csv",
+    "team_file": "",
+    "public_metric": 0.377049,
+    "public_points": 28.602296,
+    "memo": "hfe 역부호 최적 — 공식 최고 갱신 (부토스와 0.0003차)",
     "team_score": null
    }
   ],
