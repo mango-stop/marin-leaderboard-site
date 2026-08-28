@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-29T00:50:19+09:00",
+ "generated_at": "2026-08-29T01:24:29+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -1489,6 +1489,28 @@
     "public_points": 24.083396,
     "memo": "세진 zoo2b(34베이스 균등평균) 탭형 26베이스를 ORS+기상청 부이 43지점 온셋 표본(w0.3) 풀링 재학습 — 공식 최고 갱신(0.5945→0.5828 −2.0%)",
     "team_score": 0.74293
+   },
+   {
+    "submitted_at": "2026-08-29",
+    "task": "P2",
+    "submitter": "홍화수",
+    "file": "official_P2_r16_probe_mw_v2.csv",
+    "team_file": "",
+    "public_metric": 0.380014,
+    "public_points": 28.565102,
+    "memo": "mw 프로브 — 역부호 확정 측정",
+    "team_score": null
+   },
+   {
+    "submitted_at": "2026-08-29",
+    "task": "P2",
+    "submitter": "홍화수",
+    "file": "official_P2_v6_c1mw_opt.csv",
+    "team_file": "",
+    "public_metric": 0.374581,
+    "public_points": 28.633273,
+    "memo": "c1+mw 결합 회수 — 신기록 (예측 8연속 적중",
+    "team_score": null
    }
   ],
   "errors": []
