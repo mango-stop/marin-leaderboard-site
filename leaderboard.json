@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-29T00:30:17+09:00",
+ "generated_at": "2026-08-29T00:50:19+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -486,7 +486,7 @@
       }
      },
      "status": "ok",
-     "rank": 24
+     "rank": 27
     },
     {
      "file": "sejin__blend-v4-v4b-v5.csv",
@@ -507,7 +507,7 @@
       }
      },
      "status": "ok",
-     "rank": 17
+     "rank": 20
     },
     {
      "file": "sejin__blend-v4b-v5.csv",
@@ -528,7 +528,7 @@
       }
      },
      "status": "ok",
-     "rank": 18
+     "rank": 21
     },
     {
      "file": "sejin__blend-zoo-v6.csv",
@@ -549,7 +549,7 @@
       }
      },
      "status": "ok",
-     "rank": 11
+     "rank": 14
     },
     {
      "file": "sejin__blend-zoo3-ext-v7ext.csv",
@@ -570,7 +570,7 @@
       }
      },
      "status": "ok",
-     "rank": 2
+     "rank": 5
     },
     {
      "file": "sejin__blend-zoo3-ext.csv",
@@ -591,7 +591,7 @@
       }
      },
      "status": "ok",
-     "rank": 3
+     "rank": 6
     },
     {
      "file": "sejin__onset-lgbm-ridge-v1.csv",
@@ -612,7 +612,7 @@
       }
      },
      "status": "ok",
-     "rank": 21
+     "rank": 24
     },
     {
      "file": "sejin__stacking-phys-gru-v2.csv",
@@ -633,7 +633,7 @@
       }
      },
      "status": "ok",
-     "rank": 15
+     "rank": 18
     },
     {
      "file": "sejin__stacking-v3.csv",
@@ -654,7 +654,7 @@
       }
      },
      "status": "ok",
-     "rank": 19
+     "rank": 22
     },
     {
      "file": "sejin__stacking-v3b.csv",
@@ -675,7 +675,7 @@
       }
      },
      "status": "ok",
-     "rank": 20
+     "rank": 23
     },
     {
      "file": "sejin__stacking-v5.csv",
@@ -696,7 +696,7 @@
       }
      },
      "status": "ok",
-     "rank": 16
+     "rank": 19
     },
     {
      "file": "sejin__stacking-v5zoo.csv",
@@ -717,7 +717,7 @@
       }
      },
      "status": "ok",
-     "rank": 13
+     "rank": 16
     },
     {
      "file": "sejin__stacking-v6.csv",
@@ -738,7 +738,7 @@
       }
      },
      "status": "ok",
-     "rank": 12
+     "rank": 15
     },
     {
      "file": "sejin__zoo2-mean_all.csv",
@@ -759,7 +759,7 @@
       }
      },
      "status": "ok",
-     "rank": 8
+     "rank": 11
     },
     {
      "file": "sejin__zoo2-simplex.csv",
@@ -780,7 +780,7 @@
       }
      },
      "status": "ok",
-     "rank": 7
+     "rank": 10
     },
     {
      "file": "sejin__zoo3-mean_all.csv",
@@ -801,7 +801,7 @@
       }
      },
      "status": "ok",
-     "rank": 6
+     "rank": 9
     },
     {
      "file": "sejin__zoo3-simplex.csv",
@@ -822,7 +822,7 @@
       }
      },
      "status": "ok",
-     "rank": 5
+     "rank": 8
     },
     {
      "file": "임민수__ext-pool-kma-v1.csv",
@@ -843,7 +843,7 @@
       }
      },
      "status": "ok",
-     "rank": 1
+     "rank": 3
     },
     {
      "file": "임민수__ridge-lgbm-leadw-v2.csv",
@@ -864,7 +864,7 @@
       }
      },
      "status": "ok",
-     "rank": 23
+     "rank": 26
     },
     {
      "file": "임민수__ridge-lgbm-v1.csv",
@@ -885,7 +885,7 @@
       }
      },
      "status": "ok",
-     "rank": 22
+     "rank": 25
     },
     {
      "file": "임민수__sejin-v445-warm-shrink-v1.csv",
@@ -906,7 +906,7 @@
       }
      },
      "status": "ok",
-     "rank": 9
+     "rank": 12
     },
     {
      "file": "임민수__sejin-v445-zoo-blend-v1.csv",
@@ -927,7 +927,7 @@
       }
      },
      "status": "ok",
-     "rank": 14
+     "rank": 17
     },
     {
      "file": "임민수__stacking-v7-thr15-w03.csv",
@@ -948,7 +948,7 @@
       }
      },
      "status": "ok",
-     "rank": 4
+     "rank": 7
     },
     {
      "file": "임민수__v445-warm-shrink-s10-v2.csv",
@@ -969,12 +969,75 @@
       }
      },
      "status": "ok",
-     "rank": 10
+     "rank": 13
+    },
+    {
+     "file": "임민수__zoo2-kma-pool-noworse-v2.csv",
+     "submitter": "임민수",
+     "memo": "v1에서 풀링으로 악화된 lasso/enet/et/phys_pure 4베이스 제외(27베이스 균등평균). safe OOF 0.6918, 팀검증 0.7403",
+     "submitted_at": "2026-08-29T00:49:17+09:00",
+     "is_baseline": false,
+     "score": 0.740323,
+     "detail": {
+      "n": 546,
+      "per_lead": {
+       "3": 0.4625386854859138,
+       "6": 0.6026633330457821,
+       "9": 0.7011416831761763,
+       "12": 0.7587316096059747,
+       "18": 0.9023149478503673,
+       "24": 0.9109767576697451
+      }
+     },
+     "status": "ok",
+     "rank": 1
+    },
+    {
+     "file": "임민수__zoo2-kma-pool-v1.csv",
+     "submitter": "임민수",
+     "memo": "세진 zoo2 34베이스 균등평균에 KMA 부이 온셋 58k(w0.3) 풀링 이식: 탭형 26베이스 재학습, 시퀀스/lgb_v7/svr은 ORS 캐시. safe OOF 0.7036→0.6926, 팀검증 0.7616→0.7429",
+     "submitted_at": "2026-08-29T00:49:17+09:00",
+     "is_baseline": false,
+     "score": 0.74293,
+     "detail": {
+      "n": 546,
+      "per_lead": {
+       "3": 0.4684824186256945,
+       "6": 0.6019688798265144,
+       "9": 0.7031938876288791,
+       "12": 0.7618211162588187,
+       "18": 0.905496311645606,
+       "24": 0.9138100074728611
+      }
+     },
+     "status": "ok",
+     "rank": 4
+    },
+    {
+     "file": "임민수__zoo2-v7kma-leadswitch-v1.csv",
+     "submitter": "임민수",
+     "memo": "세진 zoo2 균등평균 × 내 v7(KMA 풀링) 리드별 스위치: +3/+6 zoo2, +9 반반, +12 이후 v7 (팀검증 0.7427)",
+     "submitted_at": "2026-08-29T00:49:17+09:00",
+     "is_baseline": false,
+     "score": 0.742733,
+     "detail": {
+      "n": 546,
+      "per_lead": {
+       "3": 0.4720787857974556,
+       "6": 0.6118614142269312,
+       "9": 0.705701561031119,
+       "12": 0.7587645942257384,
+       "18": 0.9051361521649901,
+       "24": 0.9053560832470986
+      }
+     },
+     "status": "ok",
+     "rank": 2
     }
    ],
-   "n_ok": 24,
+   "n_ok": 27,
    "best_by_submitter": [
-    "임민수__ext-pool-kma-v1.csv",
+    "임민수__zoo2-kma-pool-noworse-v2.csv",
     "sejin__blend-zoo3-ext-v7ext.csv",
     "baseline__persistence.csv"
    ],
@@ -1415,6 +1478,17 @@
     "public_points": 28.61503,
     "memo": "요동 포락선 축(17가을 아카이브 발굴) 프로브 — 신기록·부토스 추월",
     "team_score": null
+   },
+   {
+    "submitted_at": "2026-08-29",
+    "task": "P3",
+    "submitter": "임민수",
+    "file": "zoo2-kma-pool-v1.csv",
+    "team_file": "임민수__zoo2-kma-pool-v1.csv",
+    "public_metric": 0.582806,
+    "public_points": 24.083396,
+    "memo": "세진 zoo2b(34베이스 균등평균) 탭형 26베이스를 ORS+기상청 부이 43지점 온셋 표본(w0.3) 풀링 재학습 — 공식 최고 갱신(0.5945→0.5828 −2.0%)",
+    "team_score": 0.74293
    }
   ],
   "errors": []
