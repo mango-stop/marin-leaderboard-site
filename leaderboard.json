@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-29T00:17:30+09:00",
+ "generated_at": "2026-08-29T00:30:17+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -1404,6 +1404,17 @@
     "public_points": 23.940836,
     "memo": "동물원 v3 균등평균(zoo2 + 24h창 CNN-GRU + MLP) — 공식 최고 갱신",
     "team_score": 0.760071
+   },
+   {
+    "submitted_at": "2026-08-29",
+    "task": "P2",
+    "submitter": "홍화수",
+    "file": "official_P2_r13_probe_c1.csv",
+    "team_file": "",
+    "public_metric": 0.376035,
+    "public_points": 28.61503,
+    "memo": "요동 포락선 축(17가을 아카이브 발굴) 프로브 — 신기록·부토스 추월",
+    "team_score": null
    }
   ],
   "errors": []
