@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-28T10:56:02+09:00",
+ "generated_at": "2026-08-28T11:09:41+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -1298,6 +1298,17 @@
     "public_points": 28.602296,
     "memo": "hfe 역부호 최적 — 공식 최고 갱신 (부토스와 0.0003차)",
     "team_score": null
+   },
+   {
+    "submitted_at": "2026-08-28",
+    "task": "P3",
+    "submitter": "세진",
+    "file": "submission_zoo2b.csv",
+    "team_file": "sejin__zoo2-mean_all.csv",
+    "public_metric": 0.594503,
+    "public_points": 23.897754,
+    "memo": "동물원 v2 34베이스 균등평균(GBDT 4종+CNN-GRU 추가) — 공식 최고 갱신",
+    "team_score": 0.761645
    }
   ],
   "errors": []
