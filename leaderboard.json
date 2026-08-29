@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-30T00:42:29+09:00",
+ "generated_at": "2026-08-30T00:50:55+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -1628,6 +1628,28 @@
     "public_metric": 0.373249,
     "public_points": 28.649987,
     "memo": "부활 GBM축 프로브 — 설계 적중(c=1.01) 그 자체로 신기록",
+    "team_score": null
+   },
+   {
+    "submitted_at": "2026-08-30",
+    "task": "P2",
+    "submitter": "홍화수",
+    "file": "official_P2_r17_probe_xb24_v2.csv",
+    "team_file": "",
+    "public_metric": 0.376379,
+    "public_points": 28.610711,
+    "memo": "xb24 프로브 — 역부호 확정 측정",
+    "team_score": null
+   },
+   {
+    "submitted_at": "2026-08-30",
+    "task": "P2",
+    "submitter": "홍화수",
+    "file": "official_P2_v7_full_opt.csv",
+    "team_file": "",
+    "public_metric": 0.372019,
+    "public_points": 28.665421,
+    "memo": "gbm+xb24+c1재조준 결합 — 신기록 (10연속 적중",
     "team_score": null
    }
   ],
