@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-29T04:10:23+09:00",
+ "generated_at": "2026-08-29T12:18:09+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -1573,6 +1573,39 @@
     "public_metric": 0.374581,
     "public_points": 28.633273,
     "memo": "c1+mw 결합 회수 — 신기록 (예측 8연속 적중",
+    "team_score": null
+   },
+   {
+    "submitted_at": "2026-08-29",
+    "task": "P1",
+    "submitter": "임민수",
+    "file": "cnn-gru5-lgbm-blend-stI035__test2026.csv",
+    "team_file": "",
+    "public_metric": 0.95166,
+    "public_points": 32.04855,
+    "memo": "정점별 임계값 프로브: I-ORS만 0.35(−26행) — t0.30 대비 +0.0016 공식 최고. I-ORS 상향 유효 → 다음 stS025/stG020",
+    "team_score": null
+   },
+   {
+    "submitted_at": "2026-08-29",
+    "task": "P1",
+    "submitter": "임민수",
+    "file": "cnn-gru5-lgbm-blend-stS025__test2026.csv",
+    "team_file": "",
+    "public_metric": 0.950292,
+    "public_points": 32.012198,
+    "memo": "정점별 임계값 프로브: S-ORS만 0.25(+160행) — t0.30 대비 +0.0003 중립. S-ORS 하향 이득 없음 → S 0.30 유지",
+    "team_score": null
+   },
+   {
+    "submitted_at": "2026-08-29",
+    "task": "P1",
+    "submitter": "임민수",
+    "file": "cnn-gru5-lgbm-blend-stG020__test2026.csv",
+    "team_file": "",
+    "public_metric": 0.950037,
+    "public_points": 32.005398,
+    "memo": "정점별 임계값 프로브: G-ORS만 0.20(+48행) — t0.30 과 완전 동일 점수. 파일명 stG020 확인. 추가 48행 전부 2026-05~06 → Public 채점 구간 밖(Public≈1~4월 추정). G-ORS Public 판단 불가 → 0.30 유지",
     "team_score": null
    }
   ],
