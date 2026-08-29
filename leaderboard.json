@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-29T12:18:09+09:00",
+ "generated_at": "2026-08-29T13:30:32+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -1607,6 +1607,17 @@
     "public_points": 32.005398,
     "memo": "정점별 임계값 프로브: G-ORS만 0.20(+48행) — t0.30 과 완전 동일 점수. 파일명 stG020 확인. 추가 48행 전부 2026-05~06 → Public 채점 구간 밖(Public≈1~4월 추정). G-ORS Public 판단 불가 → 0.30 유지",
     "team_score": null
+   },
+   {
+    "submitted_at": "2026-08-30",
+    "task": "P3",
+    "submitter": "세진",
+    "file": "submission_zoo4b.csv",
+    "team_file": "sejin__zoo4-mean_all.csv",
+    "public_metric": 0.585858,
+    "public_points": 24.034963,
+    "memo": "동물원 v4 균등평균(zoo3 + KMA 26지점 온셋 31",
+    "team_score": 0.739627
    }
   ],
   "errors": []
