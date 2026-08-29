@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-29T13:30:32+09:00",
+ "generated_at": "2026-08-30T00:42:29+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -1618,6 +1618,17 @@
     "public_points": 24.034963,
     "memo": "동물원 v4 균등평균(zoo3 + KMA 26지점 온셋 31",
     "team_score": 0.739627
+   },
+   {
+    "submitted_at": "2026-08-30",
+    "task": "P2",
+    "submitter": "홍화수",
+    "file": "official_P2_r17_probe_gbm_v2.csv",
+    "team_file": "",
+    "public_metric": 0.373249,
+    "public_points": 28.649987,
+    "memo": "부활 GBM축 프로브 — 설계 적중(c=1.01) 그 자체로 신기록",
+    "team_score": null
    }
   ],
   "errors": []
