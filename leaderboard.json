@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-30T00:50:55+09:00",
+ "generated_at": "2026-08-31T00:57:26+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -1650,6 +1650,39 @@
     "public_metric": 0.372019,
     "public_points": 28.665421,
     "memo": "gbm+xb24+c1재조준 결합 — 신기록 (10연속 적중",
+    "team_score": null
+   },
+   {
+    "submitted_at": "2026-08-31",
+    "task": "P2",
+    "submitter": "홍화수",
+    "file": "official_P2_r20_probe_damp.csv",
+    "team_file": "",
+    "public_metric": 0.372801,
+    "public_points": 28.655605,
+    "memo": "커널 국면 프로브 — 약한 역부호 측정",
+    "team_score": null
+   },
+   {
+    "submitted_at": "2026-08-31",
+    "task": "P2",
+    "submitter": "홍화수",
+    "file": "official_P2_r21_probe_swl4.csv",
+    "team_file": "",
+    "public_metric": 0.373079,
+    "public_points": 28.652116,
+    "memo": "층4 평활차등 프로브 — 강한 역부호 발견 (더 평활 방향)",
+    "team_score": null
+   },
+   {
+    "submitted_at": "2026-08-31",
+    "task": "P2",
+    "submitter": "홍화수",
+    "file": "official_P2_v9_dampswl4_opt.csv",
+    "team_file": "",
+    "public_metric": 0.371263,
+    "public_points": 28.674902,
+    "memo": "커널 2축 역회수 결합 — 신기록 (13연속 적중)",
     "team_score": null
    }
   ],
