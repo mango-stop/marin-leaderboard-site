@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-31T15:01:05+09:00",
+ "generated_at": "2026-08-31T17:54:45+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -1783,6 +1783,17 @@
     "public_points": 32.091242,
     "memo": "모델 프로브: mask-rel 0.3 시드5(n5mr03) + 정점별 t G0.30/I0.50/S0.30 — n5 stI050 대비 −0.0007 → 모델 n5 유지 확정. P1 최종 = n5 + stI050",
     "team_score": null
+   },
+   {
+    "submitted_at": "2026-08-31",
+    "task": "P3",
+    "submitter": "세진",
+    "file": "submission_zoo3u.csv",
+    "team_file": "sejin__zoo3-upgraded.csv",
+    "public_metric": 0.598011,
+    "public_points": 23.842078,
+    "memo": "solo LGBM + zoo3b 1:1 — 팀검증 개선(0.7557)이 Public에서 역전(+1.1%)",
+    "team_score": 0.755674
    }
   ],
   "errors": [
