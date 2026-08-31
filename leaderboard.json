@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-31T14:46:40+09:00",
+ "generated_at": "2026-08-31T15:01:05+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -486,7 +486,7 @@
       }
      },
      "status": "ok",
-     "rank": 28
+     "rank": 30
     },
     {
      "file": "sejin__blend-v4-v4b-v5.csv",
@@ -507,7 +507,7 @@
       }
      },
      "status": "ok",
-     "rank": 21
+     "rank": 23
     },
     {
      "file": "sejin__blend-v4b-v5.csv",
@@ -528,7 +528,7 @@
       }
      },
      "status": "ok",
-     "rank": 22
+     "rank": 24
     },
     {
      "file": "sejin__blend-zoo-v6.csv",
@@ -549,7 +549,7 @@
       }
      },
      "status": "ok",
-     "rank": 15
+     "rank": 17
     },
     {
      "file": "sejin__blend-zoo3-ext-v7ext.csv",
@@ -633,7 +633,28 @@
       }
      },
      "status": "ok",
-     "rank": 25
+     "rank": 27
+    },
+    {
+     "file": "sejin__solo-boost-v1.csv",
+     "submitter": "세진",
+     "memo": "단일 부스팅 극대화: LGBM-멀티태스크(huber), 피처 60개(F2+F7+SOLO 선별), 증강 +mixup, CV 0.6946",
+     "submitted_at": "2026-08-31T15:00:43+09:00",
+     "is_baseline": false,
+     "score": 0.768537,
+     "detail": {
+      "n": 546,
+      "per_lead": {
+       "3": 0.4428441795514957,
+       "6": 0.6269834071625364,
+       "9": 0.7278905535257948,
+       "12": 0.782118071663082,
+       "18": 0.947240392165289,
+       "24": 0.9570159756150456
+      }
+     },
+     "status": "ok",
+     "rank": 14
     },
     {
      "file": "sejin__stacking-phys-gru-v2.csv",
@@ -654,7 +675,7 @@
       }
      },
      "status": "ok",
-     "rank": 19
+     "rank": 21
     },
     {
      "file": "sejin__stacking-v3.csv",
@@ -675,7 +696,7 @@
       }
      },
      "status": "ok",
-     "rank": 23
+     "rank": 25
     },
     {
      "file": "sejin__stacking-v3b.csv",
@@ -696,7 +717,7 @@
       }
      },
      "status": "ok",
-     "rank": 24
+     "rank": 26
     },
     {
      "file": "sejin__stacking-v5.csv",
@@ -717,7 +738,7 @@
       }
      },
      "status": "ok",
-     "rank": 20
+     "rank": 22
     },
     {
      "file": "sejin__stacking-v5zoo.csv",
@@ -738,7 +759,7 @@
       }
      },
      "status": "ok",
-     "rank": 17
+     "rank": 19
     },
     {
      "file": "sejin__stacking-v6.csv",
@@ -759,7 +780,7 @@
       }
      },
      "status": "ok",
-     "rank": 16
+     "rank": 18
     },
     {
      "file": "sejin__zoo2-mean_all.csv",
@@ -780,7 +801,7 @@
       }
      },
      "status": "ok",
-     "rank": 12
+     "rank": 13
     },
     {
      "file": "sejin__zoo2-simplex.csv",
@@ -801,7 +822,7 @@
       }
      },
      "status": "ok",
-     "rank": 11
+     "rank": 12
     },
     {
      "file": "sejin__zoo3-mean_all.csv",
@@ -822,7 +843,7 @@
       }
      },
      "status": "ok",
-     "rank": 10
+     "rank": 11
     },
     {
      "file": "sejin__zoo3-simplex.csv",
@@ -840,6 +861,27 @@
        "12": 0.7746726596185253,
        "18": 0.9181044183354271,
        "24": 0.9230933309164451
+      }
+     },
+     "status": "ok",
+     "rank": 10
+    },
+    {
+     "file": "sejin__zoo3-upgraded.csv",
+     "submitter": "세진",
+     "memo": "zoo3 업그레이드 근사: 단일 부스팅 극대화 모델 + zoo3 균등평균의 예측 1:1 블렌드",
+     "submitted_at": "2026-08-31T15:00:43+09:00",
+     "is_baseline": false,
+     "score": 0.755674,
+     "detail": {
+      "n": 546,
+      "per_lead": {
+       "3": 0.4408957287770501,
+       "6": 0.6083131047693005,
+       "9": 0.7078232819436914,
+       "12": 0.773787363830062,
+       "18": 0.9381614980966705,
+       "24": 0.939104326364597
       }
      },
      "status": "ok",
@@ -906,7 +948,7 @@
       }
      },
      "status": "ok",
-     "rank": 27
+     "rank": 29
     },
     {
      "file": "임민수__ridge-lgbm-v1.csv",
@@ -927,7 +969,7 @@
       }
      },
      "status": "ok",
-     "rank": 26
+     "rank": 28
     },
     {
      "file": "임민수__sejin-v445-warm-shrink-v1.csv",
@@ -948,7 +990,7 @@
       }
      },
      "status": "ok",
-     "rank": 13
+     "rank": 15
     },
     {
      "file": "임민수__sejin-v445-zoo-blend-v1.csv",
@@ -969,7 +1011,7 @@
       }
      },
      "status": "ok",
-     "rank": 18
+     "rank": 20
     },
     {
      "file": "임민수__v445-warm-shrink-s10-v2.csv",
@@ -990,7 +1032,7 @@
       }
      },
      "status": "ok",
-     "rank": 14
+     "rank": 16
     },
     {
      "file": "임민수__zoo3-kma-pool-all3-v2.csv",
@@ -1056,7 +1098,7 @@
      "rank": 3
     }
    ],
-   "n_ok": 28,
+   "n_ok": 30,
    "best_by_submitter": [
     "sejin__zoo4-simplex.csv",
     "임민수__zoo3-kma-pool-cg12-v3.csv",
