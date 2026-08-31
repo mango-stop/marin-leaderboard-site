@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-31T14:06:06+09:00",
+ "generated_at": "2026-08-31T14:40:38+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -1550,7 +1550,7 @@
     "team_file": "임민수__zoo2-kma-pool-v1.csv",
     "public_metric": 0.582806,
     "public_points": 24.083396,
-    "memo": "세진 zoo2b(34베이스 균등평균) 탭형 26베이스를 ORS+기상청 부이 43지점 온셋 표본(w0.3) 풀링 재학습 — 공식 최고 갱신(0.5945→0.5828 −2.0%) [규정위반: 외부데이터 사용 — 최종 선택 금지]",
+    "memo": "세진 zoo2b(34베이스 균등평균) 탭형 26베이스를 ORS+기상청 부이 43지점 온셋 표본(w0.3) 풀링 재학습 — 공식 최고 갱신(0.5945→0.5828 −2.0%) [규정위반: 외부데이터 사용 — 제출 취소 완료]",
     "team_score": 0.74293
    },
    {
@@ -1618,6 +1618,39 @@
     "public_points": 24.034963,
     "memo": "동물원 v4 균등평균(zoo3 + KMA 26지점 온셋 31",
     "team_score": 0.739627
+   },
+   {
+    "submitted_at": "2026-08-30",
+    "task": "P3",
+    "submitter": "임민수",
+    "file": "zoo2-kma-pool-noworse-v2.csv",
+    "team_file": "임민수__zoo2-kma-pool-noworse-v2.csv",
+    "public_metric": 0.582268,
+    "public_points": 24.091944,
+    "memo": "zoo2-kma-pool-v1에서 풀링으로 악화된 4베이스 제외한 30베이스 균등평균 [규정위반: 외부데이터 사용 — 제출 취소 완료]",
+    "team_score": 0.740323
+   },
+   {
+    "submitted_at": "2026-08-30",
+    "task": "P3",
+    "submitter": "임민수",
+    "file": "zoo3-kma-pool-v1.csv",
+    "team_file": "",
+    "public_metric": 0.578993,
+    "public_points": 24.143916,
+    "memo": "noworse-v2에 zoo3식 베이스 2종(24h창 CNN-GRU 5시드·탭형 MLP 3시드) 추가한 29베이스 균등평균 [규정위반: 외부데이터 사용 — 제출 취소 완료]",
+    "team_score": null
+   },
+   {
+    "submitted_at": "2026-08-30",
+    "task": "P3",
+    "submitter": "임민수",
+    "file": "zoo3-kma-pool-all3-v2.csv",
+    "team_file": "",
+    "public_metric": 0.57766,
+    "public_points": 24.16508,
+    "memo": "zoo3-kma-pool-v1 + mlp_tabx 30베이스 균등평균 [규정위반: 외부데이터 사용 — 제출 취소 완료]",
+    "team_score": null
    },
    {
     "submitted_at": "2026-08-30",
