@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-02T01:03:38+09:00",
+ "generated_at": "2026-09-02T01:14:04+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -2122,6 +2122,17 @@
     "public_metric": 0.952451,
     "public_points": 32.069569,
     "memo": "층별 프로브: 미세 조정 일괄(S-l2 .4+S-l3 .2+S-l6 .4+I-l5 .4",
+    "team_score": null
+   },
+   {
+    "submitted_at": "2026-09-02",
+    "task": "P1",
+    "submitter": "임민수",
+    "file": "cnn-gru5-lgbm-blend-stI050-S025__test2026.csv",
+    "team_file": "",
+    "public_metric": 0.954245,
+    "public_points": 32.117255,
+    "memo": "정점별 임계값: S-ORS 0.25(G 0.30/I 0.50) — stI050 대비 +0.0003 신기록. 8/29 stS025의 +0.0003이 실제 이득으로 확정(가산성 검증됨) → S 0.25 채택. 다음 stS020으로 S 정점 탐색",
     "team_score": null
    }
   ],
