@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-01T15:52:22+09:00",
+ "generated_at": "2026-09-01T16:59:21+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -486,7 +486,7 @@
       }
      },
      "status": "ok",
-     "rank": 32
+     "rank": 36
     },
     {
      "file": "sejin__blend-v4-v4b-v5.csv",
@@ -507,7 +507,7 @@
       }
      },
      "status": "ok",
-     "rank": 25
+     "rank": 28
     },
     {
      "file": "sejin__blend-v4b-v5.csv",
@@ -528,7 +528,7 @@
       }
      },
      "status": "ok",
-     "rank": 26
+     "rank": 29
     },
     {
      "file": "sejin__blend-zoo-v6.csv",
@@ -549,7 +549,7 @@
       }
      },
      "status": "ok",
-     "rank": 19
+     "rank": 22
     },
     {
      "file": "sejin__blend-zoo3-ext-v7ext.csv",
@@ -633,7 +633,7 @@
       }
      },
      "status": "ok",
-     "rank": 29
+     "rank": 33
     },
     {
      "file": "sejin__solo-boost-v1.csv",
@@ -654,7 +654,7 @@
       }
      },
      "status": "ok",
-     "rank": 16
+     "rank": 18
     },
     {
      "file": "sejin__stacking-phys-gru-v2.csv",
@@ -675,7 +675,7 @@
       }
      },
      "status": "ok",
-     "rank": 23
+     "rank": 26
     },
     {
      "file": "sejin__stacking-v3.csv",
@@ -696,7 +696,7 @@
       }
      },
      "status": "ok",
-     "rank": 27
+     "rank": 31
     },
     {
      "file": "sejin__stacking-v3b.csv",
@@ -717,7 +717,7 @@
       }
      },
      "status": "ok",
-     "rank": 28
+     "rank": 32
     },
     {
      "file": "sejin__stacking-v5.csv",
@@ -738,7 +738,7 @@
       }
      },
      "status": "ok",
-     "rank": 24
+     "rank": 27
     },
     {
      "file": "sejin__stacking-v5zoo.csv",
@@ -759,7 +759,7 @@
       }
      },
      "status": "ok",
-     "rank": 21
+     "rank": 24
     },
     {
      "file": "sejin__stacking-v6.csv",
@@ -780,7 +780,7 @@
       }
      },
      "status": "ok",
-     "rank": 20
+     "rank": 23
     },
     {
      "file": "sejin__zoo2-mean_all.csv",
@@ -801,7 +801,7 @@
       }
      },
      "status": "ok",
-     "rank": 14
+     "rank": 16
     },
     {
      "file": "sejin__zoo2-simplex.csv",
@@ -822,7 +822,7 @@
       }
      },
      "status": "ok",
-     "rank": 12
+     "rank": 14
     },
     {
      "file": "sejin__zoo3-mean_all.csv",
@@ -843,7 +843,7 @@
       }
      },
      "status": "ok",
-     "rank": 11
+     "rank": 12
     },
     {
      "file": "sejin__zoo3-simplex.csv",
@@ -948,7 +948,7 @@
       }
      },
      "status": "ok",
-     "rank": 15
+     "rank": 17
     },
     {
      "file": "sejin__zoo6-mean_all.csv",
@@ -969,7 +969,7 @@
       }
      },
      "status": "ok",
-     "rank": 13
+     "rank": 15
     },
     {
      "file": "임민수__ridge-lgbm-leadw-v2.csv",
@@ -990,7 +990,7 @@
       }
      },
      "status": "ok",
-     "rank": 31
+     "rank": 35
     },
     {
      "file": "임민수__ridge-lgbm-v1.csv",
@@ -1011,7 +1011,7 @@
       }
      },
      "status": "ok",
-     "rank": 30
+     "rank": 34
     },
     {
      "file": "임민수__sejin-v445-warm-shrink-v1.csv",
@@ -1032,7 +1032,7 @@
       }
      },
      "status": "ok",
-     "rank": 17
+     "rank": 20
     },
     {
      "file": "임민수__sejin-v445-zoo-blend-v1.csv",
@@ -1053,7 +1053,49 @@
       }
      },
      "status": "ok",
-     "rank": 22
+     "rank": 25
+    },
+    {
+     "file": "임민수__tabpfn-solo-v1.csv",
+     "submitter": "임민수",
+     "memo": "TabPFN 단독(tabpfn==8.5.0, 합성 사전학습 FM, 9/1 규정 예외) lead별 Δhs 회귀, val-safe 1822앵커, n_est=8, zoo2 가드 동일",
+     "submitted_at": "2026-09-01T16:52:17+09:00",
+     "is_baseline": false,
+     "score": 0.79551,
+     "detail": {
+      "n": 546,
+      "per_lead": {
+       "3": 0.4656541885312568,
+       "6": 0.6887196561992149,
+       "9": 0.7412863832406622,
+       "12": 0.8207460321139356,
+       "18": 0.9834628696824075,
+       "24": 0.9568275662513394
+      }
+     },
+     "status": "ok",
+     "rank": 30
+    },
+    {
+     "file": "임민수__tabpfn0.30-zoo2-blend-v1.csv",
+     "submitter": "임민수",
+     "memo": "TabPFN v2 x0.30 + zoo2 mean_all x0.70 블렌드 (alpha는 val-safe OOF로 선택)",
+     "submitted_at": "2026-09-01T16:52:17+09:00",
+     "is_baseline": false,
+     "score": 0.770989,
+     "detail": {
+      "n": 546,
+      "per_lead": {
+       "3": 0.4625357055418521,
+       "6": 0.6258327521202239,
+       "9": 0.7108219073411033,
+       "12": 0.7914694369086147,
+       "18": 0.9610046774079718,
+       "24": 0.9516938339174441
+      }
+     },
+     "status": "ok",
+     "rank": 19
     },
     {
      "file": "임민수__v445-warm-shrink-s10-v2.csv",
@@ -1074,7 +1116,7 @@
       }
      },
      "status": "ok",
-     "rank": 18
+     "rank": 21
     },
     {
      "file": "임민수__zoo3-kma-pool-all3-v2.csv",
@@ -1138,9 +1180,51 @@
      },
      "status": "ok",
      "rank": 3
+    },
+    {
+     "file": "임민수__zoo3ors-tabpfn3h-v1.csv",
+     "submitter": "임민수",
+     "memo": "zoo3ors + TabPFN v2(+3h만 w=0.5, tabpfn==8.5.0 V2 가중치, 합성 사전학습 FM, 9/1 공지 허용, 오프라인 로드 가능) — safe OOF 0.6999/팀검증 0.7598 동시 개선",
+     "submitted_at": "2026-09-01T16:52:17+09:00",
+     "is_baseline": false,
+     "score": 0.759844,
+     "detail": {
+      "n": 546,
+      "per_lead": {
+       "3": 0.4566514381167171,
+       "6": 0.6110764714469409,
+       "9": 0.7079056620578948,
+       "12": 0.7804765488448088,
+       "18": 0.9448515980923049,
+       "24": 0.9376662541522032
+      }
+     },
+     "status": "ok",
+     "rank": 11
+    },
+    {
+     "file": "임민수__zoo3ors-v1.csv",
+     "submitter": "임민수",
+     "memo": "합법판(외부데이터 금지 후): zoo2 31베이스 + cnngru24 + mlp_tab 전부 ORS 전용, 동등가중",
+     "submitted_at": "2026-09-01T16:52:17+09:00",
+     "is_baseline": false,
+     "score": 0.761137,
+     "detail": {
+      "n": 546,
+      "per_lead": {
+       "3": 0.46938614718037336,
+       "6": 0.6110764714469409,
+       "9": 0.7079056620578948,
+       "12": 0.7804765488448088,
+       "18": 0.9448515980923049,
+       "24": 0.9376662541522032
+      }
+     },
+     "status": "ok",
+     "rank": 13
     }
    ],
-   "n_ok": 32,
+   "n_ok": 36,
    "best_by_submitter": [
     "sejin__zoo4-simplex.csv",
     "임민수__zoo3-kma-pool-cg12-v3.csv",
