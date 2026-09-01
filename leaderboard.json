@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-01T15:25:35+09:00",
+ "generated_at": "2026-09-01T15:52:22+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -1869,6 +1869,17 @@
     "public_points": 32.110453,
     "memo": "층별 프로브: S-ORS layer8 t0.5 (변경 13행·1~4월 10행) — 완전 동일 → 어제 \"1~4월∧layer≥2\" 가설 반증. 재분석: Public = 정점×층 시리즈 부분집합(월 무관·D≈3400·양성 약 1700행). 확정 제외 G-l1·S-l1·S-l7·S-l8. 남은 측정 후보 = S-l5(stS035 이동의 주역) + 마이크로 조합",
     "team_score": null
+   },
+   {
+    "submitted_at": "2026-09-01",
+    "task": "P3",
+    "submitter": "세진",
+    "file": "submission_zoo6.csv",
+    "team_file": "sejin__zoo6-mean_all.csv",
+    "public_metric": 0.592742,
+    "public_points": 23.925699,
+    "memo": "zoo6 40멤버 균등평균 — 로스터 확장 이득 소진 확인(+0.16% vs zoo3b)",
+    "team_score": 0.761281
    }
   ],
   "errors": [
