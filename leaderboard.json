@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-01T13:52:31+09:00",
+ "generated_at": "2026-09-01T14:00:38+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -1815,6 +1815,17 @@
     "public_metric": 0.953989,
     "public_points": 32.110453,
     "memo": "층별 프로브: S-ORS layer7 t0.7 (변경 14행 전부 5월 이후) — 또 완전 동일. 과거 9개 프로브 전수 분해로 \"Public = 1~4월 ∧ layer≥2\" 가설 확립 (점수 이동량이 교집합 행수와 전부 일치·무변화 3종은 교집합 0행)",
+    "team_score": null
+   },
+   {
+    "submitted_at": "2026-09-01",
+    "task": "P1",
+    "submitter": "임민수",
+    "file": "cnn-gru5-lgbm-blend-Sl8-050__test2026.csv",
+    "team_file": "",
+    "public_metric": 0.953989,
+    "public_points": 32.110453,
+    "memo": "층별 프로브: S-ORS layer8 t0.5 (변경 13행·1~4월 10행) — 완전 동일 → 어제 \"1~4월∧layer≥2\" 가설 반증. 재분석: Public = 정점×층 시리즈 부분집합(월 무관·D≈3400·양성 약 1700행). 확정 제외 G-l1·S-l1·S-l7·S-l8. 남은 측정 후보 = S-l5(stS035 이동의 주역) + 마이크로 조합",
     "team_score": null
    }
   ],
