@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-01T14:00:38+09:00",
+ "generated_at": "2026-09-01T15:25:35+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -486,7 +486,7 @@
       }
      },
      "status": "ok",
-     "rank": 30
+     "rank": 32
     },
     {
      "file": "sejin__blend-v4-v4b-v5.csv",
@@ -507,7 +507,7 @@
       }
      },
      "status": "ok",
-     "rank": 23
+     "rank": 25
     },
     {
      "file": "sejin__blend-v4b-v5.csv",
@@ -528,7 +528,7 @@
       }
      },
      "status": "ok",
-     "rank": 24
+     "rank": 26
     },
     {
      "file": "sejin__blend-zoo-v6.csv",
@@ -549,7 +549,7 @@
       }
      },
      "status": "ok",
-     "rank": 17
+     "rank": 19
     },
     {
      "file": "sejin__blend-zoo3-ext-v7ext.csv",
@@ -633,7 +633,7 @@
       }
      },
      "status": "ok",
-     "rank": 27
+     "rank": 29
     },
     {
      "file": "sejin__solo-boost-v1.csv",
@@ -654,7 +654,7 @@
       }
      },
      "status": "ok",
-     "rank": 14
+     "rank": 16
     },
     {
      "file": "sejin__stacking-phys-gru-v2.csv",
@@ -675,7 +675,7 @@
       }
      },
      "status": "ok",
-     "rank": 21
+     "rank": 23
     },
     {
      "file": "sejin__stacking-v3.csv",
@@ -696,7 +696,7 @@
       }
      },
      "status": "ok",
-     "rank": 25
+     "rank": 27
     },
     {
      "file": "sejin__stacking-v3b.csv",
@@ -717,7 +717,7 @@
       }
      },
      "status": "ok",
-     "rank": 26
+     "rank": 28
     },
     {
      "file": "sejin__stacking-v5.csv",
@@ -738,7 +738,7 @@
       }
      },
      "status": "ok",
-     "rank": 22
+     "rank": 24
     },
     {
      "file": "sejin__stacking-v5zoo.csv",
@@ -759,7 +759,7 @@
       }
      },
      "status": "ok",
-     "rank": 19
+     "rank": 21
     },
     {
      "file": "sejin__stacking-v6.csv",
@@ -780,7 +780,7 @@
       }
      },
      "status": "ok",
-     "rank": 18
+     "rank": 20
     },
     {
      "file": "sejin__zoo2-mean_all.csv",
@@ -801,7 +801,7 @@
       }
      },
      "status": "ok",
-     "rank": 13
+     "rank": 14
     },
     {
      "file": "sejin__zoo2-simplex.csv",
@@ -930,6 +930,48 @@
      "rank": 1
     },
     {
+     "file": "sejin__zoo6-invw.csv",
+     "submitter": "세진",
+     "memo": "동물원 v6: 40멤버 1/OOF² 가중평균 (내부 CV 0.6964 최선) — 팀검증 0.7685",
+     "submitted_at": "2026-09-01T15:25:09+09:00",
+     "is_baseline": false,
+     "score": 0.76853,
+     "detail": {
+      "n": 546,
+      "per_lead": {
+       "3": 0.4706506215680774,
+       "6": 0.6234502589498342,
+       "9": 0.7208155159414772,
+       "12": 0.7916947544197979,
+       "18": 0.9518595381880461,
+       "24": 0.9387426383726803
+      }
+     },
+     "status": "ok",
+     "rank": 15
+    },
+    {
+     "file": "sejin__zoo6-mean_all.csv",
+     "submitter": "세진",
+     "memo": "동물원 v6: 40멤버(zoo3 36 + decay/llmt + DL4 + solo + 임민수 3) 메타 mean_all — 팀검증 0.7613",
+     "submitted_at": "2026-09-01T15:25:09+09:00",
+     "is_baseline": false,
+     "score": 0.761281,
+     "detail": {
+      "n": 546,
+      "per_lead": {
+       "3": 0.4626239691295586,
+       "6": 0.6119068877131302,
+       "9": 0.7116749617689181,
+       "12": 0.7831882911156546,
+       "18": 0.9454367337228481,
+       "24": 0.9354814391355036
+      }
+     },
+     "status": "ok",
+     "rank": 13
+    },
+    {
      "file": "임민수__ridge-lgbm-leadw-v2.csv",
      "submitter": "임민수",
      "memo": "v1 + 리드별 Ridge/LGBM 블렌드 가중(단리드 LGBM 위주, +24h Ridge 전용; 온셋 CV 선택). 온셋 CV 0.7258(-11.8%)",
@@ -948,7 +990,7 @@
       }
      },
      "status": "ok",
-     "rank": 29
+     "rank": 31
     },
     {
      "file": "임민수__ridge-lgbm-v1.csv",
@@ -969,7 +1011,7 @@
       }
      },
      "status": "ok",
-     "rank": 28
+     "rank": 30
     },
     {
      "file": "임민수__sejin-v445-warm-shrink-v1.csv",
@@ -990,7 +1032,7 @@
       }
      },
      "status": "ok",
-     "rank": 15
+     "rank": 17
     },
     {
      "file": "임민수__sejin-v445-zoo-blend-v1.csv",
@@ -1011,7 +1053,7 @@
       }
      },
      "status": "ok",
-     "rank": 20
+     "rank": 22
     },
     {
      "file": "임민수__v445-warm-shrink-s10-v2.csv",
@@ -1032,7 +1074,7 @@
       }
      },
      "status": "ok",
-     "rank": 16
+     "rank": 18
     },
     {
      "file": "임민수__zoo3-kma-pool-all3-v2.csv",
@@ -1098,7 +1140,7 @@
      "rank": 3
     }
    ],
-   "n_ok": 30,
+   "n_ok": 32,
    "best_by_submitter": [
     "sejin__zoo4-simplex.csv",
     "임민수__zoo3-kma-pool-cg12-v3.csv",
