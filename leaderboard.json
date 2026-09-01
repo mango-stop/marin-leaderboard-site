@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-01T13:49:00+09:00",
+ "generated_at": "2026-09-01T13:52:31+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -1804,6 +1804,17 @@
     "public_metric": 0.953989,
     "public_points": 32.110453,
     "memo": "층별 프로브: S-ORS layer1 t0.6 (189행·12구간 변경·1~4월 118행) — stI050 과 완전 동일 → S-l1 은 Public 채점 미포함. stG020(G-l1)과 합쳐 \"Public 은 layer1 제외\" 가설 부상·월 가설 흔들림",
+    "team_score": null
+   },
+   {
+    "submitted_at": "2026-09-01",
+    "task": "P1",
+    "submitter": "임민수",
+    "file": "cnn-gru5-lgbm-blend-Sl7-070__test2026.csv",
+    "team_file": "",
+    "public_metric": 0.953989,
+    "public_points": 32.110453,
+    "memo": "층별 프로브: S-ORS layer7 t0.7 (변경 14행 전부 5월 이후) — 또 완전 동일. 과거 9개 프로브 전수 분해로 \"Public = 1~4월 ∧ layer≥2\" 가설 확립 (점수 이동량이 교집합 행수와 전부 일치·무변화 3종은 교집합 0행)",
     "team_score": null
    }
   ],
