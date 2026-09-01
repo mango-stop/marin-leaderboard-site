@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-01T16:59:21+09:00",
+ "generated_at": "2026-09-01T17:03:54+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -654,7 +654,7 @@
       }
      },
      "status": "ok",
-     "rank": 18
+     "rank": 19
     },
     {
      "file": "sejin__stacking-phys-gru-v2.csv",
@@ -948,7 +948,7 @@
       }
      },
      "status": "ok",
-     "rank": 17
+     "rank": 18
     },
     {
      "file": "sejin__zoo6-mean_all.csv",
@@ -1058,7 +1058,7 @@
     {
      "file": "임민수__tabpfn-solo-v1.csv",
      "submitter": "임민수",
-     "memo": "TabPFN 단독(tabpfn==8.5.0, 합성 사전학습 FM, 9/1 규정 예외) lead별 Δhs 회귀, val-safe 1822앵커, n_est=8, zoo2 가드 동일",
+     "memo": "TabPFN v2 단독(tabpfn==8.5.0, 합성 사전학습 FM, 9/1 규정 예외) lead별 Δhs 회귀, val-safe 1822앵커, n_est=8, zoo2 가드 동일",
      "submitted_at": "2026-09-01T16:52:17+09:00",
      "is_baseline": false,
      "score": 0.79551,
@@ -1082,20 +1082,20 @@
      "memo": "TabPFN v2 x0.30 + zoo2 mean_all x0.70 블렌드 (alpha는 val-safe OOF로 선택)",
      "submitted_at": "2026-09-01T16:52:17+09:00",
      "is_baseline": false,
-     "score": 0.770989,
+     "score": 0.765757,
      "detail": {
       "n": 546,
       "per_lead": {
-       "3": 0.4625357055418521,
-       "6": 0.6258327521202239,
-       "9": 0.7108219073411033,
-       "12": 0.7914694369086147,
-       "18": 0.9610046774079718,
-       "24": 0.9516938339174441
+       "3": 0.4606727484980973,
+       "6": 0.6266915920438549,
+       "9": 0.7126643444933161,
+       "12": 0.7856114066812498,
+       "18": 0.9517225281296281,
+       "24": 0.9394080182940555
       }
      },
      "status": "ok",
-     "rank": 19
+     "rank": 17
     },
     {
      "file": "임민수__v445-warm-shrink-s10-v2.csv",
