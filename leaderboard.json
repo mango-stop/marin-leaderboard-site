@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-01T17:03:54+09:00",
+ "generated_at": "2026-09-01T17:09:56+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -1964,6 +1964,17 @@
     "public_points": 23.925699,
     "memo": "zoo6 40멤버 균등평균 — 로스터 확장 이득 소진 확인(+0.16% vs zoo3b)",
     "team_score": 0.761281
+   },
+   {
+    "submitted_at": "2026-09-01",
+    "task": "P3",
+    "submitter": "임민수",
+    "file": "zoo3ors-tabpfn3h-v1.csv",
+    "team_file": "임민수__zoo3ors-tabpfn3h-v1.csv",
+    "public_metric": 0.590583,
+    "public_points": 23.959969,
+    "memo": "합법(ORS 전용) 신기록: zoo2+cnngru24+mlp_tab + TabPFN v2 +3h만 w=0.5 — zoo3b 0.591788 제침(−0.2%). 검증: 팀 0.7598·safe OOF 0.6999 동시 개선 방향 적중",
+    "team_score": 0.759844
    }
   ],
   "errors": [
