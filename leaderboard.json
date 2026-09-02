@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-02T01:14:04+09:00",
+ "generated_at": "2026-09-02T11:14:29+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -2134,6 +2134,17 @@
     "public_points": 32.117255,
     "memo": "정점별 임계값: S-ORS 0.25(G 0.30/I 0.50) — stI050 대비 +0.0003 신기록. 8/29 stS025의 +0.0003이 실제 이득으로 확정(가산성 검증됨) → S 0.25 채택. 다음 stS020으로 S 정점 탐색",
     "team_score": null
+   },
+   {
+    "submitted_at": "2026-09-02",
+    "task": "P3",
+    "submitter": "세진",
+    "file": "submission_zoo8b.csv",
+    "team_file": "sejin__zoo8-mean_all.csv",
+    "public_metric": 0.591396,
+    "public_points": 23.947064,
+    "memo": "zoo3+TabPFN v2(합성사전학습) 균등평균 — 공식 최고 갱신. CV·팀검증·공식 3중 동시 개선 최초 사례",
+    "team_score": 0.759289
    }
   ],
   "errors": [
