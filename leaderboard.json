@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-02T11:14:29+09:00",
+ "generated_at": "2026-09-02T12:11:27+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -2145,6 +2145,28 @@
     "public_points": 23.947064,
     "memo": "zoo3+TabPFN v2(합성사전학습) 균등평균 — 공식 최고 갱신. CV·팀검증·공식 3중 동시 개선 최초 사례",
     "team_score": 0.759289
+   },
+   {
+    "submitted_at": "2026-09-02",
+    "task": "P2",
+    "submitter": "홍화수",
+    "file": "official_P2_v13_hybrid.csv",
+    "team_file": "",
+    "public_metric": 0.437099,
+    "public_points": 27.848818,
+    "memo": "재구축 1차 — 2024내부CV 이식실패 실측 (교훈: 연도횡단 게이트 필수)",
+    "team_score": null
+   },
+   {
+    "submitted_at": "2026-09-02",
+    "task": "P2",
+    "submitter": "홍화수",
+    "file": "official_P2_v14_minimal.csv",
+    "team_file": "",
+    "public_metric": 0.40155,
+    "public_points": 28.294873,
+    "memo": "합규 앵커 확정 — 전상수 자가적합 최소구조",
+    "team_score": null
    }
   ],
   "errors": [
