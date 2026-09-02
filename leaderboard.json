@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-02T14:33:12+09:00",
+ "generated_at": "2026-09-02T14:44:52+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -2166,6 +2166,17 @@
     "public_metric": 0.40155,
     "public_points": 28.294873,
     "memo": "합규 앵커 확정 — 전상수 자가적합 최소구조",
+    "team_score": null
+   },
+   {
+    "submitted_at": "2026-09-02",
+    "task": "P2",
+    "submitter": "홍화수",
+    "file": "official_P2_v15_gated.csv",
+    "team_file": "",
+    "public_metric": 0.401137,
+    "public_points": 28.300063,
+    "memo": "합규 신기록 — hfe LOPO½수축 자가적합 (예측밴드 적중)",
     "team_score": null
    }
   ],
