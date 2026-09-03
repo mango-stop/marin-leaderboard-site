@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-04T07:29:00+09:00",
+ "generated_at": "2026-09-04T08:51:33+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -1553,28 +1553,6 @@
    },
    {
     "submitted_at": "2026-08-26",
-    "task": "P1",
-    "submitter": "임민수",
-    "file": "cnn-gru5-lgbm-blend-t0775-v8__test2026.csv",
-    "team_file": "임민수__cnn-gru5-lgbm-blend-t0775-v8.csv",
-    "public_metric": 0.858393,
-    "public_points": 29.569671,
-    "memo": "v7 과 같은 모델 t0.775 프로브 — 높은 임계값 −0.061 (dev 예상 −0.005)",
-    "team_score": 0.935928
-   },
-   {
-    "submitted_at": "2026-08-26",
-    "task": "P1",
-    "submitter": "임민수",
-    "file": "cnn-gru5-lgbm-blend-t045-v9__test2026.csv",
-    "team_file": "임민수__cnn-gru5-lgbm-blend-t045-v9.csv",
-    "public_metric": 0.937407,
-    "public_points": 31.669724,
-    "memo": "v7 과 같은 모델 t0.45 프로브 — 임계값 하향 +0.018 공식 최고",
-    "team_score": 0.951845
-   },
-   {
-    "submitted_at": "2026-08-26",
     "task": "P2",
     "submitter": "홍화수",
     "file": "official_P2_v2_opt.csv",
@@ -1616,39 +1594,6 @@
     "public_points": 28.562021,
     "memo": "3모수 리더보드 해 (s=0.944 h=0.137 m=-1.335) — 공식 최고 갱신",
     "team_score": null
-   },
-   {
-    "submitted_at": "2026-08-27",
-    "task": "P1",
-    "submitter": "임민수",
-    "file": "cnn-gru5-lgbm-blend-t035__test2026.csv",
-    "team_file": "임민수__cnn-gru5-lgbm-blend-t035.csv",
-    "public_metric": 0.947291,
-    "public_points": 31.932426,
-    "memo": "시드5 모델 t0.35 프로브 — 임계값 하향 계속 유효(+0.010) 공식 최고",
-    "team_score": 0.950299
-   },
-   {
-    "submitted_at": "2026-08-27",
-    "task": "P1",
-    "submitter": "임민수",
-    "file": "cnn-gru5-lgbm-blend-t030__test2026.csv",
-    "team_file": "임민수__cnn-gru5-lgbm-blend-t030.csv",
-    "public_metric": 0.950037,
-    "public_points": 32.005398,
-    "memo": "시드5 모델 t0.30 프로브 — +0.003 공식 최고",
-    "team_score": 0.943934
-   },
-   {
-    "submitted_at": "2026-08-27",
-    "task": "P1",
-    "submitter": "임민수",
-    "file": "cnn-gru5-lgbm-blend-t030-h08__test2026.csv",
-    "team_file": "임민수__cnn-gru5-lgbm-blend-t030-h08.csv",
-    "public_metric": 0.91047,
-    "public_points": 30.953803,
-    "memo": "t0.30 히스테리시스 프로브 — 저신뢰 구간 제거 -0.040 (내부 val +0.027 과 정반대) 제거 축 종료",
-    "team_score": 0.978831
    },
    {
     "submitted_at": "2026-08-27",
@@ -1740,39 +1685,6 @@
    },
    {
     "submitted_at": "2026-08-28",
-    "task": "P1",
-    "submitter": "임민수",
-    "file": "cnn-gru5-lgbm-blend-t025__test2026.csv",
-    "team_file": "임민수__cnn-gru5-lgbm-blend-t025.csv",
-    "public_metric": 0.940893,
-    "public_points": 31.762369,
-    "memo": "시드5 모델 t0.25 프로브 — t0.30(0.950037) 대비 -0.009 → 임계값 정점 0.30 확정",
-    "team_score": 0.937165
-   },
-   {
-    "submitted_at": "2026-08-28",
-    "task": "P1",
-    "submitter": "임민수",
-    "file": "cnn-gru5-lgbm-blend-t030-dil2__test2026.csv",
-    "team_file": "임민수__cnn-gru5-lgbm-blend-t030-dil2.csv",
-    "public_metric": 0.943761,
-    "public_points": 31.838593,
-    "memo": "t0.30 + 구간 시작 2행 앞당김(dilate) 프로브 — -0.006. 침식·확장 양방향 손해 확정",
-    "team_score": 0.940336
-   },
-   {
-    "submitted_at": "2026-08-28",
-    "task": "P1",
-    "submitter": "임민수",
-    "file": "cnn-gru5-lgbm-blend-stI025__test2026.csv",
-    "team_file": "",
-    "public_metric": 0.940637,
-    "public_points": 31.755577,
-    "memo": "정점별 임계값 프로브: I-ORS만 0.25(+100행) — -0.0094 = 전역 t0.25 손해의 전부 → I-ORS는 0.30 이상 G/S는 하향 여지",
-    "team_score": null
-   },
-   {
-    "submitted_at": "2026-08-28",
     "task": "P2",
     "submitter": "홍화수",
     "file": "official_P2_r12_probe_hfe_A.csv",
@@ -1857,39 +1769,6 @@
     "public_metric": 0.374581,
     "public_points": 28.633273,
     "memo": "c1+mw 결합 회수 — 신기록 (예측 8연속 적중",
-    "team_score": null
-   },
-   {
-    "submitted_at": "2026-08-29",
-    "task": "P1",
-    "submitter": "임민수",
-    "file": "cnn-gru5-lgbm-blend-stI035__test2026.csv",
-    "team_file": "",
-    "public_metric": 0.95166,
-    "public_points": 32.04855,
-    "memo": "정점별 임계값 프로브: I-ORS만 0.35(−26행) — t0.30 대비 +0.0016 공식 최고. I-ORS 상향 유효 → 다음 stS025/stG020",
-    "team_score": null
-   },
-   {
-    "submitted_at": "2026-08-29",
-    "task": "P1",
-    "submitter": "임민수",
-    "file": "cnn-gru5-lgbm-blend-stS025__test2026.csv",
-    "team_file": "",
-    "public_metric": 0.950292,
-    "public_points": 32.012198,
-    "memo": "정점별 임계값 프로브: S-ORS만 0.25(+160행) — t0.30 대비 +0.0003 중립. S-ORS 하향 이득 없음 → S 0.30 유지",
-    "team_score": null
-   },
-   {
-    "submitted_at": "2026-08-29",
-    "task": "P1",
-    "submitter": "임민수",
-    "file": "cnn-gru5-lgbm-blend-stG020__test2026.csv",
-    "team_file": "",
-    "public_metric": 0.950037,
-    "public_points": 32.005398,
-    "memo": "정점별 임계값 프로브: G-ORS만 0.20(+48행) — t0.30 과 완전 동일 점수. 파일명 stG020 확인. 추가 48행 전부 2026-05~06 → Public 채점 구간 밖(Public≈1~4월 추정). G-ORS Public 판단 불가 → 0.30 유지",
     "team_score": null
    },
    {
@@ -2003,72 +1882,6 @@
     "team_score": null
    },
    {
-    "submitted_at": "2026-08-30",
-    "task": "P1",
-    "submitter": "임민수",
-    "file": "cnn-gru5-lgbm-blend-stI040__test2026.csv",
-    "team_file": "",
-    "public_metric": 0.953056,
-    "public_points": 32.085655,
-    "memo": "정점별 임계값 프로브: I-ORS만 0.40(G/S 0.30) — stI035 대비 +0.0014 공식 최고. I-ORS 상향 계속 유효 → 다음 stI045",
-    "team_score": null
-   },
-   {
-    "submitted_at": "2026-08-30",
-    "task": "P1",
-    "submitter": "임민수",
-    "file": "cnn-gru5-lgbm-blend-stI045__test2026.csv",
-    "team_file": "",
-    "public_metric": 0.953523,
-    "public_points": 32.098048,
-    "memo": "정점별 임계값 프로브: I-ORS만 0.45(G/S 0.30) — stI040 대비 +0.0005 공식 최고. 증가폭 축소(+0.0016→+0.0014→+0.0005) → I-ORS 정점 0.45~0.50 근접. 다음 stI050",
-    "team_score": null
-   },
-   {
-    "submitted_at": "2026-08-30",
-    "task": "P1",
-    "submitter": "임민수",
-    "file": "cnn-gru5-lgbm-blend-stI050__test2026.csv",
-    "team_file": "",
-    "public_metric": 0.953989,
-    "public_points": 32.110453,
-    "memo": "정점별 임계값 프로브: I-ORS만 0.50(G/S 0.30) — stI045 대비 +0.0005 공식 최고. 아직 상승 → 다음 stI055/stI060",
-    "team_score": null
-   },
-   {
-    "submitted_at": "2026-08-31",
-    "task": "P1",
-    "submitter": "임민수",
-    "file": "cnn-gru5-lgbm-blend-stI055__test2026.csv",
-    "team_file": "",
-    "public_metric": 0.953642,
-    "public_points": 32.101234,
-    "memo": "정점별 임계값 프로브: I-ORS만 0.55 — stI050(0.953989) 대비 −0.0003 하락 → I-ORS 정점 0.50 확정. stI060 불필요",
-    "team_score": null
-   },
-   {
-    "submitted_at": "2026-08-31",
-    "task": "P1",
-    "submitter": "임민수",
-    "file": "cnn-gru5-lgbm-blend-stS035__test2026.csv",
-    "team_file": "",
-    "public_metric": 0.952964,
-    "public_points": 32.08321,
-    "memo": "정점별 임계값 프로브: S-ORS 0.35(I 0.50) — stI050 대비 −0.0010 하락 → S 0.30 확정. 정점별 t 최종 = G0.30/I0.50/S0.30 (stI050)",
-    "team_score": null
-   },
-   {
-    "submitted_at": "2026-08-31",
-    "task": "P1",
-    "submitter": "임민수",
-    "file": "cnn-gru5mr03-lgbm-blend-stI050__test2026.csv",
-    "team_file": "",
-    "public_metric": 0.953266,
-    "public_points": 32.091242,
-    "memo": "모델 프로브: mask-rel 0.3 시드5(n5mr03) + 정점별 t G0.30/I0.50/S0.30 — n5 stI050 대비 −0.0007 → 모델 n5 유지 확정. P1 최종 = n5 + stI050",
-    "team_score": null
-   },
-   {
     "submitted_at": "2026-08-31",
     "task": "P3",
     "submitter": "세진",
@@ -2078,39 +1891,6 @@
     "public_points": 23.842078,
     "memo": "solo LGBM + zoo3b 1:1 — 팀검증 개선(0.7557)이 Public에서 역전(+1.1%)",
     "team_score": 0.755674
-   },
-   {
-    "submitted_at": "2026-09-01",
-    "task": "P1",
-    "submitter": "임민수",
-    "file": "cnn-gru5-lgbm-blend-Sl1-060__test2026.csv",
-    "team_file": "",
-    "public_metric": 0.953989,
-    "public_points": 32.110453,
-    "memo": "층별 프로브: S-ORS layer1 t0.6 (189행·12구간 변경·1~4월 118행) — stI050 과 완전 동일 → S-l1 은 Public 채점 미포함. stG020(G-l1)과 합쳐 \"Public 은 layer1 제외\" 가설 부상·월 가설 흔들림",
-    "team_score": null
-   },
-   {
-    "submitted_at": "2026-09-01",
-    "task": "P1",
-    "submitter": "임민수",
-    "file": "cnn-gru5-lgbm-blend-Sl7-070__test2026.csv",
-    "team_file": "",
-    "public_metric": 0.953989,
-    "public_points": 32.110453,
-    "memo": "층별 프로브: S-ORS layer7 t0.7 (변경 14행 전부 5월 이후) — 또 완전 동일. 과거 9개 프로브 전수 분해로 \"Public = 1~4월 ∧ layer≥2\" 가설 확립 (점수 이동량이 교집합 행수와 전부 일치·무변화 3종은 교집합 0행)",
-    "team_score": null
-   },
-   {
-    "submitted_at": "2026-09-01",
-    "task": "P1",
-    "submitter": "임민수",
-    "file": "cnn-gru5-lgbm-blend-Sl8-050__test2026.csv",
-    "team_file": "",
-    "public_metric": 0.953989,
-    "public_points": 32.110453,
-    "memo": "층별 프로브: S-ORS layer8 t0.5 (변경 13행·1~4월 10행) — 완전 동일 → 어제 \"1~4월∧layer≥2\" 가설 반증. 재분석: Public = 정점×층 시리즈 부분집합(월 무관·D≈3400·양성 약 1700행). 확정 제외 G-l1·S-l1·S-l7·S-l8. 남은 측정 후보 = S-l5(stS035 이동의 주역) + 마이크로 조합",
-    "team_score": null
    },
    {
     "submitted_at": "2026-09-01",
@@ -2133,39 +1913,6 @@
     "public_points": 23.959969,
     "memo": "합법(ORS 전용) 신기록: zoo2+cnngru24+mlp_tab + TabPFN v2 +3h만 w=0.5 — zoo3b 0.591788 제침(−0.2%). 검증: 팀 0.7598·safe OOF 0.6999 동시 개선 방향 적중",
     "team_score": 0.759844
-   },
-   {
-    "submitted_at": "2026-09-02",
-    "task": "P1",
-    "submitter": "임민수",
-    "file": "cnn-gru5-lgbm-blend-Sl5-070__test2026.csv",
-    "team_file": "",
-    "public_metric": 0.953733,
-    "public_points": 32.103647,
-    "memo": "층별 프로브: S-l5 t0.7 (변경 271행) — stI050 0.953989 대비 −0.0003 → S-l5 상향 미채택. dev +0.0025 와 역방향 = 내부 지표 불신 재확인",
-    "team_score": null
-   },
-   {
-    "submitted_at": "2026-09-02",
-    "task": "P1",
-    "submitter": "임민수",
-    "file": "cnn-gru5-lgbm-blend-lymicro-v1__test2026.csv",
-    "team_file": "",
-    "public_metric": 0.952451,
-    "public_points": 32.069569,
-    "memo": "층별 프로브: 미세 조정 일괄(S-l2 .4+S-l3 .2+S-l6 .4+I-l5 .4",
-    "team_score": null
-   },
-   {
-    "submitted_at": "2026-09-02",
-    "task": "P1",
-    "submitter": "임민수",
-    "file": "cnn-gru5-lgbm-blend-stI050-S025__test2026.csv",
-    "team_file": "",
-    "public_metric": 0.954245,
-    "public_points": 32.117255,
-    "memo": "정점별 임계값: S-ORS 0.25(G 0.30/I 0.50) — stI050 대비 +0.0003 신기록. 8/29 stS025의 +0.0003이 실제 이득으로 확정(가산성 검증됨) → S 0.25 채택. 다음 stS020으로 S 정점 탐색",
-    "team_score": null
    },
    {
     "submitted_at": "2026-09-02",
