@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-03T19:26:57+09:00",
+ "generated_at": "2026-09-03T19:29:15+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -2193,6 +2193,17 @@
     "public_metric": 0.401137,
     "public_points": 28.300063,
     "memo": "합규 신기록 — hfe LOPO½수축 자가적합 (예측밴드 적중)",
+    "team_score": null
+   },
+   {
+    "submitted_at": "2026-09-03",
+    "task": "P1",
+    "submitter": "임민수",
+    "file": "cnn-gru5-lgbm-blend-stdev-G040-I050-S055__test2026.csv",
+    "team_file": "",
+    "public_metric": 0.932567,
+    "public_points": 31.541101,
+    "memo": "합규 후보 ①: n5 + dev OOF 정점별 임계값 G0.40/I0.50/S0.55(station_thr_fit) — v7(t0.55 전역 0.919179) 대비 +0.0134. LB 프로브 상수판(0.954245)은 사용 불가. 합규 후보 중 현 최고. 다음 ② D 멀티태스크 stdev-G030-I060-S045",
     "team_score": null
    }
   ],
