@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-03T22:46:53+09:00",
+ "generated_at": "2026-09-03T22:54:38+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -2227,6 +2227,17 @@
     "public_points": 32.25593,
     "memo": "합규 후보 ③: D + joint(다층 동시 입력) CNN 로짓 평균(0.5 고정) + LGBM w0.7",
     "team_score": null
+   },
+   {
+    "submitted_at": "2026-09-03",
+    "task": "P3",
+    "submitter": "임민수",
+    "file": "zoo3ors-w36-tabpfn-cond-v2.csv",
+    "team_file": "임민수__zoo3ors-w36-tabpfn-cond-v2.csv",
+    "public_metric": 0.592495,
+    "public_points": 23.929623,
+    "memo": "zoo3ors + TabPFN airt0 조건부(F1) + w36 — 팀검증 0.757457(팀 최고)이지만 공식은 zoo3ors-tabpfn3h-v1(0.590583) 대비 −0.0019 → 미채택. 합법 P3 최고 = zoo3ors-tabpfn3h-v1 유지(KMA 풀링 계열은 외부데이터라 최종 선택 금지). 팀검증-공식 역방향 재확인",
+    "team_score": 0.757457
    }
   ],
   "errors": [
