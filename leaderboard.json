@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-03T22:54:38+09:00",
+ "generated_at": "2026-09-04T07:21:04+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -2238,6 +2238,17 @@
     "public_points": 23.929623,
     "memo": "zoo3ors + TabPFN airt0 조건부(F1) + w36 — 팀검증 0.757457(팀 최고)이지만 공식은 zoo3ors-tabpfn3h-v1(0.590583) 대비 −0.0019 → 미채택. 합법 P3 최고 = zoo3ors-tabpfn3h-v1 유지(KMA 풀링 계열은 외부데이터라 최종 선택 금지). 팀검증-공식 역방향 재확인",
     "team_score": 0.757457
+   },
+   {
+    "submitted_at": "2026-09-04",
+    "task": "P1",
+    "submitter": "임민수",
+    "file": "cnn-hybrid-G-D-IS-Djoint-stdev__test2026.csv",
+    "team_file": "",
+    "public_metric": 0.959722,
+    "public_points": 32.262806,
+    "memo": "합규 후보 ④ 하이브리드: 정점별 모델 선택 — G-ORS = D 단독 stdev(G0.30)",
+    "team_score": null
    }
   ],
   "errors": [
