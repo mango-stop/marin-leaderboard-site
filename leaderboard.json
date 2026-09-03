@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-03T02:14:02+09:00",
+ "generated_at": "2026-09-03T19:26:57+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -22,7 +22,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 24
+     "rank": 25
     },
     {
      "file": "임민수__cnn-gru-lgbm-blend-erode1-v6.csv",
@@ -105,6 +105,22 @@
      "rank": 5
     },
     {
+     "file": "임민수__cnn-gru5-auxw1-lgbm-blend-t045.csv",
+     "submitter": "임민수",
+     "memo": "n5 + 온셋·유형 보조 헤드 멀티태스크(--aux onset,type --onset-samp --aux-w 1.0,0.5), LGBM 로짓 블렌드 w0.7, dev 선택 t0.45 pp(6,12), 확장 후처리 없음",
+     "submitted_at": "2026-09-03T19:26:29+09:00",
+     "is_baseline": false,
+     "score": 0.967016,
+     "detail": {
+      "TP": 9455,
+      "FP": 189,
+      "FN": 456,
+      "n": 208093
+     },
+     "status": "ok",
+     "rank": 7
+    },
+    {
      "file": "임민수__cnn-gru5-lgbm-blend-t025.csv",
      "submitter": "임민수",
      "memo": "시드5 모델 임계값 0.25 프로브 (정점 확인용; t0.30 공식 0.950037)",
@@ -118,7 +134,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 12
+     "rank": 13
     },
     {
      "file": "임민수__cnn-gru5-lgbm-blend-t030-dil2.csv",
@@ -134,7 +150,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 11
+     "rank": 12
     },
     {
      "file": "임민수__cnn-gru5-lgbm-blend-t030-h08.csv",
@@ -166,7 +182,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 10
+     "rank": 11
     },
     {
      "file": "임민수__cnn-gru5-lgbm-blend-t035.csv",
@@ -182,7 +198,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 8
+     "rank": 9
     },
     {
      "file": "임민수__cnn-gru5-lgbm-blend-t045-v9.csv",
@@ -198,7 +214,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 7
+     "rank": 8
     },
     {
      "file": "임민수__cnn-gru5-lgbm-blend-t0775-v8.csv",
@@ -214,7 +230,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 13
+     "rank": 14
     },
     {
      "file": "임민수__cnn-gru5-lgbm-blend-v7.csv",
@@ -230,7 +246,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 9
+     "rank": 10
     },
     {
      "file": "임민수__cnn-lgbm-blend-v1.csv",
@@ -246,7 +262,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 14
+     "rank": 15
     },
     {
      "file": "임민수__gbm-aug-v2.csv",
@@ -262,7 +278,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 22
+     "rank": 23
     },
     {
      "file": "임민수__gbm-aug-v3.csv",
@@ -278,7 +294,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 21
+     "rank": 22
     },
     {
      "file": "임민수__gbm-aug-v4-t05.csv",
@@ -294,7 +310,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 18
+     "rank": 19
     },
     {
      "file": "임민수__gbm-aug-v4.csv",
@@ -310,7 +326,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 20
+     "rank": 21
     },
     {
      "file": "임민수__lgbm-v4-t05.csv",
@@ -326,7 +342,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 17
+     "rank": 18
     },
     {
      "file": "임민수__lgbm-v4.csv",
@@ -342,7 +358,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 19
+     "rank": 20
     },
     {
      "file": "임민수__lgbm-v5-both-t05.csv",
@@ -358,7 +374,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 15
+     "rank": 16
     },
     {
      "file": "임민수__lgbm-v5-both.csv",
@@ -374,7 +390,7 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 16
+     "rank": 17
     },
     {
      "file": "임민수__rules-v1.csv",
@@ -390,10 +406,10 @@
       "n": 208093
      },
      "status": "ok",
-     "rank": 23
+     "rank": 24
     }
    ],
-   "n_ok": 24,
+   "n_ok": 25,
    "best_by_submitter": [
     "임민수__cnn-gru-lgbm-blend-pp3-v5.csv",
     "baseline__hard-rule.csv"
