@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-03T19:33:39+09:00",
+ "generated_at": "2026-09-03T22:46:53+09:00",
  "tasks": {
   "P1": {
    "name": "수온 이상탐지",
@@ -2216,6 +2216,17 @@
     "public_points": 32.078346,
     "memo": "합규 후보 ②: 온셋·유형 보조 헤드 멀티태스크 D(--aux onset",
     "team_score": 0.967016
+   },
+   {
+    "submitted_at": "2026-09-03",
+    "task": "P1",
+    "submitter": "임민수",
+    "file": "cnn-Djoint-avg-lgbm-blend-stdev-G030-I055-S065__test2026.csv",
+    "team_file": "",
+    "public_metric": 0.959463,
+    "public_points": 32.25593,
+    "memo": "합규 후보 ③: D + joint(다층 동시 입력) CNN 로짓 평균(0.5 고정) + LGBM w0.7",
+    "team_score": null
    }
   ],
   "errors": [
